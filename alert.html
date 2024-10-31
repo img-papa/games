@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<title>短編ホラーゲーム - 警報</title>
+<meta charset="utf-8">
+<meta name="viewport" content="widrh=device-widrh,initial-scale=1">
+<link rel="stylesheet" href="../css/common.css">
+<style>
+    
+    /*
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+　　　　■■■■　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+　　　■■■■■　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+　　　■　　　■　　　　　　　　　■　　　　　　　　　　　　　■　　　　　　　
+　　　■■■■■　　　　　　　　　■　　　　　　　　　　　　■■■　　■■　　
+　　　■　　　■　　　　　　　　■■■　　　　　　　　　■■■■　　　　■■　
+　　　■■■■■　　　　　　　■■■　　　　　　　　　　　■　　　　　　　■　
+　　　■　　　■　　　　　　　　■■　　■■■■　　　　■■　　　　■　　　　
+　　　■■■■■　　　　　　　　■　　　　　　■　　　　　　　　　　■　　　　
+　　　　■■■　　　　　　　　　■　　　　　　　　　　　　　　　　■■■　　　
+　　　■■　■　　　　　　　　　■　　　　　　　　　　　　　　　■　■■■　　
+　　■■　　■　　　　　　　　　■　　　　■■■　　　　　　　■■　■　　　　
+　■■　　　■■■■　　　　　　■　　　　　　　　　　　　　　　■■■　　　　
+　　　　　　　　■■
+    
+　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    何か仕込んでると思ったでしょ？
+    コードぐちゃぐちゃだから見ちゃやーよ♥
+    
+    AAは以下のサイトでつくりました
+    
+    巨大文字AAジェネレーター - LAZE SOFTWARE
+    https://lazesoftware.com/ja/tool/hugeaagen/
+    
+    THANKS!!!!!
+    
+    */
+    
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+    
+    :root {
+        --c-main: #BA8B40;
+        --c-border: #a52a2a;
+        --c-back: #600;
+        --c-dark: #666;
+        --c-font: #222;
+    }
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        line-height: 1.8;
+        color: #eee;
+        background: #000;
+    }
+    
+    a {
+        color: #ffa;
+    }
+    
+    p {
+        margin: 10px;
+    }
+    
+    h3 {
+        display: flex;
+        align-items: center;
+    }
+    h3:after {
+        flex-grow: 1;
+        content: "";
+        margin-left: 15px;
+        flex-grow: 1;
+        height: 5px;
+        background: var(--c-border);
+    }
+    
+    .head {
+        padding: 10px 40px 10px 15px;
+        border-radius: 0 50px 50px 0;
+        border-left: 8px solid #f00;
+        background: var(--c-back);
+        color: #fff;
+    }
+    .head p {
+        margin: 0;
+    }
+    strong {
+        color: #ff0;
+        font-size: 140%;
+        margin: 0 3px;
+    }
+    small {
+        color: #aaa;
+    }
+    
+    
+    
+    nav {
+        padding: 0;
+        background: var(--c-back);
+    }
+    nav a {
+        text-decoration: none;
+        font-weight: bold;
+    }
+    nav a:hover {
+        background: var(--c-border);
+        
+    }
+    nav ul li {
+        list-style: none;
+        border-top: 1px solid var(--c-border);
+    }
+    nav ul a {
+        display: block;
+        padding: 8px 20px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    
+    main {
+        flex-grow: 4;
+        max-width: 1000px;
+        padding: 20px 10px 30px;
+    }
+    
+    footer {
+        padding: 20px;
+        background: var(--c-dark);
+    }
+    
+    header {
+        padding: 30px;
+        background: url("DSC_0509.jpg");
+        background-size: 100%;
+        text-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+    }
+    
+    .box {
+        margin: 10px 0;
+        background: #eee;
+        adisplay: flex;
+        justify-content: space-between;
+    }
+    .box img {
+        adisplay: block;
+        awidth: 50%;
+        height: 200px;
+    }
+    
+    #flex {
+        display: flex;
+        justify-content: flex-start;
+    }
+    nav {
+        flex-basis: 230px;
+        flex-shrink: 2;
+        order: 3;
+    }
+    
+    @media only screen and (min-width: 700px) {
+        
+        .flex {
+            display: flex;
+            justify-content: flex-start;
+        }
+        main .flex {
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .flex section {
+            flex-basis: 49%;
+        }
+        
+        nav {
+            flex-basis: 200px;
+            flex-shrink: 2;
+            order: -3;
+            align-self: stretch;
+        }
+        
+    }
+    
+</style>
+</head>
+<body>
+    
+    <div id="wrap">
+
+        <header>
+            <h1>パパのホラー＆ゲームぶろぐ</h1>
+            <p>お気軽に絡んでください！(*^^)ﾉ~♪</p>
+        </header>
+        
+        <div id="flex">
+        <nav>
+            <div style="background:#000;margin:10px;padding:5px 10px;">
+                <div style="text-align:center;"><a href="">≪</a>　2024年 11月　<a href="">≫</a></div>
+            <table style="width:95%;color:#a66;text-align:right;">
+                <tr style="color:#fff;"><td style="color:hotpink;">日</td><td>月</td><td>火</td><td>水</td><td>木</td><td>金</td><td style="color:cornflowerblue;">土</td></tr>
+                <tr><td></td><td></td><td></td><td></td><td></td><td>1</td><td>2</td></tr>
+                <tr><td>3</td><td>4</td><td><a href="">5</a></td><td><a href="">6</a></td><td><a href="">7</a></td><td>8</td><td>9</td></tr>
+                <tr><td>10</td><td><a href="">11</a></td><td>12</td><td>13</td><td>14</td><td><a href="">15</a></td><td>16</td></tr>
+                <tr><td>17</td><td><a href="">18</a></td><td>19</td><td>20</td><td>21</td><td><a href="">22</a></td><td>23</td></tr>
+                <tr><td>24</td><td>25</td><td><a href="">26</a></td><td><a href="">27</a></td><td><a href="">28</a></td><td>29</td><td>30</td></tr>
+            </table>
+            </div>
+            <ul>
+                <li><a href="">トップページへ</a></li>
+                <li><a href="◆">2023年の記事</a></li>
+                <li><a href="◆">2022年の記事</a></li>
+                <li><a href="◆">2021年の記事</a></li>
+                <li><a href="◆">2020年の記事</a></li>
+                <li><a href="◆">2019年の記事</a></li>
+                <li><a href="◆">2018年の記事</a></li>
+                <li><a href="◆">ご連絡</a></li>
+            </ul>
+        </nav>
+        
+        <main>
+
+            <article class="head">
+                <h3>【短編ホラーゲーム】警報</h3>
+                <p>2024.10.10(Sun) 21:00:44　ｺﾒﾝﾄ(<a href="#comment">1</a>)</p>
+            </article>
+            <article style="margin:30px 10px;"><p>
+みなさん、「狐の窓」というものはご存知でしょうか？<br>
+指をある形に組んで、その隙間から世界を覗くと<strong>人ならざるモノ</strong>が見える､､､というヤツですね。</p><p>
+これに限らず、例えば鏡とか、<strong>特定の囲い</strong>からナニカを覗くと､､､<br>
+なんと<strong>霊力のない人でも見えてしまう</strong>ことがあるそうなんです！</p>
+<p>で、一度見てしまうとおしまいです。<br>
+そいつと関わりができてしまう。ご縁がね。<br>
+次からは何を通さなくても見えるし、触れるようになるでしょうね。
+</p>
+</article>
+            
+            <section style="border-top: 5px solid var(--c-back);margin-top: 20px;padding: 15px 10px 5px;">
+                <h4 id="comment" style="border-left: 10px solid #800;padding-left: 10px;">コメント（1件）</h4>
+                <article style="padding:10px;border-bottom:1px dashed #fff;">
+                    <h5>匿名さん｜2024.10.20(Sun) 22:58:13</h5>
+                    <p>○　○　<span style="color:#000">あけて</span></p>
+                </article>
+            </section>
+            
+        </main>
+        </div>
+        
+    </div>
+    <footer>
+    </footer>
+    
+</body>
+</html>
