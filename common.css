@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+
+:root {
+    --c-main: cadetblue;
+    --c-back: #fff;
+    --c-border: #ccc;
+    --c-gray: #aaa;
+    --c-light: #eee;
+    --c-dark: #444444;
+    --c-font: #2a2a2a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    line-height: 1.3;
+    image-rendering: pixelated;
+}
+
+body {
+    color: var(--c-font);
+    font-family: "Funnel Display", "Noto Sans JP", sans-serif;
+    font-weight: 400;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+}
+
+a {
+    color: var(--c-font);
+    text-decoration: none;
+}
