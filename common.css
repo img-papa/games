@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Darumadrop+One&family=Monomaniac+One&display=swap');
 
 :root {
     --c-main: cadetblue;
@@ -33,3 +32,24 @@ a {
     color: var(--c-font);
     text-decoration: none;
 }
+
+.links {
+    display: flex;
+    margin: 5px;
+    align-items: center;
+    align-content: center;
+    font-weight: bold;
+    border-radius: 50px;
+}
+
+.icon {
+    margin: 8px;
+    width: 32px;
+    height: 32px;
+    box-shadow: 0 0 1px #333;
+    border-radius: 50px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+
