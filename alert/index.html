@@ -112,7 +112,11 @@
     body {
         line-height: 1.8;
         color: #eee;
-        background: #000;
+        background: #0d0d0d;
+        background-image: url(bgi.png);
+        background-size: 80%;
+        background-position: bottom right;
+        background-repeat: no-repeat;
     }
     
     a {
@@ -161,15 +165,15 @@
     small {
         color: #aaa;
     }
-    
-    
-    
     nav {
+        flex-basis: 230px;
+        flex-shrink: 2;
+        order: 3;
         padding: 0;
         background: var(--c-back);
     }
     nav a {
-        text-decoration: none;
+        text-decoration: underline;
         font-weight: bold;
     }
     nav a:hover {
@@ -191,6 +195,9 @@
         flex-grow: 4;
         max-width: 1000px;
         padding: 20px 10px 30px;
+    }
+    main img {
+        width: 95%;
     }
     
     footer {
@@ -224,29 +231,58 @@
         height: 200px;
     }
     
-    #flex {
-        display: flex;
-        justify-content: flex-start;
-    }
-    nav {
-        flex-basis: 230px;
-        flex-shrink: 2;
-        order: 3;
-    }
-    nav a {
-        text-decoration: underline;
-    }
-    
-    main img {
-        width: 70%;
-    }
-    
     footer a:hover {
         opacity: 0.6;
     }
     
-    @media only screen and (min-width: 700px) {
+    .calendar {
+        padding: 5px 10px;
+        background: #000;
+    }
+    
+    @media only screen and (max-width: 649px) {
         
+        main img {
+            width: 100%;
+        }
+    
+        .contents {
+            margin: 5em 5px;
+            font-size: 100%;
+        }
+        
+        nav {
+            border-top: 5px solid #f00;
+        }
+        
+        footer,
+        nav p {
+            display: none;
+        }
+        
+        .smp {
+            margin: auto;
+            padding: 1em;
+        }
+        .smp img {
+            width: 100%;
+        }
+        .calendar {
+            max-width: 250px;
+            margin: 10px auto;
+        }
+        
+    }
+    @media only screen and (min-width: 650px) {
+        
+        .smp {
+            display: none;
+        }
+        
+        #flex {
+            display: flex;
+            justify-content: flex-start;
+        }
         .flex {
             display: flex;
             justify-content: flex-start;
@@ -255,8 +291,16 @@
             justify-content: space-between;
             flex-wrap: wrap;
         }
+        main img {
+            width: 85%;
+        }
+        
         .flex section {
             flex-basis: 49%;
+        }
+        .contents {
+            margin: 5em 20px;
+            font-size:110%;
         }
         
         nav {
@@ -264,6 +308,9 @@
             flex-shrink: 2;
             order: -3;
             align-self: stretch;
+        }
+        .calendar {
+            margin: 10px;
         }
         
     }
@@ -280,32 +327,6 @@
         </header>
         
         <div id="flex">
-        <nav>
-            <div style="background:#000;margin:10px;padding:5px 10px;">
-                <div style="text-align:center;"><a href="error.html">≪</a>　2024年 11月　<a href="error.html">≫</a></div>
-            <table style="width:95%;color:#a66;text-align:right;">
-                <tr style="color:#fff;"><td style="color:hotpink;">日</td><td>月</td><td>火</td><td>水</td><td>木</td><td>金</td><td style="color:cornflowerblue;">土</td></tr>
-                <tr><td></td><td></td><td></td><td></td><td></td><td>1</td><td>2</td></tr>
-                <tr><td>3</td><td>4</td><td><a href="error.html">5</a></td><td><a href="error.html">6</a></td><td><a href="error.html">7</a></td><td>8</td><td>9</td></tr>
-                <tr><td>10</td><td><a href="error.html">11</a></td><td>12</td><td>13</td><td>14</td><td><a href="error.html">15</a></td><td>16</td></tr>
-                <tr><td>17</td><td><a href="error.html">18</a></td><td>19</td><td>20</td><td>21</td><td><a href="error.html">22</a></td><td>23</td></tr>
-                <tr><td>24</td><td>25</td><td><a href="error.html">26</a></td><td><a href="error.html">27</a></td><td><a href="error.html">28</a></td><td>29</td><td>30</td></tr>
-            </table>
-            </div>
-            <ul>
-                <li><a href="error.html">トップページへ</a></li>
-                <li><a href="error.html">2023年の記事</a></li>
-                <li><a href="error.html">2022年の記事</a></li>
-                <li><a href="error.html">2021年の記事</a></li>
-                <li><a href="error.html">2020年の記事</a></li>
-                <li><a href="error.html">2019年の記事</a></li>
-                <li><a href="error.html">2018年の記事</a></li>
-                <li><a href="error.html">ご連絡</a></li>
-            </ul>
-            <p><a href="https://img-papa.booth.pm/"><img src="https://asset.booth.pm/static-images/banner/300x250_01.png" style="width:100%;"></a></p>
-            <p><a href="https://freegame-mugen.jp/"><img src="https://freegame-mugen.jp/common_images/banner_125x125.jpg" alt="フリーゲーム夢現" width="125" height="125" /></a></p>
-        </nav>
-        
         <main>
 
             <article class="head">
@@ -313,7 +334,7 @@
                 <p>2024.10.10(Thu) 21:00:44　ｺﾒﾝﾄ(<a href="#comment">1</a>)</p>
             </article>
 
-            <article style="margin:5em 20px;font-size:110%">
+            <article class="contents">
                 <p>みなさん、「狐の窓」というものはご存知でしょうか？</p>
                 <p>指をある形に組んで、その隙間から世界を覗くと<br><strong>人ならざるモノ</strong>が見える､､､<br>というヤツですね。
                 </p><p>
@@ -359,11 +380,7 @@
                 
                 <p>実況される方向けの<strong>ガイドライン</strong>もあるようです！<br><br>
                 ＞＞＞<a href="https://img-papa.github.io/games/guide.html" target="_blank">公式サイトさんのガイドラインはこちら</a>＜＜＜</p>
-                <p>一般的なガイドラインとほとんど変わりませんが、<br>今後実況する予定のある方は目を通しておくといいかも。<br><br>要約すると､､､</p>
-                
-                <p>◇公式orよそ様の著作物を勝手に使うな！<br>◇宗教や政治など実在する特定の何かの批判・誹謗中傷や、反対に過剰な支援に誘導する内容は禁止！
-                    </p>
-                <p>といったごく普通のガイドラインでした！</p>
+                <p>一般的なガイドラインとほとんど変わりませんが、<br>今後実況する予定のある方は目を通しておくといいかも。</p>
                 
                 <p><small>てわけで紹介しましたので、これで許してください笑</small></p>
                 
@@ -378,13 +395,47 @@
             </section>
             
         </main>
+            
+        <nav>
+            <div class="calendar">
+                <div style="text-align:center;"><a href="error.html">≪</a>　2024年 11月　<a href="error.html">≫</a></div>
+            <table style="width:95%;color:#a66;text-align:right;">
+                <tr style="color:#fff;"><td style="color:hotpink;">日</td><td>月</td><td>火</td><td>水</td><td>木</td><td>金</td><td style="color:cornflowerblue;">土</td></tr>
+                <tr><td></td><td></td><td></td><td></td><td></td><td>1</td><td>2</td></tr>
+                <tr><td>3</td><td>4</td><td><a href="error.html">5</a></td><td><a href="error.html">6</a></td><td><a href="error.html">7</a></td><td>8</td><td>9</td></tr>
+                <tr><td>10</td><td><a href="error.html">11</a></td><td>12</td><td>13</td><td>14</td><td><a href="error.html">15</a></td><td>16</td></tr>
+                <tr><td>17</td><td><a href="error.html">18</a></td><td>19</td><td>20</td><td>21</td><td><a href="error.html">22</a></td><td>23</td></tr>
+                <tr><td>24</td><td>25</td><td><a href="error.html">26</a></td><td><a href="error.html">27</a></td><td><a href="error.html">28</a></td><td>29</td><td>30</td></tr>
+            </table>
+            </div>
+            <ul>
+                <li><a href="error.html">トップページへ</a></li>
+                <li><a href="error.html">2023年の記事</a></li>
+                <li><a href="error.html">2022年の記事</a></li>
+                <li><a href="error.html">2021年の記事</a></li>
+                <li><a href="error.html">2020年の記事</a></li>
+                <li><a href="error.html">2019年の記事</a></li>
+                <li><a href="error.html">2018年の記事</a></li>
+                <li><a href="error.html">ご連絡</a></li>
+            </ul>
+            <p>
+                <a href="https://img-papa.booth.pm/"><img src="https://asset.booth.pm/static-images/banner/300x250_01.png" style="width:100%;"></a>
+            </p>
+            <p>
+                <a href="https://freegame-mugen.jp/"><img src="https://freegame-mugen.jp/common_images/banner_125x125.jpg" alt="フリーゲーム夢現" width="125" height="125" /></a>
+            </p>
+            <div class="smp">
+                <a href="https://freegame-mugen.jp/"><img src="https://freegame-mugen.jp/common_images/banner_468x60.jpg" alt="フリーゲーム夢現" width="468" height="60" /></a>
+                <a href="https://img-papa.booth.pm/"><img src="https://asset.booth.pm/static-images/banner/300x250_01.png" style="width:100%;"></a>
+            </div>
+        </nav>
         </div>
         
     </div>
     <footer>
-        <p>
+        <!--p>
             <a href="https://img-papa.github.io/games/guide.html" style="display:inline-block;border-radius:50px;margin-bottom:10px;padding:0.5em 1em;background:#aaa;color:#000;text-decoration:none;">ゲームを実況する前に…（総合ガイドライン）</a>
-        </p>
+        </p-->
         <p>
         <a href="https://img-papa.booth.pm/"><img src="https://asset.booth.pm/static-images/banner/468x60_02.png" style="margin:0 10px;"></a>
             <a href="https://freegame-mugen.jp/"><img src="https://freegame-mugen.jp/common_images/banner_468x60.jpg" alt="フリーゲーム夢現" width="468" height="60" /></a>
