@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<title>イマジナリーパパス - ゲーム制作</title>
+<meta name="description" content="ゲームを作っています。今のところフリーゲーム／ホラーのみ。" /><meta charset="utf-8">
+<link rel="icon" href="img/myicon.png" sizes="62x62" type="image/png" />
+<link rel="apple-touch-icon-precomposed" href="img/myicon.png" />
+<meta property="og:url" content="https://img-papa.github.io/games/" />
+<link rel="canonical" href="https://img-papa.github.io/games/" />
+<meta property="og:title" content="イマジナリーパパス" />
+<meta property="og:image" content="img/myicon.png" />
+<meta name="twitter:site" content="@img_papa" />
+<meta property="og:site_name" content="イマジナリーパパス" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="widrh=device-widrh,initial-scale=1">
+
+<link rel="stylesheet" href="common.css">
+<link rel="stylesheet" href="default.css">
+
+<style>
+    
+    @import url('https://fonts.googleapis.com/css2?family=Darumadrop+One&family=Geologica:wght@100..900&display=swap');
+    
+    :root {
+        --c-main: #7DBB7C;
+        --c-sub: #BA8B40;
+        --c-accent: #D3336F;
+        --c-font: #565656;
+        --c-light: #e5e5e5;
+        --c-back: #fafafa;
+    }
+    
+    body {
+        text-align: center;
+        color: var(--c-font);
+        background: var(--c-back);
+    }
+    
+    header {
+        text-align: left;
+        border-top: 5em solid var(--c-font);
+    }
+    header article > div {
+        flex-grow: 2;
+        margin: 2em 1em;
+    }
+    header h1 {
+        padding: 0.2em;
+        font-size: 2em;
+        border-bottom: 3px solid var(--c-light);
+        font-family: "Darumadrop One", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+    header article {
+        margin: auto;
+        max-width: 600px;
+        display: flex;
+        position: relative;
+        top: -25px;
+    }
+    header article p {
+        margin: 0.4em 0.5em;
+    }
+    header article:before {
+        content: '';
+        display: block;
+        width: 128px;
+        height: 128px;
+        border: 4px solid #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 4px var(--c-font);
+        background-size: 100%;
+        background-color: var(--c-main);
+        background-image: url("img/myicon.png");
+    }
+    
+    footer {
+        padding: 1em;
+        background-color: var(--c-font);
+    }
+    
+    main {
+        position: relative;
+        top: -5em;
+    }
+    
+    main section {
+        margin: auto;
+        padding: 0 1.5em;
+        max-width: 600px;
+    }
+    
+    main > article {
+        margin-bottom: 2em;
+    }
+    
+    article > p {
+        margin: 0.5em 0;
+    }
+    
+    h2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 3em auto 1em;
+        font-size: 1.8em;
+        font-family: "Darumadrop One", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        color: #fff;
+    }
+    h2 span {
+        margin: 2px;
+        width: 50px;
+        height: 50px;
+        border-radius: 5px;
+        background: var(--c-font);
+    }
+    
+    .button,
+    .links {
+        box-shadow: 3px 3px 3px #ddd;
+    }
+    
+    .button_d,
+    .button {
+        display: inline-block;
+        margin: 0.5em;
+        padding: 0.8em 1.8em;
+        color: #fff;
+        font-weight: 900;
+        border: 3px solid var(--c-accent);
+        border-radius: 100px;
+        background: var(--c-accent);
+    }
+    .button:hover {
+        color: var(--c-accent);
+        background: #fff;
+    }
+    .button_d {
+        border: 3px solid #999;
+        background: #999;
+    }
+    .button_d:hover {
+        border: 3px solid var(--c-accent);
+        color: var(--c-accent);
+        background: #fff;
+    }
+    
+    .links {
+        text-align: left;
+        margin: 1em 1em 0;
+        padding: 0.5em 2em 0.5em 1em;
+        border: 1px solid #eee;
+        border-radius: 100px;
+        background: #fff;
+    }
+    .links article {
+        flex: 1;
+    }
+    .links h3 {
+        padding: 0.2em 0.3em;
+        border-bottom: 3px solid var(--c-light);
+        color: var(--c-accent);
+        font-size: 1.5em;
+        font-family: "Geologica", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 600;
+        font-style: normal;
+        font-variation-settings: "slnt" 0,"CRSV" 0,"SHRP" 0;
+    }
+    .links:hover h3 {
+        color: #aaa;
+    }
+    .links p {
+        margin: 0.3em 0.5em;
+        font-weight: normal;
+    }
+    .links .icon {
+        margin: 1em 0.6em;
+        width: 64px;
+        height: 64px;
+        box-shadow: 0 0 3px #bbb;
+    }
+    .links:hover .icon,
+    .links:hover img {
+        opacity: 0.6;
+    }
+    
+    .games .links {
+        align-items: flex-start;
+        padding: 1em;
+        border-radius: 10px 20px 20px 10px;
+    }
+    .games img {
+        margin-right: 0.6em;
+    }
+    .games p {
+        margin: 0.5em;
+    }
+    
+    .shrink {
+        transform: scale(0.9, 1);
+        transform-origin: left center;
+    }
+    
+    strong {
+        display: inline-block;
+        position: relative;
+        top: -1px;
+        color: #999;
+        margin-right: 0.5em;
+    }
+    
+</style>
+</head>
+<body>
+
+    <header>
+        
+        <article>
+            <div>
+                <h1>イマジナリーパパス</h1>
+                <p><strong>@img_papa</strong>ゲーム作ってるよ</p>
+            </div>
+        </article>
+        
+    </header>
+    <main>
+        
+        <h2>
+            <span>ゲ</span>
+            <span>ー</span>
+            <span>ム</span>
+        </h2>
+        <section class="games">
+            
+            <article style="margin-bottom:2em;">
+                <p>実況などをするときは↓を読んでね</p>
+                <p><a href="https://img-papa.github.io/games/guide.html" target="_blank" class="button">いろいろガイドライン</a></p>
+                <br>
+                <p>ダウンロードは以下のサイトでどうぞ。</p>
+            </article>
+            
+           <a href="https://freegame-mugen.jp/cms/mt-cp.cgi?__mode=view&blog_id=1&id=10333" target="_blank" class="links">
+                <img style="image-rendering:auto;" src="https://freegame-mugen.jp/common_images/banner_125x125.jpg" alt="フリーゲーム夢現" width="125" height="125" />
+                <article>
+                    <h3 class="shrink" style="font-size:1.35em;">フリーゲーム夢現</h3>
+                    <p>審査があるので安心かも</p>
+                </article>
+            </a>
+            
+            <a href="https://img-papa.booth.pm/" target="_blank" class="links"><img style="image-rendering:auto; width:125px;" src="https://asset.booth.pm/static-images/banner/300x250_01.png">
+                <article>
+                    <h3>BOOTH</h3>
+                    <p>公開日にすぐにダウンロードできます</p>
+                </article>
+            </a>
+            
+        </section>
+        
+        <h2>
+            <span>リ</span>
+            <span>ン</span>
+            <span>ク</span>
+        </h2>
+        <section>
+
+            <a href="https://www.youtube.com/@img_papa" target="_blank" class="links">
+                <div class="icon" style="background-image:url('img/links_icon_youtube.png')"></div>
+                <article>
+                    <h3>YouTube</h3>
+                    <p>PVやプレイ動画・進捗動画など</p>
+                </article>
+            </a>
+
+            <a href="https://note.com/img_papa" target="_blank" class="links">
+                <div class="icon" style="background-image:url('img/links_icon_note.png')"></div>
+                <article>
+                    <h3>note</h3>
+                    <p>進捗や雑談</p>
+                </article>
+            </a>
+
+            <a href="https://xfolio.jp/portfolio/img_papa" target="_blank" class="links">
+                <div class="icon" style="background-image:url('img/links_icon_xfolio.png')"></div>
+                <article>
+                    <h3>Xfolio</h3>
+                    <p>ドット絵</p>
+                </article>
+            </a>
+            
+            <a href="https://x.com/img_papa" target="_blank" class="links">
+                <div class="icon" style="background-image:url('img/logo-twitter_white.png')"></div>
+                <article>
+                    <h3>Twitter</h3>
+                    <p>更新報告や進捗など</p>
+                </article>
+            </a>
+            
+        </section>
+        
+        <a href="#" class="button_d" style="margin:5em;">ページトップへ戻る</a>
+        
+    </main>
+    
+    <footer></footer>
+    
+</body>
+</html>
