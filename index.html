@@ -67,22 +67,23 @@
     header h1:before {
         width: 100px;
         height: 100px;
-        margin: 0.5em auto;
+        margin: 0em auto 1em;
         border: 4px solid #fff;
         border-radius: 100px;
-        background-image: url(img/myicon_sns.png);
+        image-rendering: pixelated;
+        background-image: url(img/myicon.png);
         background-size: 100%;
         background-repeat: no-repeat;
         background-position: center center;
     }
     header h2 {
-        margin-bottom: 0.5em;
+        margin-bottom: 0.8em;
         font-size: 0.9em;
         color: var(--c-gray);
     }
     header hgroup p {
         padding-top: 0.5em;
-        border-top: 1px solid var(--c-dk-gray);
+        border-top: 2px dotted var(--c-dk-gray);
         font-size: 0.9em;
         color: var(--c-lt-gray);
     }
@@ -115,22 +116,44 @@
         margin-bottom: 0.5em;
     }
     
+    .search {
+        margin: 2.5em 1em 1em;
+        padding: 1.5em 0.5em;
+        border: 3px solid var(--c-gray);
+        border-radius: 1em;
+    }
+    .search p {
+        display: inline-block;
+        margin: 0 auto;
+        padding: 0.8em 0.5em 1em;
+        font-size: 0.8em;
+        border-top: 2px dotted var(--c-gray);
+        color: var(--c-dk-gray);
+    }
+    
+    input[type="text"] {
+        display: block;
+        width: 85%;
+        margin: 0 auto 0.8em;
+        padding: 0.6em 0.8em;
+        border: 2px solid var(--c-dk-gray);
+        border-radius: 5px;
+    }
+    button {
+        padding: 0.2em 0.8em 0.4em;
+    }
     
     /* games 内 */
     
     #games article {
-        display: flex;
-        justify-content: flex-end;
         margin: 1em;
         text-align: left;
-        box-shadow: 2px 2px 5px var(--c-lt-gray);
+        box-shadow: 0 0 5px var(--c-gray), 2px 2px 5px var(--c-gray);
         background: var(--c-gray);
-        background-size: auto 100%;
         background-repeat: no-repeat;
         background-position: top left;
     }
     #games article > section {
-        flex: 0 0 300px;
         padding: 1.5em 1.5em 1em;
         background: #fff;
     }
@@ -142,6 +165,7 @@
         border-left: 5px solid var(--c-main);
     }
     #games hgroup p {
+        margin-bottom: 0.6em;
         padding: 0.2em 0.5em;
         font-size: 0.9em;
     }
@@ -149,36 +173,21 @@
         text-decoration: none;
     }
     
-    
-    /* games内専用タグ */
-    
-    .search {
-        margin: 1.5em 0.5em 1em;
-        padding: 1.5em 0.5em;
-        border: 3px solid var(--c-gray);
-        border-radius: 1em;
-    }
-    input[type="text"] {
-        display: inline-block;
-        width: 90%;
-        margin: 0 auto 0.8em;
-        padding: 0.6em 0.8em;
-        border: 2px solid var(--c-dk-gray);
-        border-radius: 5px;
-    }
-    button {
-        padding: 0.2em 0.8em;
-    }
-    
-    .flex {
+    .data {
         display: flex;
-        justify-content: space-around;
-        margin: 0.2em 0 0;
-        padding: 0.5em 1.5em 0.5em 0;
+        padding: 5px 0 5px 0.8em;
+        border-top: 2px solid var(--c-gray);
+        border-bottom: 2px solid var(--c-gray);
+        color: var(--c-dk-gray);
     }
-    .flex p:first-child {
-        border-right: 2px dashed #ccc;
-        padding-right: 1.5em;
+    .data p {
+        flex: 1;
+        font-size: 0.85em;
+    }
+    .data b {
+        margin: 0 0.2em;
+        font-size: 1.1em;
+        color: var(--c-font);
     }
     
     .time,
@@ -197,20 +206,14 @@
         padding-left: 24px;
         background-image: url(img/icon_route.png);
     }
-    .ending:before,
-    .ending:after {
+    .ending:before {
         display: inline-block;
         font-weight: normal;
-        color: var(--c-dk-gray);
-    }
-    .ending:before {
         content: "分岐";
+        position: relative;
+        top: -1px;
         margin-right: 0.5em;
         transform: scale(1,1);
-    }
-    .ending:after {
-        content: "通り";
-        margin-left: 0.3em;
     }
     
     .tag {
@@ -271,13 +274,33 @@
             left: 5%;
         }
         
+        #games article {
+            display: flex;
+            justify-content: flex-end;
+            background-size: auto 100%;
+        }
+        #games article > section {
+            flex: 0 0 300px;
+        }
+        
+        .data {
+            justify-content: space-around;
+        }
+        
     }
     
     /* スマートフォン向け */
     @media (max-width: 749px) {
         
         header, main {
-                margin: auto;
+            margin: auto;
+        }
+        
+        #games article {
+            margin: 3em;
+            padding-top: 45%;
+            background-position: top center;
+            background-size: 100%;
         }
         
     }
@@ -352,6 +375,9 @@
             
             <section class="search">
                 <h3>ゲーム検索</h3>
+                <p>
+                    ※<a href="https://www.benricho.org/Tips/ctrl_F/highlight_inpage/" target="_blank">【みんなの知識 ちょっと便利帳】</a>様の<br>配布スクリプトを使用させていただいております。
+                </p>
                 <input type="text" id="searchTerm" placeholder="ページ内検索ができます。プレイしたいゲームのジャンルを入力してください。">
                 <button onclick="nextHighlight()">前へ</button>
                 <button onclick="previousHighlight()">次へ</button>
@@ -364,7 +390,7 @@
             
             <div id="games">
                 
-                <article>
+                <!--article>
                     <section>
                         
                         <hgroup>
@@ -372,7 +398,7 @@
                             <p>絶対に指示を守ってください。</p>
                         </hgroup>
                         
-                        <div class="flex">
+                        <div class="data">
                             <p class="time">５ ～ 10 分</p>
                             <p class="ending">４</p>
                         </div>
@@ -386,7 +412,7 @@
                         </ul>
                         
                     </section>
-                </article>
+                </article-->
 
                 <article style="background-image:url(img/games_fofw.png);">
                     <section>
@@ -395,9 +421,9 @@
                             <p>“狐の窓”で怪異を探そう！</p>
                         </hgroup>
                         
-                        <div class="flex">
-                            <p class="time">２ ～ ３ 分</p>
-                            <p class="ending">１</p>
+                        <div class="data">
+                            <p class="time"><b>２</b>～<b>３</b>分</p>
+                            <p class="ending"><b>なし</b></p>
                         </div>
                         
                         <ul class="tag">
@@ -418,9 +444,9 @@
                             <p>外から断続的な機械音がする。どうやら、マンションの警報機が壊れてしまったらしい。</p>
                         </hgroup>
                         
-                        <div class="flex">
-                            <p class="time">６ ～ 10 分</p>
-                            <p class="ending">１</p>
+                        <div class="data">
+                            <p class="time"><b>６</b>～<b>10</b>分</p>
+                            <p class="ending"><b>なし</b></p>
                         </div>
                         
                         <ul class="tag">
