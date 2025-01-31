@@ -1,403 +1,659 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<title>イマジナリーパパス - ゲーム制作</title>
-<meta name="description" content="ゲームを作っています。今のところフリーゲーム／ホラーのみ。" /><meta charset="utf-8">
-<link rel="icon" href="img/myicon.png" sizes="62x62" type="image/png" />
-<link rel="apple-touch-icon-precomposed" href="img/myicon.png" />
-<meta property="og:url" content="https://img-papa.github.io/games/" />
-<link rel="canonical" href="https://img-papa.github.io/games/" />
-<meta property="og:title" content="イマジナリーパパス" />
-<meta property="og:image" content="img/myicon.png" />
-<meta name="twitter:site" content="@img_papa" />
-<meta property="og:site_name" content="イマジナリーパパス" />
-
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>イマジナリーパパス - フリーゲーム総合ガイドライン</title>
+<meta charset="utf-8">
 <meta name="viewport" content="widrh=device-widrh,initial-scale=1">
-
 <link rel="stylesheet" href="common.css">
-<link rel="stylesheet" href="default.css">
-
 <style>
     
-    @import url('https://fonts.googleapis.com/css2?family=Darumadrop+One&family=Geologica:wght@100..900&display=swap');
+    /*@import url('https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap');*/
     
-    :root {
-        --c-main: #7DBB7C;
-        --c-sub: #BA8B40;
-        --c-accent: #D3336F;
-        --c-font: #565656;
-        --c-light: #e5e5e5;
-        --c-dark: #ccc;
-        --c-back: #fafafa;
+    * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    aaa {
+        line-height: 1.6;
+        letter-spacing: 0.05em;
+        font-family: "Montserrat", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        font-size: 0.98em;
+        color: var(--c-black);
+    }
+    
+    /* 共通設定 */
+    
+    .tag {
+        display: flex;
+        align-items: center;
+    }
+    header h1:before,
+    main h2:before {
+        content: "";
+        display: block;
     }
     
     body {
         text-align: center;
         color: var(--c-font);
-        background: var(--c-back);
-    }
-    p {
-        margin-bottom: 0.8em;
-        line-height: 1.8;
     }
     
-    header {
-        border-top: 5em solid var(--c-font);
+    #wrap {
+        margin: auto;
+        border-top: 1em solid var(--c-dark);
     }
-    header article > div {
-        margin: 0.5em;
+    
+    header,
+    header h1:before {
+        box-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+    }
+    header {
+        max-width: 200px;
+        padding: 1em 1em 1.3em;
+        border-radius: 0 0 40px 40px;
+        background: var(--c-dark);
+    }
+    header hgroup {
+        margin: 0 0.5em 2em;
     }
     header h1 {
-        padding: 0.2em;
-        font-size: 2em;
-        font-family: "Darumadrop One", sans-serif;
-        font-weight: 400;
-        font-style: normal;
+        line-height: 1.2em;
+        font-size: 1em;
+        color: var(--c-base);
     }
-    header article {
-        margin: auto;
-        position: relative;
-        top: -48px;
-    }
-    header article p {
-        display: inline-block;
-        padding: 0.5em 1em;
-        border-top: 3px solid var(--c-dark);
-    }
-    header article:before {
-        content: '';
-        display: block;
-        width: 128px;
-        height: 128px;
-        margin: auto;
+    header h1:before {
+        width: 100px;
+        height: 100px;
+        margin: 0.5em auto;
         border: 4px solid #fff;
-        border-radius: 16px;
-        box-shadow: 0 0 4px var(--c-font);
+        border-radius: 100px;
+        background-image: url(img/myicon_sns.png);
         background-size: 100%;
-        background-color: var(--c-main);
-        background-image: url("img/myicon.png");
+        background-repeat: no-repeat;
+        background-position: center center;
     }
-    
-    footer {
-        padding: 1em;
-        background-color: var(--c-font);
+    header h2 {
+        margin-bottom: 0.5em;
+        font-size: 0.9em;
+        color: var(--c-gray);
+    }
+    header hgroup p {
+        padding-top: 0.5em;
+        border-top: 1px solid var(--c-dk-gray);
+        font-size: 0.9em;
+        color: var(--c-lt-gray);
+    }
+    header a {
+        color: #fff;
     }
     
     main {
-        position: relative;
-        top: -5em;
+        max-width: 1200px;
     }
-    
-    main section {
-        margin: auto;
-        padding: 0 1.5em;
-        max-width: 570px;
+    main h2 {
+        margin: 2em 1em 1em;
     }
-    
-    main > article {
-        margin-bottom: 2em;
-    }
-    
-    article > p {
-        margin: 0.5em 0;
-    }
-    
-    nav {
-        padding-bottom: 5em;
-    }
-    nav > ul {
-        display: flex;
-        justify-content: center;
-    }
-    nav > ul .button {
-        margin: 0.2em;
-        border-radius: 0;
-    }
-    nav > ul li:first-child .button {
-        padding-left: 2.3em;
-        border-radius: 100px 0 0 100px;
-    }
-    
-    nav > ul li:last-child .button {
-        padding-right: 2.3em;
-        border-radius: 0 100px 100px 0;
-    }
-    
-    h2 {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 3em auto 1em;
-        font-size: 1.8em;
-        font-family: "Darumadrop One", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        color: #fff;
-    }
-    h2 span {
+    main h2 span {
         margin: 2px;
+        padding: 0 0.35em 0.25em;
         width: 50px;
         height: 50px;
         border-radius: 5px;
+        line-height: 1em;
+        font-size: 1.2em;
+        font-weight: normal;
+        font-family: "Darumadrop One", sans-serif;
+        color: var(--c-base);
         background: var(--c-font);
     }
     
-    .button,
-    .button_i,
-    .links {
-        box-shadow: 3px 3px 3px #ddd;
+    main h3 {
+        font-size: 1em;
+        margin-bottom: 0.5em;
     }
     
-    .button_i,
-    .button {
-        display: inline-block;
-        margin: 0.5em;
-        padding: 0.8em 1.8em;
-        color: #fff;
-        font-weight: 900;
-        border: 3px solid #999;
-        border-radius: 100px;
-        background: #999;
-    }
-    .button:hover {
-        border: 3px solid var(--c-accent);
-        color: var(--c-accent);
-        background: #fff;
-    }
-    .button_i {
-        border: 3px solid var(--c-accent);
-        background: var(--c-accent);
-    }
-    .button_i:hover {
-        color: var(--c-accent);
-        background: #fff;
-    }
     
-    .links {
+    /* games 内 */
+    
+    #games article {
+        display: flex;
+        justify-content: flex-end;
+        margin: 1em;
         text-align: left;
-        margin: 1em 1em 0;
-        padding: 0.5em 2em 0.5em 1em;
-        border: 1px solid #eee;
-        border-radius: 100px;
+        box-shadow: 2px 2px 5px var(--c-lt-gray);
+        background: var(--c-gray);
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+        background-position: top left;
+    }
+    #games article > section {
+        flex: 0 0 300px;
+        padding: 1.5em 1.5em 1em;
         background: #fff;
     }
-    .links article {
-        flex: 1;
+    #games article h3 {
+        margin-bottom: 0.3em;
+        padding: 0 0.5em;
+        line-height: 1.3em;
+        font-size: 1.4em;
+        border-left: 5px solid var(--c-main);
     }
-    .links h3 {
-        padding: 0.2em 0.3em;
-        border-bottom: 3px solid var(--c-light);
-        color: var(--c-accent);
-        font-size: 1.5em;
-        font-family: "Geologica", sans-serif;
-        font-optical-sizing: auto;
-        font-weight: 600;
-        font-style: normal;
-        font-variation-settings: "slnt" 0,"CRSV" 0,"SHRP" 0;
+    #games hgroup p {
+        padding: 0.2em 0.5em;
+        font-size: 0.9em;
     }
-    .links:hover h3 {
-        color: #aaa;
-    }
-    .links p {
-        margin: 0.3em 0.5em;
-        font-weight: normal;
-    }
-    .links .icon {
-        margin: 1em 0.6em;
-        width: 64px;
-        height: 64px;
-        box-shadow: 0 0 3px #bbb;
-    }
-    .links:hover .icon,
-    .links:hover img {
-        opacity: 0.6;
+    #games a {
+        text-decoration: none;
     }
     
-    .games .links {
-        align-items: flex-start;
-        padding: 1em;
-        border-radius: 10px 20px 20px 10px;
-    }
-    .games img {
-        margin-right: 0.6em;
-    }
-    .games p {
-        margin: 0.5em;
-    }
     
-    .shrink {
-        transform: scale(0.9, 1);
-        transform-origin: left center;
-    }
+    /* games内専用タグ */
     
-    strong {
+    .search {
+        margin: 1.5em 0.5em 1em;
+        padding: 1.5em 0.5em;
+        border: 3px solid var(--c-gray);
+        border-radius: 1em;
+    }
+    input[type="text"] {
         display: inline-block;
-        position: relative;
-        top: -1px;
-        color: #999;
-        margin-right: 0.5em;
+        width: 90%;
+        margin: 0 auto 0.8em;
+        padding: 0.6em 0.8em;
+        border: 2px solid var(--c-dk-gray);
+        border-radius: 5px;
+    }
+    button {
+        padding: 0.2em 0.8em;
     }
     
-    @media (max-width: 600px) {
-        
-        body {
-            font-size: 0.9em;
+    .flex {
+        display: flex;
+        justify-content: space-around;
+        margin: 0.2em 0 0;
+        padding: 0.5em 1.5em 0.5em 0;
+    }
+    .flex p:first-child {
+        border-right: 2px dashed #ccc;
+        padding-right: 1.5em;
+    }
+    
+    .time,
+    .ending {
+        margin: 0.3em;
+        background-repeat: no-repeat;
+        background-size: 16px;
+        background-position: left center;
+    }
+    .time {
+        padding-left: 25px;
+        background-image: url(img/icon_time.png);
+    }
+    .ending {
+        display: block;
+        padding-left: 24px;
+        background-image: url(img/icon_route.png);
+    }
+    .ending:before,
+    .ending:after {
+        display: inline-block;
+        font-weight: normal;
+        color: var(--c-dk-gray);
+    }
+    .ending:before {
+        content: "分岐";
+        margin-right: 0.5em;
+        transform: scale(1,1);
+    }
+    .ending:after {
+        content: "通り";
+        margin-left: 0.3em;
+    }
+    
+    .tag {
+        flex-wrap: wrap;
+        margin: 0.8em 0.5em;
+        color: var(--c-dk-gray);
+        font-size: 0.9em;
+    }
+    .tag li:not(:last-child):after {
+        content: "";
+        display: inline-block;
+        width: 1.8px;
+        height: 1em;
+        position: relative;
+        top: -1.5px;
+        transform: rotate(20deg);
+/*      width: 6px;
+        height: 6px;
+        border-radius: 2em;
+*/      vertical-align: middle;
+        margin: 0 0.6em;
+        background: var(--c-gray);
+    }
+    
+    .dl {
+        margin-top: 1em;
+    }
+    .dl:before {
+        content: "ダウンロードはこちら";
+        display: block;
+        margin-bottom: 0.7em;
+        font-weight: bold;
+        font-size: 0.9em;
+    }
+    
+    .center {
+        margin: 1em 0.5em;
+        text-align: center;
+    }
+    
+    /* PC向け */
+    @media (min-width: 750px) {
+
+        #wrap {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: stretch;
+            align-content: flex-start;
+            margin: auto;
+        }
+        main {
+            margin-left: 250px;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 5%;
         }
         
-        header article:before {
-            width: 96px;
-            height: 96px;
+    }
+    
+    /* スマートフォン向け */
+    @media (max-width: 749px) {
+        
+        header, main {
+                margin: auto;
         }
         
-        h2 span {
-            width: 48px;
-            height: 48px;
-        }
-        
+    }
+    
+    
+    /* ここから下は以下のサイト様で配布されているスクリプトを利用させていただいております。
+    
+    【みんなの知識 ちょっと便利帳】
+    https://www.benricho.org/Tips/ctrl_F/highlight_inpage/
+    
+    ページ内検索を自サイトに設置する方法 - How to Implement In-Page Search on Your Web Page. ヒットしたテキストをハイライト表示・対象の文字へスクロール
+    
+    */
+    
+    .highlight {
+        font-weight: bold;
+        color: var(--c-accent);
+        background-color: #ffff99;
+        margin: 0 0.3em;
+        padding: 0.3em 0.6em;
+    }
+    .current {
+        outline: 2px solid var(--c-accent);
     }
     
 </style>
 </head>
 <body>
+    
+    <div id="wrap">
 
-    <header>
-        
-        <article>
-            <div>
+        <header>
+            
+            <hgroup>
                 <h1>イマジナリーパパス</h1>
-                <p><strong>@img_papa</strong>ゲーム作ってるよ</p>
+                <h2>@img_papa</h2>
+                <p>ゲーム作ってるよ<br>今のところ全部ホラー</p>
+            </hgroup>
+            
+            <nav>
+                
+                <a href="https://x.com/img_papa" target="_blank" class="link_i">
+                    <div class="icon" style="background-image:url('img/logo-twitter_white.png')"></div>
+                    <p>Twitter</p>
+                </a>
+
+                <a href="https://www.youtube.com/@img_papa" target="_blank" class="link_i">
+                    <div class="icon" style="background-image:url('img/links_icon_youtube.png')"></div>
+                    <p>YouTube</p>
+                </a>
+
+                <a href="https://note.com/img_papa" target="_blank" class="link_i">
+                    <div class="icon" style="background-image:url('img/links_icon_note.png')"></div>
+                    <p>note</p>
+                </a>
+                
+                <a href="https://xfolio.jp/portfolio/img_papa" target="_blank" class="link_i">
+                    <div class="icon" style="background-image:url('img/links_icon_xfolio.png')"></div><p>Xfolio</p>
+                </a>
+                
+                <a href="https://img-papa.booth.pm/" target="_blank" class="link_i">
+                    <div class="icon" style="background-image:url('img/links_icon_booth.png')"></div>
+                    <p>BOOTH</p>
+                </a>
+            </nav>
+            
+        </header>
+
+        <main>
+            
+            <!--h2><span>ゲ</span><span>ー</span><span>ム</span></h2-->
+            
+            <section class="search">
+                <h3>ゲーム検索</h3>
+                <input type="text" id="searchTerm" placeholder="ページ内検索ができます。プレイしたいゲームのジャンルを入力してください。">
+                <button onclick="nextHighlight()">前へ</button>
+                <button onclick="previousHighlight()">次へ</button>
+                <button onclick="resetSearch()">リセット</button>
+            </section>
+            
+            <section>
+                <a href="https://img-papa.github.io/games/guide.html" target="_blank" class="link_sp" style="margin:1em auto 2em;">実況の前にガイドラインをお読みください</a>
+            </section>
+            
+            <div id="games">
+                
+                <article>
+                    <section>
+                        
+                        <hgroup>
+                            <h3>指示待ちゲーム</h3>
+                            <p>絶対に指示を守ってください。</p>
+                        </hgroup>
+                        
+                        <div class="flex">
+                            <p class="time">５ ～ 10 分</p>
+                            <p class="ending">４</p>
+                        </div>
+                        
+                        <ul class="tag">
+                            <li>Windows11</li><li>キーボード操作</li><li>マウス操作</li><li>ホラー</li>
+                        </ul>
+                        
+                        <ul class="dl">
+                            <li><a href="https://img-papa.booth.pm/items/6409614" target="_blank" class="link_r">BOOTH</a></li>
+                        </ul>
+                        
+                    </section>
+                </article>
+
+                <article style="background-image:url(img/games_fofw.png);">
+                    <section>
+                        <hgroup>
+                            <h3>Focus on Fox's windows</h3>
+                            <p>“狐の窓”で怪異を探そう！</p>
+                        </hgroup>
+                        
+                        <div class="flex">
+                            <p class="time">２ ～ ３ 分</p>
+                            <p class="ending">１</p>
+                        </div>
+                        
+                        <ul class="tag">
+                            <li>Windows11</li><li>マウス操作</li><li>ホラー</li>
+                        </ul>
+                        <ul class="dl">
+                            <li><a href="https://freegame-mugen.jp/adventure/game_13163.html" target="_blank" class="link_r">フリーゲーム夢現</a></li>
+                            <li><a href="https://img-papa.booth.pm/items/6409614" target="_blank" class="link_r">BOOTH</a></li>
+                        </ul>
+                    </section>
+                </article>
+
+                <article style="background-image:url(img/games_k-alert.png);">
+                    <section>
+                        
+                        <hgroup>
+                            <h3>K報</h3>
+                            <p>外から断続的な機械音がする。どうやら、マンションの警報機が壊れてしまったらしい。</p>
+                        </hgroup>
+                        
+                        <div class="flex">
+                            <p class="time">６ ～ 10 分</p>
+                            <p class="ending">１</p>
+                        </div>
+                        
+                        <ul class="tag">
+                            <li>Windows11</li><li>マウス操作</li><li>ホラー</li>
+                        </ul>
+                        
+                        <ul class="dl">
+                            <li><a href="https://freegame-mugen.jp/adventure/game_13045.html" target="_blank" class="link_r">フリーゲーム夢現</a></li>
+                            <li><a href="https://img-papa.booth.pm/items/6272406" target="_blank" class="link_r">BOOTH</a></li>
+                        </ul>
+                        
+                        <p class="center">
+                            <a href="https://img-papa.github.io/games/alert/" target="_blank" class="link_sp">おまけページはこちら</a>
+                        </p>
+                        
+                    </section>
+                </article>
             </div>
-        </article>
+            
+            <a href="#" class="link_t" style="margin-bottom:5em;">ページトップへ戻る</a>
+            
+        </main>
         
-    </header>
+    </div>
     
-    <!--nav>
-        <ul>
-            <li>
-                <a class="button" href="#game">ゲーム</a>
-            </li>
-            <li>
-                <a class="button" href="#link">リンク</a>
-            </li>
-            <li>
-                <a class="button" href="#mail">メール</a>
-            </li>
-        </ul>
-    </nav-->
     
-    <main>
-        
-        <h2 id="game">
-            <span>ゲ</span>
-            <span>ー</span>
-            <span>ム</span>
-        </h2>
-        <section class="games">
-            
-            <article style="margin-bottom:2em;">
-                <p>実況などをするときは↓を読んでね<br>一般的なガイドラインとあまり変わりません</p>
-                
-                <p style="margin:2em;">
-                    <a href="https://img-papa.github.io/games/guide.html" target="_blank" class="button_i">いろいろガイドライン</a>
-                </p>
-                
-                <p>ダウンロードは以下のサイトでどうぞ。</p>
-            </article>
-            
-           <a href="https://freegame-mugen.jp/cms/mt-cp.cgi?__mode=view&blog_id=1&id=10333" target="_blank" class="links">
-                <img style="image-rendering:auto;" src="https://freegame-mugen.jp/common_images/banner_125x125.jpg" alt="フリーゲーム夢現" width="125" height="125" />
-                <article>
-                    <h3 class="shrink" style="font-size:1.35em;">フリーゲーム夢現</h3>
-                    <p>審査があるので安心かも</p>
-                </article>
-            </a>
-            
-            <a href="https://img-papa.booth.pm/" target="_blank" class="links"><img style="image-rendering:auto; width:125px;" src="https://asset.booth.pm/static-images/banner/300x250_01.png">
-                <article>
-                    <h3>BOOTH</h3>
-                    <p>公開日にすぐにダウンロードできます</p>
-                </article>
-            </a>
-            
-            <a href="https://www.freem.ne.jp/brand/15513" target="_blank" class="links"><img src="">
-                <article>
-                    <h3>ふりーむ！</h3>
-                    <p>ホラー以外を投稿していく予定</p>
-                </article>
-            </a>
-            
-        </section>
-        
-        <h2 id="link">
-            <span>リ</span>
-            <span>ン</span>
-            <span>ク</span>
-        </h2>
-        <section>
+    
+    
+    
+    
+    
+    
+    
+    
+<script>
+    let highlights = [];            // ハイライトされた要素を格納する配列
+    let currentIndex = -1;          // 現在のハイライト位置を示すインデックス
+    let lastSearchTerm = '';        // 最後に検索された語句を保持する変数
+    let searchTimer = null;         // 入力変更後に検索を遅延させるためのタイマー
+    let isComposing = false;        // 入力中の状態を保持
+    let caseSensitive = false;      // 大文字小文字の区別フラグ（デフォルトは区別しない）
 
-            <a href="https://www.youtube.com/@img_papa" target="_blank" class="links">
-                <div class="icon" style="background-image:url('img/links_icon_youtube.png')"></div>
-                <article>
-                    <h3>YouTube</h3>
-                    <p>PVやプレイ動画。進捗動画もあるよ</p>
-                </article>
-            </a>
-            
-            <a href="https://www.nicovideo.jp/user/138086854" target="_blank" class="links">
-                <div class="icon" style="background-image:url('img/links_icon_nico.png')"></div>
-                <article>
-                    <h3>niconico</h3>
-                    <p>PVやプレイ動画など</p>
-                </article>
-            </a>
+    /**
+     * 特殊文字をエスケープする関数
+     * @param {string} string - エスケープする文字列
+     * @returns {string} - エスケープされた文字列
+     */
+    function escapeRegExp(string) {
+        return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
 
-            <a href="https://note.com/img_papa" target="_blank" class="links">
-                <div class="icon" style="background-image:url('img/links_icon_note.png')"></div>
-                <article>
-                    <h3>note</h3>
-                    <p>進捗や雑談</p>
-                </article>
-            </a>
+    /**
+     * 検索を実行し、マッチしたテキストをハイライトする関数
+     * @param {string} searchTerm - 検索語
+     */
+    function search(searchTerm) {
+        if (!searchTerm || searchTerm === lastSearchTerm) return;
 
-            <a href="https://xfolio.jp/portfolio/img_papa" target="_blank" class="links">
-                <div class="icon" style="background-image:url('img/links_icon_xfolio.png')"></div>
-                <article>
-                    <h3>Xfolio</h3>
-                    <p>ドット絵</p>
-                </article>
-            </a>
-            
-            <a href="https://x.com/img_papa" target="_blank" class="links">
-                <div class="icon" style="background-image:url('img/logo-twitter_white.png')"></div>
-                <article>
-                    <h3>Twitter</h3>
-                    <p>更新報告や進捗など</p>
-                </article>
-            </a>
-            
-        </section>
-        
-        <h2 id="mail">
-            <span>メ</span>
-            <span>ー</span>
-            <span>ル</span>
-        </h2>
-        <section>
-            
-            <p>
-                G㐅一ルを使っています。<br>
-                ページトップの＠以降の_を.にして最後尾にsを付けたアドレスです。
-            </p>
-            <p>メールを持っていない方は各SNSのメッセージからどうぞ。</p>
-            
-        </section>
-        
-        <a href="#" class="button" style="margin:5em;">ページトップへ戻る</a>
-        
-    </main>
-    
-    <footer></footer>
-    
+        lastSearchTerm = searchTerm;
+        resetHighlights();
+
+        searchTerm = escapeRegExp(searchTerm);
+
+        const content = document.getElementById('games');
+        searchAndHighlight(content, searchTerm);
+
+        if (highlights.length > 0) {
+            currentIndex = 0;
+            scrollToHighlight(currentIndex);
+        }
+
+        document.getElementById('searchTerm').focus();
+    }
+
+    /**
+     * テキストノード内で検索語を見つけてハイライトする関数
+     * @param {Node} element - 検索対象のノード
+     * @param {string} searchTerm - 検索語
+     */
+    function searchAndHighlight(element, searchTerm) {
+        if (element.nodeType === 3) { // テキストノード
+            const regex = new RegExp(searchTerm, caseSensitive ? 'g' : 'gi');
+            const matches = element.textContent.match(regex);
+            if (matches) {
+                const parent = element.parentNode;
+                const fragment = document.createDocumentFragment();
+                let lastIndex = 0;
+                matches.forEach(match => {
+                    const matchStart = element.textContent.indexOf(match, lastIndex);
+                    const matchEnd = matchStart + match.length;
+
+                    fragment.appendChild(document.createTextNode(element.textContent.slice(lastIndex, matchStart)));
+
+                    const span = document.createElement('span');
+                    span.className = 'highlight';
+                    span.textContent = match;
+                    fragment.appendChild(span);
+
+                    lastIndex = matchEnd;
+                    highlights.push(span);
+                });
+
+                fragment.appendChild(document.createTextNode(element.textContent.slice(lastIndex)));
+                parent.replaceChild(fragment, element);
+            }
+        } else {
+            Array.from(element.childNodes).forEach(child => searchAndHighlight(child, searchTerm));
+        }
+    }
+
+    /**
+     * 現在のハイライト要素にスクロールする関数
+     * @param {number} index - ハイライト要素のインデックス
+     */
+    function scrollToHighlight(index) {
+        if (highlights.length > 0) {
+            highlights.forEach(el => el.classList.remove('current'));
+            highlights[index].classList.add('current');
+            highlights[index].scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    }
+
+    /**
+     * 次のハイライトに移動する関数
+     */
+    function nextHighlight() {
+        if (highlights.length > 0) {
+            currentIndex = (currentIndex + 1) % highlights.length;
+            scrollToHighlight(currentIndex);
+        }
+    }
+
+    /**
+     * 前のハイライトに移動する関数
+     */
+    function previousHighlight() {
+        if (highlights.length > 0) {
+            currentIndex = (currentIndex - 1 + highlights.length) % highlights.length;
+            scrollToHighlight(currentIndex);
+        }
+    }
+
+    /**
+     * ハイライトをリセットする関数
+     */
+    function resetHighlights() {
+        highlights.forEach(el => {
+            el.outerHTML = el.innerHTML;
+        });
+        highlights = [];
+        currentIndex = -1;
+        lastSearchTerm = '';
+    }
+
+    /**
+     * 検索をリセットし、入力枠にスクロールする関数
+     */
+    function resetSearch() {
+        resetHighlights();
+        document.getElementById('searchTerm').value = '';
+        scrollToSearchInput();
+    }
+
+    /**
+     * 入力枠にスクロールする関数
+     */
+    function scrollToSearchInput() {
+        const searchInput = document.getElementById('searchTerm');
+        searchInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        searchInput.focus(); // 入力枠にフォーカスも合わせる
+    }
+
+    /**
+     * 検索の処理を実行する関数
+     */
+    function handleSearch() {
+        const searchTerm = document.getElementById('searchTerm').value;
+
+        // 検索語句が空の場合にリセットし、入力枠にスクロールする
+        if (searchTerm === '') {
+            resetSearch();
+            return;
+        }
+
+        if (searchTerm && searchTerm !== lastSearchTerm) {
+            search(searchTerm);
+
+            if (highlights.length === 0) {
+                scrollToSearchInput();
+            }
+        }
+    }
+
+    document.getElementById('searchTerm').addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            const searchTerm = this.value;
+            if (searchTerm) {
+                if (currentIndex === -1) {
+                    handleSearch();
+                } else {
+                    nextHighlight();
+                }
+            }
+        }
+    });
+
+    document.getElementById('searchTerm').addEventListener('input', function() {
+        if (searchTimer) clearTimeout(searchTimer);
+        if (!isComposing) {
+            searchTimer = setTimeout(handleSearch, 500);
+        }
+    });
+
+    document.getElementById('searchTerm').addEventListener('compositionstart', function() {
+        isComposing = true;
+    });
+
+    document.getElementById('searchTerm').addEventListener('compositionend', function() {
+        isComposing = false;
+        handleSearch();
+    });
+
+    document.querySelectorAll('input[name="caseOption"]').forEach(radio => {
+        radio.addEventListener('change', handleCaseOptionChange);
+    });
+
+    /**
+     * 大文字小文字の区別設定を変更する関数
+     */
+    function handleCaseOptionChange() {
+        caseSensitive = document.querySelector('input[name="caseOption"]:checked').value === 'sensitive';
+        search(document.getElementById('searchTerm').value);
+    }
+</script>
 </body>
-</html>
