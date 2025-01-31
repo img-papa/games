@@ -51,6 +51,10 @@ a:hover:after {
 a {
     color: var(--c-font);
 }
+a:hover {
+    text-decoration: none;
+    color: var(--c-accent);
+}
 
 
 /* テキスト装飾 */
