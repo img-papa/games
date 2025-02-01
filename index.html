@@ -105,7 +105,7 @@
     }
     
     main {
-        max-width: 1200px;
+        max-width: 900px;
     }
     main h2 {
         margin: 2em 1em 1em;
@@ -130,7 +130,7 @@
     }
     
     .search {
-        margin: 2.5em 1em 1em;
+        margin: 2.5em 2em 1em;
         padding: 1.5em 0.5em;
         border: 3px solid var(--c-gray);
         border-radius: 1em;
@@ -155,6 +155,7 @@
     button {
         padding: 0.2em 0.8em 0.4em;
     }
+    
     
     /* games 内 */
     
@@ -198,8 +199,10 @@
         font-size: 0.85em;
     }
     .data b {
-        margin: 0 0.2em;
-        font-size: 1.1em;
+        margin: 0 0.3em;
+        position: relative;
+        top: 1px;
+        font-size: 1.3em;
         color: var(--c-font);
     }
     
@@ -214,6 +217,26 @@
         padding-left: 25px;
         background-image: url(img/icon_time.png);
     }
+    .time:hover:after,
+    .ending:hover:after {
+        z-index: 10;
+        white-space: pre;
+        display: block;
+        position: absolute;
+        padding: 0.5em 1em;
+        border-radius: 5px;
+        box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+        background: rgba(255,255,255,0.9);
+        color: var(--c-accent);
+        -webkit-transition: all 0.2s ease;
+        transition: all 0.2s ease;
+    }
+    .time:hover:after {
+        content: "クリア（分岐ありの場合、第一エンド到達）\Aまでの時間の目安です。";
+    }
+    .ending:hover:after {
+        content: "エンディングまたはルート分岐の数です。";
+    }
     .ending {
         display: block;
         padding-left: 24px;
@@ -223,8 +246,6 @@
         display: inline-block;
         font-weight: normal;
         content: "分岐";
-        position: relative;
-        top: -1px;
         margin-right: 0.5em;
         transform: scale(1,1);
     }
@@ -243,12 +264,58 @@
         position: relative;
         top: -1.5px;
         transform: rotate(20deg);
-/*      width: 6px;
-        height: 6px;
-        border-radius: 2em;
-*/      vertical-align: middle;
+        vertical-align: middle;
         margin: 0 0.6em;
         background: var(--c-gray);
+    }
+    
+    .level {
+        margin: 0 0.5em;
+    }
+    .level ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+    .level ul:first-child {
+        margin: 1.2em 0 0.6em;
+    }
+    .level li:not(:nth-child(2)) {
+        font-size: 0.8em;
+        color: var(--c-dk-gray);
+    }
+    .level_bar {
+        justify-content: space-around;
+        align-items: center;
+        margin: 0.5em 1em;
+    }
+    .level:after {
+        display: block;
+        content: "";
+        flex: 1;
+        position: relative;
+        top: -20px;
+        height: 7px;
+        margin: 0 20px;
+        background: #eee;
+    }
+    .level_bar li {
+        display: inline-block;
+        z-index: 10;
+        width: 12px;
+        height: 12px;
+        border: 3px solid #fff;
+        border-radius: 50px;
+        box-shadow: 0 0 2px var(--c-dk-gray), 1px 1px 3px var(--c-dk-gray);
+        background: var(--c-gray);
+    }
+    .level_bar .point {
+        width: 16px;
+        height: 16px;
+        border-width: 4px;
+        position: relative;
+        top: 4px;
+        background: var(--c-main);
     }
     
     .dl {
@@ -267,8 +334,8 @@
         text-align: center;
     }
     
-    /* PC向け */
-    @media (min-width: 750px) {
+    /* 全画面（PC） */
+    @media (min-width: 1000px) {
 
         #wrap {
             display: flex;
@@ -302,21 +369,26 @@
         
     }
     
-    /* スマートフォン向け */
-    @media (max-width: 749px) {
+    /* ウィンドウモード（PC） */
+    @media (max-width: 999px) {
         
         header, main {
             margin: auto;
         }
         
+        main {
+            max-width: 600px;
+        }
+        
         #games article {
             margin: 3em;
-            padding-top: 45%;
+            padding-top: 44.5%;
             background-position: top center;
             background-size: 100%;
         }
         
     }
+    /* スマートフォン向け */
     
     
     /* ここから下は以下のサイト様で配布されているスクリプトを利用させていただいております。
@@ -403,30 +475,6 @@
             
             <div id="games">
                 
-                <!--article>
-                    <section>
-                        
-                        <hgroup>
-                            <h3>指示待ちゲーム</h3>
-                            <p>絶対に指示を守ってください。</p>
-                        </hgroup>
-                        
-                        <div class="data">
-                            <p class="time">５ ～ 10 分</p>
-                            <p class="ending">４</p>
-                        </div>
-                        
-                        <ul class="tag">
-                            <li>Windows11</li><li>キーボード操作</li><li>マウス操作</li><li>ホラー</li>
-                        </ul>
-                        
-                        <ul class="dl">
-                            <li><a href="https://img-papa.booth.pm/items/6409614" target="_blank" class="link_r">BOOTH</a></li>
-                        </ul>
-                        
-                    </section>
-                </article-->
-
                 <article style="background-image:url(img/games_fofw.png);">
                     <section>
                         <hgroup>
@@ -435,12 +483,27 @@
                         </hgroup>
                         
                         <div class="data">
-                            <p class="time"><b>２</b>～<b>３</b>分</p>
-                            <p class="ending"><b>なし</b></p>
+                            <p class="time"><b>2</b>～<b>3</b>分</p>
+                            <p class="ending">なし</p>
                         </div>
                         
                         <ul class="tag">
                             <li>Windows11</li><li>マウス操作</li><li>ホラー</li>
+                        </ul>
+                        
+                        <ul class="level">
+                            <ul>
+                                <li>じっとり</li>
+                                <li>怖さ</li>
+                                <li>びっくり</li>
+                            </ul>
+                            <ul class="level_bar">
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li class="point"></li>
+                                <li></li>
+                            </ul>
                         </ul>
                         <ul class="dl">
                             <li><a href="https://freegame-mugen.jp/adventure/game_13163.html" target="_blank" class="link_r">フリーゲーム夢現</a></li>
@@ -458,12 +521,27 @@
                         </hgroup>
                         
                         <div class="data">
-                            <p class="time"><b>６</b>～<b>10</b>分</p>
-                            <p class="ending"><b>なし</b></p>
+                            <p class="time"><b>7</b>～<b>10</b>分</p>
+                            <p class="ending">なし</p>
                         </div>
                         
                         <ul class="tag">
-                            <li>Windows11</li><li>マウス操作</li><li>ホラー</li>
+                            <li>Windows11</li><li>マウス操作</li><li>ホラー</li><li>ストーリー</li>
+                        </ul>
+                        
+                        <ul class="level">
+                            <ul>
+                                <li>じっとり</li>
+                                <li>怖さ</li>
+                                <li>びっくり</li>
+                            </ul>
+                            <ul class="level_bar">
+                                <li></li>
+                                <li class="point"></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
                         </ul>
                         
                         <ul class="dl">
