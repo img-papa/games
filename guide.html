@@ -1,9 +1,25 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<title>イマジナリーパパス - フリーゲーム総合ガイドライン</title>
+
+<title>イマジナリーパパス - 総合ガイドライン</title>
 <meta charset="utf-8">
+
+<meta name="description" content="『イマジナリーパパス』ゲームのガイドラインです。みてね" />
+
+<meta property="og:title" content="イマジナリーパパス" />
+<meta property="og:site_name" content="イマジナリーパパス" />
+<meta property="og:url" content="https://img-papa.github.io/games/guide.html" />
+<link rel="canonical" href="https://img-papa.github.io/games/guide.html" />
+<meta name="twitter:site" content="@img_papa" />
+
+<meta property="og:image" content="img/myicon.png" />
+<link rel="icon" href="img/myicon.png" sizes="62x62" type="image/png" />
+<link rel="apple-touch-icon-precomposed" href="img/myicon.png" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width,initial-scale=1">
+
 <link rel="stylesheet" href="common.css">
 <style>
     
@@ -24,7 +40,7 @@
         font-size: 2.5em;
         font-weight: 700;
     }
-    header h1:after {
+    header h1::after {
         margin: 30px 0;
         width: 128px;
         height: 6px;
@@ -54,9 +70,9 @@
         max-width: 700px;
     }
     
-    header h1:after,
-    main h2:after,
-    main h3:before {
+    header h1::after,
+    main h2::after,
+    main h3::before {
         content: "";
         display: block;
     }
@@ -73,7 +89,7 @@
         padding-top: 1em;
         color: var(--dk-gray);
     }
-    main h2:after {
+    main h2::after {
         flex: 1;
         margin-left: 20px;
         height: 4px;
@@ -85,7 +101,7 @@
         margin: 0.5em 0 1em;
         padding-top: 1.5em;
     }
-    main h3:before {
+    main h3::before {
         display: inline-block;
         margin-right: 0.8em;
         width: 24px;
@@ -109,12 +125,6 @@
     li p {
         margin-top: 1em;
     }
-    li a {
-        text-decoration: underline;
-    }
-    li a:hover {
-        text-decoration: none;
-    }
     
     footer {
         margin-top: 1em;
@@ -127,7 +137,7 @@
         align-items: center;
         margin-bottom: 0.8em;
     }
-    footer h2:before {
+    footer h2::before {
         content: "";
         display: inline-block;
         height: 1.3em;
@@ -154,12 +164,12 @@
         display: flex;
         align-items: center;
     }
-    .toc a:before,
-    .toc a:after {
+    .toc a::before,
+    .toc a::after {
         display: inline-block;
         content: "";
     }
-    .toc a:before {
+    .toc a::before {
         width: 0.8em;
         height: 0.8em;
         border: 3px solid var(--c-base);
@@ -168,17 +178,18 @@
         border-radius: 10em;
         background: var(--c-main);
     }
-    .toc a:after {
+    .toc a::after {
         flex: 1;
         height: 0.3em;
-        margin-left: 0.5em;
-        border-bottom: 1px dashed var(--c-main);
+        margin-left: 1em;
+        border-bottom: 1px dashed var(--c-dk-gray);
     }
-    .toc ul > ul a:before {
+    .toc ul > ul a::before {
         position: relative;
         left: 0.15em;
         width: 0.5em;
         height: 0.5em;
+        margin-right: 1em;
         border-color: var(--c-main);
         background: var(--c-base);
     }
@@ -187,8 +198,8 @@
         overflow-y: scroll;
         height: 200px;
         margin: 1.5em 0.5em;
-        padding: 0 1.5em 2em;
-        border: solid 3px var(--c-border);
+        padding: 0.3em 1.5em 2em;
+        border: solid 2px var(--c-border);
         border-right: 0;
         border-radius: 5px;
     }
@@ -224,6 +235,7 @@
             font-size: 0.95em;
         }
     }
+    
     /* smp */
     @media (max-width: 600px) {
         
@@ -233,7 +245,10 @@
         header h1 {
             font-size: 2em;
         }
-    }
+        
+        .toc ul > ul li::before {
+            left: 0.13em;
+        }
     
 </style>
 </head>
@@ -253,7 +268,8 @@
             <ul style="margin:1.8em 0 1.8em 2em;">
                 <li><a href="#note">前置き</a></li>
                 <ul>
-                    <li><a href="#note">ガイドライン内の記述について</a></li>
+                    <li><a href="#note">複数のガイドラインがある場合</a></li>
+                    <li><a href="#note_name">ガイドライン内の記述について</a></li>
                 </ul>
                 <li><a href="#ng">禁止事項</a></li>
                 <ul>
@@ -284,21 +300,21 @@
                     ゲームの形態によっては、個別にガイドラインを設けているものがあります。実況などの際は必ず<strong>ゲームの紹介ページに掲載されているガイドラインを優先</strong>してください。
                 </li>
             </ul>
-            <h3>ガイドライン内の表記について</h3>
+            <h3 id="note_name">ガイドライン内の表記について</h3>
             <ul>
                 <li>
-                    本ガイドラインでは、当方の著作物（ゲーム・動画・イラスト・音声・文章・Webページなど）を『<strong>本家コンテンツ</strong>』と呼称します。
+                    本ガイドラインでは、当方の著作物（ゲーム・動画・イラスト・音声・文章・Webページなど）を『<strong>本家コンテンツ</strong>』と総称します。
                 </li>
                 <li>
-                    また、上記の本家コンテンツを題材とした、以下のような第三者の著作物を『<strong>非公式関連作品</strong>』または『<strong>関連作品</strong>』と呼称します。
+                    また、上記の本家コンテンツを題材とした、以下のような第三者の著作物を『<strong>非公式関連作品</strong>』または『<strong>関連作品</strong>』と総称します。
                     <ul>
-                        <li>当方のゲームの実況・配信動画</li>
+                        <li>ゲームの実況・配信動画</li>
                         <li>ゲーム・動画・イラスト・音声・文章など、形態を問わない二次創作</li>
                         <li>ブログ・wikiなどの感想または攻略記事</li>
                     </ul>
                 </li>
                 <li class="note">
-                    翻訳ミスやクローラーによる情報収集時のミスを防ぐため、禁止事項の項目のみ都度「～を禁じます」と冗長な記述をしています。読み辛い点があると思われますが、何卒ご容赦ください。
+                    翻訳ミスやクローラーによる情報収集時のミスを防ぐため、禁止事項の項目のみ都度「～を禁じます」と冗長な記述をしています。読み辛い箇所があるかと思われますが、何卒ご容赦ください。
                 </li>
             </ul>
         </section>
@@ -324,7 +340,7 @@
             <h3 id="ng_movie">配信・実況動画</h3>
             <ol>
                 <li>実況形式の音声または字幕を<strong>含まない</strong>、一部またはゲーム全編に渡る本家コンテンツ（イベント・スチル・BGMなど種類を問わず）の視聴のみを目的とした動画（閲覧用にストーリー箇所を繋げたものや、いわゆる「<a href="https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A1%E3%82%B9%E3%83%88%E6%98%A0%E7%94%BB" target="_blank">ファスト映画</a>」的な動画）の作成および投稿を禁じます。</li>
-                <li>実況形式の音声または字幕を<strong>含まない</strong>、本家コンテンツの一部または全体のストーリーを解説するのみの動画を作成および投稿することを禁じます。</li>
+                <li>本家コンテンツの一部または全体のストーリーを解説するのみの動画を作成および投稿することを禁じます。</li>
             </ol>
             
         </section>
@@ -352,7 +368,7 @@
             <h3 id="ok_other">その他</h3>
             <ol>
                 <li>レビュー動画・記事（もちろん批判的なレビューであっても可能です）</li>
-                <li>上記活動に伴うスクリーンショットの掲載・二次利用</li>
+                <li>上記活動に伴うスクリーンショットの掲載</li>
             </ol>
             
         </section>
@@ -377,7 +393,7 @@
             <h2>免責事項</h2>
             <h3 id="d_contents">コンテンツについて</h3>
             <ol>
-                <li>また、本家コンテンツおよび非公式関連作品を閲覧・プレイした際に生じたあらゆる損害に関し、当方は一切の責任を負いません。特にゲームの場合、対応OS以外でプレイした場合、何らかの不具合が生じる可能性が高いです。必ず指定のOSでプレイしてください。</li>
+                <li>本家コンテンツおよび非公式関連作品を閲覧・プレイした際に生じたあらゆる損害に関し、当方は一切の責任を負いません。特にゲームの場合、対応OS以外でプレイした場合、何らかの不具合が生じる可能性が高いです。必ず指定のOSでプレイしてください。</li>
             </ol>
             <h3 id="d_guide">ガイドラインについて</h3>
             <ol>
@@ -390,6 +406,11 @@
         <section id="news">
             <h2>更新履歴</h2>
             <article class="scroll">
+                <h3>2025.02.07</h3>
+                <ul>
+                    <li>項目の修正［禁止事項］＞［配信・実況動画］＞ 2.「実況形式の音声または字幕を含まない」の記述を撤廃</li>
+                    <li>テキストを一部修正（内容の変更はありません）</li>
+                </ul>
                 <h3>2025.02.06</h3>
                 <ul>
                     <li>項目の追記［前置き］＞［複数のガイドラインがある場合］</li>
@@ -440,8 +461,8 @@
         </section>
         
         <section class="link">
-            <a href="https://img-papa.github.io/games/" class="link_l">サイトトップへ</a>
-            <a href="#" class="link_t">ページトップへ</a>
+            <a href="https://img-papa.github.io/games/" class="link_l">サイトトップ</a>
+            <a href="#" class="link_t">ページトップ</a>
         </section>
         
     </main>
@@ -461,3 +482,4 @@
     
 </body>
 </html>
+
