@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<title>イマジナリーパパス - ゲーム制作</title>
+<title>イマジナリーパパス - トップページ</title>
 <meta charset="utf-8">
 
 <meta name="description" content="ゲームを作っています。今のところフリーゲーム／ホラーのみ。" />
@@ -20,598 +20,237 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
 <link rel="stylesheet" href="common.css">
-<style>
-    
-    * {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-    }
-    aaa {
-        line-height: 1.6;
-        letter-spacing: 0.05em;
-        font-family: "Montserrat", sans-serif;
-        font-optical-sizing: auto;
-        font-style: normal;
-        font-size: 0.98em;
-        color: var(--c-black);
-    }
-    
-    /* 共通設定 */
-    
-    .tag {
-        display: flex;
-        align-items: center;
-    }
-    header h1:before,
-    main h2:before {
-        content: "";
-        display: block;
-    }
-    
-    body {
-        text-align: center;
-        color: var(--c-font);
-    }
-    
-    #wrap {
-        margin: auto;
-        border-top: 1em solid var(--c-dark);
-    }
-    
-    header,
-    header h1:before {
-        box-shadow: 1px 1px 5px rgba(0,0,0,0.3);
-    }
-    header {
-        max-width: 200px;
-        padding: 1em 1em 1.3em;
-        border-radius: 0 0 40px 40px;
-        background: var(--c-dark);
-    }
-    header hgroup {
-        margin: 0 0.5em 2em;
-    }
-    header h1 {
-        line-height: 1.2em;
-        font-size: 1em;
-        color: var(--c-base);
-    }
-    header h1:before {
-        width: 100px;
-        height: 100px;
-        margin: 0em auto 1em;
-        border: 4px solid #fff;
-        border-radius: 100px;
-        image-rendering: pixelated;
-        background-image: url(img/myicon.png);
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-position: center center;
-    }
-    header h2 {
-        margin-bottom: 0.8em;
-        font-size: 0.9em;
-        color: var(--c-gray);
-    }
-    header hgroup p {
-        padding-top: 0.5em;
-        border-top: 2px dotted var(--c-dk-gray);
-        font-size: 0.9em;
-        color: var(--c-lt-gray);
-    }
-    header a {
-        color: #fff;
-    }
-    
-    main {
-        max-width: 900px;
-    }
-    main h2 {
-        margin: 2em 1em 1em;
-    }
-    main h2 span {
-        margin: 2px;
-        padding: 0 0.35em 0.25em;
-        width: 50px;
-        height: 50px;
-        border-radius: 5px;
-        line-height: 1em;
-        font-size: 1.2em;
-        font-weight: normal;
-        font-family: "Darumadrop One", sans-serif;
-        color: var(--c-base);
-        background: var(--c-font);
-    }
-    
-    main h3 {
-        font-size: 1em;
-        margin-bottom: 0.5em;
-    }
-    
-    .search {
-        margin: 2.5em 2em 1em;
-        padding: 1.5em 0.5em;
-        border: 3px solid var(--c-gray);
-        border-radius: 1em;
-    }
-    .search p {
-        display: inline-block;
-        margin: 0 auto;
-        padding: 0.8em 0.5em 1em;
-        font-size: 0.8em;
-        border-top: 2px dotted var(--c-gray);
-        color: var(--c-dk-gray);
-    }
-    
-    input[type="text"] {
-        display: block;
-        width: 85%;
-        margin: 0 auto 0.8em;
-        padding: 0.6em 0.8em;
-        border: 2px solid var(--c-dk-gray);
-        border-radius: 5px;
-    }
-    button {
-        padding: 0.2em 0.8em 0.4em;
-    }
-    
-    
-    /* games 内 */
-    
-    #games article {
-        margin: 1em;
-        text-align: left;
-        box-shadow: 0 0 5px var(--c-gray), 2px 2px 5px var(--c-gray);
-        background: var(--c-gray);
-        background-repeat: no-repeat;
-        background-position: top left;
-    }
-    #games article > section {
-        padding: 1.5em 1.5em 1em;
-        background: #fff;
-    }
-    #games article h3 {
-        margin-bottom: 0.3em;
-        padding: 0 0.5em;
-        line-height: 1.3em;
-        font-size: 1.4em;
-        border-left: 5px solid var(--c-main);
-    }
-    #games hgroup p {
-        margin-bottom: 0.6em;
-        padding: 0.2em 0.5em;
-        font-size: 0.9em;
-    }
-    #games a {
-        text-decoration: none;
-    }
-    
-    .data {
-        display: flex;
-        padding: 5px 0 5px 0.8em;
-        border-top: 2px solid var(--c-gray);
-        border-bottom: 2px solid var(--c-gray);
-        color: var(--c-dk-gray);
-    }
-    .data p {
-        flex: 1;
-        font-size: 0.85em;
-    }
-    .data b {
-        margin: 0 0.3em;
-        position: relative;
-        top: 1px;
-        font-size: 1.3em;
-        color: var(--c-font);
-    }
-    
-    .time,
-    .route {
-        display: flex;
-        align-items: center;
-        margin: 0.3em;
-        background-repeat: no-repeat;
-        background-size: 16px;
-        background-position: left center;
-    }
-    .time {
-        padding-left: 25px;
-        background-image: url(img/icon_time.png);
-    }
-    .time:hover:after,
-    .ending:hover:after {
-        z-index: 10;
-        white-space: pre;
-        display: block;
-        position: absolute;
-        padding: 0.5em 1em;
-        border-radius: 5px;
-        box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
-        background: rgba(255,255,255,0.9);
-        color: var(--c-accent);
-        -webkit-transition: all 0.2s ease;
-        transition: all 0.2s ease;
-    }
-    .time:hover:after {
-        content: "クリア（分岐ありの場合、第一エンド到達）\Aまでの時間の目安です。";
-    }
-    .ending:hover:after {
-        content: "エンディングまたはルート分岐の数です。";
-    }
-    .ending {
-        display: block;
-        padding-left: 24px;
-        background-image: url(img/icon_route.png);
-    }
-    .ending:before {
-        display: inline-block;
-        font-weight: normal;
-        content: "分岐";
-        margin-right: 0.5em;
-        transform: scale(1,1);
-    }
-    
-    .tag {
-        flex-wrap: wrap;
-        margin: 0.8em 0.5em;
-        color: var(--c-dk-gray);
-        font-size: 0.9em;
-    }
-    .tag li:not(:last-child):after {
-        content: "";
-        display: inline-block;
-        width: 1.8px;
-        height: 1em;
-        position: relative;
-        top: -1.5px;
-        transform: rotate(20deg);
-        vertical-align: middle;
-        margin: 0 0.6em;
-        background: var(--c-gray);
-    }
-    
-    .level {
-        margin: 0 0.5em;
-    }
-    .level ul {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-    }
-    .level ul:first-child {
-        margin: 1.2em 0 0.6em;
-    }
-    .level li:not(:nth-child(2)) {
-        font-size: 0.8em;
-        color: var(--c-dk-gray);
-    }
-    .level_bar {
-        justify-content: space-around;
-        align-items: center;
-        margin: 0.5em 1em;
-    }
-    .level:after {
-        display: block;
-        content: "";
-        flex: 1;
-        position: relative;
-        top: -20px;
-        height: 7px;
-        margin: 0 20px;
-        background: #eee;
-    }
-    .level_bar li {
-        display: inline-block;
-        z-index: 10;
-        width: 12px;
-        height: 12px;
-        border: 3px solid #fff;
-        border-radius: 50px;
-        box-shadow: 0 0 2px var(--c-dk-gray), 1px 1px 3px var(--c-dk-gray);
-        background: var(--c-gray);
-    }
-    .level_bar .point {
-        width: 16px;
-        height: 16px;
-        border-width: 4px;
-        position: relative;
-        top: 4px;
-        background: var(--c-main);
-    }
-    
-    .dl {
-        margin-top: 1em;
-    }
-    .dl:before {
-        content: "ダウンロードはこちら";
-        display: block;
-        margin-bottom: 0.7em;
-        font-weight: bold;
-        font-size: 0.9em;
-    }
-    
-    .center {
-        margin: 1em 0.5em;
-        text-align: center;
-    }
-    
-    /* 全画面（PC） */
-    @media (min-width: 1000px) {
-
-        #wrap {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: stretch;
-            align-content: flex-start;
-            margin: auto;
-        }
-        main {
-            margin-left: 250px;
-        }
-        header {
-            position: fixed;
-            top: 0;
-            left: 5%;
-        }
-        
-        #games article {
-            display: flex;
-            justify-content: flex-end;
-            background-size: auto 100%;
-        }
-        #games article > section {
-            flex: 0 0 300px;
-        }
-        
-        .data {
-            justify-content: space-around;
-        }
-        
-    }
-    
-    /* ウィンドウモード（PC） */
-    @media (max-width: 999px) {
-        
-        header, main {
-            margin: auto;
-        }
-        
-        main {
-            max-width: 600px;
-        }
-        
-        #games article {
-            margin: 3em;
-            padding-top: 44.5%;
-            background-position: top center;
-            background-size: 100%;
-        }
-        
-    }
-    /* スマートフォン向け */
-    
-    
-    /* ここから下は以下のサイト様で配布されているスクリプトを利用させていただいております。
-    
-    【みんなの知識 ちょっと便利帳】
-    https://www.benricho.org/Tips/ctrl_F/highlight_inpage/
-    
-    ページ内検索を自サイトに設置する方法 - How to Implement In-Page Search on Your Web Page. ヒットしたテキストをハイライト表示・対象の文字へスクロール
-    
-    */
-    
-    .highlight {
-        font-weight: bold;
-        color: var(--c-accent);
-        background-color: #ffff99;
-        margin: 0 0.3em;
-        padding: 0.3em 0.6em;
-    }
-    .current {
-        outline: 2px solid var(--c-accent);
-    }
-    
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    <div id="wrap">
+        
+    <header>
+        <!-- background image -->
+        <nav>
+            <dl>
+                <dt>2025.02.09</dt>
+                <dd>『<a href="#new">指示待ちゲーム</a>』公開</dd>
+            </dl>
+        </nav>
+    </header>
 
-        <header>
-            
-            <hgroup>
-                <h1>イマジナリーパパス</h1>
-                <h2>@img_papa</h2>
-                <p>ゲーム作ってるよ<br>今のところ全部ホラー</p>
-            </hgroup>
-            
-            <nav>
-                
-                <a href="https://x.com/img_papa" target="_blank" class="link_i">
-                    <div class="icon" style="background-image:url('img/logo-twitter_white.png')"></div>
-                    <p>Twitter</p>
-                </a>
+    <aside>
 
-                <a href="https://www.youtube.com/@img_papa" target="_blank" class="link_i">
-                    <div class="icon" style="background-image:url('img/links_icon_youtube.png')"></div>
-                    <p>YouTube</p>
-                </a>
+        <!--hgroup>
+            <h2>イマジナリーパパス</h2>
+            <h3>@img_papa</h3>
+            <p>ゲーム作ってるよ<br>今のところ全部ホラー</p>
+        </hgroup-->
 
-                <a href="https://note.com/img_papa" target="_blank" class="link_i">
-                    <div class="icon" style="background-image:url('img/links_icon_note.png')"></div>
-                    <p>note</p>
-                </a>
-                
-                <a href="https://xfolio.jp/portfolio/img_papa" target="_blank" class="link_i">
-                    <div class="icon" style="background-image:url('img/links_icon_xfolio.png')"></div><p>Xfolio</p>
-                </a>
-                
-                <a href="https://img-papa.booth.pm/" target="_blank" class="link_i">
-                    <div class="icon" style="background-image:url('img/links_icon_booth.png')"></div>
-                    <p>BOOTH</p>
-                </a>
-            </nav>
-            
-        </header>
+        <nav>
 
-        <main>
+            <a href="https://x.com/img_papa" target="_blank" class="link_i">
+                <div class="icon" style="background-image:url('img/logo-twitter_white.png')"></div>
+                <p>Twitter</p>
+            </a>
+
+            <a href="https://note.com/img_papa" target="_blank" class="link_i">
+                <div class="icon" style="background-image:url('img/links_icon_note.png')"></div>
+                <p>note</p>
+            </a>
             
-            <!--h2><span>ゲ</span><span>ー</span><span>ム</span></h2-->
+            <a href="https://img-papa.booth.pm/" target="_blank" class="link_i">
+                <div class="icon" style="background-image:url('img/links_icon_booth.png')"></div>
+                <p>BOOTH</p>
+            </a>
             
+            <a href="https://www.youtube.com/@img_papa" target="_blank" class="link_i">
+                <div class="icon" style="background-image:url('img/links_icon_youtube.png')"></div>
+                <p>YouTube</p>
+            </a>
+
+            <a href="https://www.nicovideo.jp/user/138086854" target="_blank" class="link_i">
+                <div class="icon" style="background-image:url('img/links_icon_nico.png')"></div>
+                <article>
+                    <p>niconico</p>
+                </article>
+            </a>
+
+            <a href="https://xfolio.jp/portfolio/img_papa" target="_blank" class="link_i">
+                <div class="icon" style="background-image:url('img/links_icon_xfolio.png')"></div><p>Xfolio</p>
+            </a>
+        </nav>
+
+    </aside>
+
+    <main>
+
+        <div id="top">
+
             <section class="search">
                 <h3>ゲーム検索</h3>
                 <p>
                     ※<a href="https://www.benricho.org/Tips/ctrl_F/highlight_inpage/" target="_blank">【みんなの知識 ちょっと便利帳】</a>様の<br>配布スクリプトを使用させていただいております。
                 </p>
-                <input type="text" id="searchTerm" placeholder="ページ内検索ができます。プレイしたいゲームのジャンルを入力してください。">
+                <input type="text" id="searchTerm" placeholder="プレイしたいゲームのジャンルを入力してください。">
                 <button onclick="nextHighlight()">前へ</button>
                 <button onclick="previousHighlight()">次へ</button>
                 <button onclick="resetSearch()">リセット</button>
             </section>
-            
+
             <section>
                 <a href="https://img-papa.github.io/games/guide.html" target="_blank" class="link_sp" style="margin:1em auto 2em;">実況の前にガイドラインをお読みください</a>
             </section>
-            
-            <div id="games">
-                
-                <article style="background-image:url(img/games_rap.png);">
-                    <section>
-                        
-                        <hgroup>
-                            <h3>指示待ちゲーム</h3>
-                            <p>絶対に指示を守ってください。</p>
-                        </hgroup>
-                        
-                        <div class="data">
-                            <p class="time"><b>5</b>～<b>10</b>分</p>
-                            <p class="route"><b>5</b>通り</p>
-                        </div>
-                        
-                        <ul class="tag">
-                            <li>Windows11</li><li>キーボード操作</li><li>マウス操作</li><li>ホラー</li>
-                        </ul>
-                        
-                        <ul class="level">
-                            <ul>
-                                <li>じっとり</li>
-                                <li>怖さ</li>
-                                <li>びっくり</li>
-                            </ul>
-                            <ul class="level_bar">
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li class="point"></li>
-                            </ul>
-                        </ul>
-                        <ul class="dl">
-                            <li><a href="https://img-papa.booth.pm/items/6576498" target="_blank" class="link_r">BOOTH</a></li>
-                        </ul>
-                        
-                    </section>
-                </article>
-                
-                <article style="background-image:url(img/games_fofw.png);">
-                    <section>
-                        <hgroup>
-                            <h3>Focus on Fox's windows</h3>
-                            <p>“狐の窓”で怪異を探そう！</p>
-                        </hgroup>
-                        
-                        <div class="data">
-                            <p class="time"><b>2</b>～<b>3</b>分</p>
-                            <p class="ending">なし</p>
-                        </div>
-                        
-                        <ul class="tag">
-                            <li>Windows11</li><li>マウス操作</li><li>ホラー</li>
-                        </ul>
-                        
-                        <ul class="level">
-                            <ul>
-                                <li>じっとり</li>
-                                <li>怖さ</li>
-                                <li>びっくり</li>
-                            </ul>
-                            <ul class="level_bar">
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li class="point"></li>
-                                <li></li>
-                            </ul>
-                        </ul>
-                        <ul class="dl">
-                            <li><a href="https://freegame-mugen.jp/adventure/game_13163.html" target="_blank" class="link_r">フリーゲーム夢現</a></li>
-                            <li><a href="https://img-papa.booth.pm/items/6409614" target="_blank" class="link_r">BOOTH</a></li>
-                        </ul>
-                    </section>
-                </article>
 
-                <article style="background-image:url(img/games_k-alert.png);">
-                    <section>
-                        
-                        <hgroup>
-                            <h3>K報</h3>
-                            <p>外から断続的な機械音がする。どうやら、マンションの警報機が壊れてしまったらしい。</p>
-                        </hgroup>
-                        
-                        <div class="data">
-                            <p class="time"><b>7</b>～<b>10</b>分</p>
-                            <p class="ending">なし</p>
-                        </div>
-                        
-                        <ul class="tag">
-                            <li>Windows11</li><li>マウス操作</li><li>ホラー</li><li>ストーリー</li>
+        </div>
+
+        <div id="games">
+
+            <article id="new" style="background-image:url(img/games_rap.png);">
+                <section>
+
+                    <hgroup>
+                        <h3>指示待ちゲーム</h3>
+                        <p>絶対に指示を守ってください。</p>
+                    </hgroup>
+                    
+                    <div class="data">
+                        <p class="time"><b>3</b>～<b>5</b>分</p>
+                        <p class="route"><b>5</b>通り</p>
+                    </div>
+
+                    <ul class="tag">
+                        <li>Windows11</li><li>短編</li><li>キーボード操作</li><li>マウス操作</li><li>ミニゲーム</li><li>ホラー</li>
+                    </ul>
+
+                    <ul class="level">
+                        <ul>
+                            <li>じっとり</li>
+                            <li>怖さ</li>
+                            <li>びっくり</li>
                         </ul>
-                        
-                        <ul class="level">
-                            <ul>
-                                <li>じっとり</li>
-                                <li>怖さ</li>
-                                <li>びっくり</li>
-                            </ul>
-                            <ul class="level_bar">
-                                <li></li>
-                                <li class="point"></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                            </ul>
+                        <ul class="level_bar">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li class="point"></li>
                         </ul>
-                        
-                        <ul class="dl">
-                            <li><a href="https://freegame-mugen.jp/adventure/game_13045.html" target="_blank" class="link_r">フリーゲーム夢現</a></li>
-                            <li><a href="https://img-papa.booth.pm/items/6272406" target="_blank" class="link_r">BOOTH</a></li>
+                    </ul>
+                    <ul class="dl">
+                        <li><a href="https://img-papa.booth.pm/items/6576498" target="_blank" class="link_r">BOOTH</a></li>
+                    </ul>
+
+                </section>
+            </article>
+
+            <article style="background-image:url(img/games_fofw.png);">
+                <section>
+                    <hgroup>
+                        <h3>Focus on Fox's windows</h3>
+                        <p>“狐の窓”で怪異を探そう！</p>
+                    </hgroup>
+
+                    <div class="data">
+                        <p class="time"><b>2</b>～<b>3</b>分</p>
+                        <p class="route">なし</p>
+                    </div>
+
+                    <ul class="tag">
+                        <li>Windows11</li><li>短編</li><li>マウス操作</li><li>ホラー</li>
+                    </ul>
+
+                    <ul class="level">
+                        <ul>
+                            <li>じっとり</li>
+                            <li>怖さ</li>
+                            <li>びっくり</li>
                         </ul>
-                        
-                        <p class="center">
-                            <a href="https://img-papa.github.io/games/alert/" target="_blank" class="link_sp">おまけページはこちら</a>
-                        </p>
-                        
-                    </section>
-                </article>
-            </div>
-            
-            <a href="#" class="link_t" style="margin-bottom:5em;">ページトップへ戻る</a>
-            
-        </main>
-        
-    </div>
+                        <ul class="level_bar">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li class="point"></li>
+                            <li></li>
+                        </ul>
+                    </ul>
+                    <ul class="dl">
+                        <li><a href="https://freegame-mugen.jp/adventure/game_13163.html" target="_blank" class="link_r">フリーゲーム夢現</a></li>
+                        <li><a href="https://img-papa.booth.pm/items/6409614" target="_blank" class="link_r">BOOTH</a></li>
+                    </ul>
+                </section>
+            </article>
+
+            <article style="background-image:url(img/games_k-alert.png);">
+                <section>
+
+                    <hgroup>
+                        <h3>K報</h3>
+                        <p>外から断続的な機械音がする。どうやら、マンションの警報機が壊れてしまったらしい。</p>
+                    </hgroup>
+
+                    <div class="data">
+                        <p class="time"><b>7</b>～<b>10</b>分</p>
+                        <p class="route">なし</p>
+                    </div>
+
+                    <ul class="tag">
+                        <li>Windows11</li><li>短編</li><li>マウス操作</li><li>一人称視点</li><li>ストーリー</li><li>ホラー</li>
+                    </ul>
+
+                    <ul class="level">
+                        <ul>
+                            <li>じっとり</li>
+                            <li>怖さ</li>
+                            <li>びっくり</li>
+                        </ul>
+                        <ul class="level_bar">
+                            <li></li>
+                            <li class="point"></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </ul>
+
+                    <ul class="dl">
+                        <li><a href="https://freegame-mugen.jp/adventure/game_13045.html" target="_blank" class="link_r">フリーゲーム夢現</a></li>
+                        <li><a href="https://img-papa.booth.pm/items/6272406" target="_blank" class="link_r">BOOTH</a></li>
+                    </ul>
+
+                    <p class="center">
+                        <a href="https://img-papa.github.io/games/alert/" target="_blank" class="link_sp">おまけページはこちら</a>
+                    </p>
+
+                </section>
+            </article>
+        </div>
+
+        <a href="#" class="link_t" style="margin-bottom:5em;">ページトップへ戻る</a>
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
+        <!--article>
+            <hgroup>
+                <h3>Information</h3>
+                <p>このサイトについて</p>
+            </hgroup>
+            <p>ゲーム作ってるよ 今のところ全部ホラー</p>
+        </article-->
+
+    </main>
+
+    <footer>
+    </footer>
+
+
+
+
+
+<!--
+
+ここから下は以下のサイト様で配布されているスクリプトを利用させていただいております。
+
+【みんなの知識 ちょっと便利帳】
+https://www.benricho.org/Tips/ctrl_F/highlight_inpage/
+
+ページ内検索を自サイトに設置する方法 - How to Implement In-Page Search on Your Web Page. ヒットしたテキストをハイライト表示・対象の文字へスクロール
+
+-->
+
 <script>
     let highlights = [];            // ハイライトされた要素を格納する配列
     let currentIndex = -1;          // 現在のハイライト位置を示すインデックス
