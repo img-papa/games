@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
     
@@ -34,19 +34,20 @@
 }
 
 body {
-    font-family: "Nunito", "Noto Sans JP", sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: normal;
     font-style: normal;
     font-optical-sizing: auto;
-    letter-spacing: 0.01em;
+    letter-spacing: 0.03em;
     color: var(--c-font);
     background: var(--c-base);
 }
 
 a, a:hover,
-a:hover:before,
-a:hover:after {
-    transition : all 0.2s;
+a:hover::before,
+a:hover::after {
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
 }
 a {
     color: var(--c-font);
@@ -64,11 +65,13 @@ strong {
 }
 
 .link_sp,
+.link_t,
+.link_b,
 .link_l,
 .link_r,
-.link_t,
 .link_i {
     display: inline-block;
+    text-decoration: none;
 }
 
 /* 強調リンク */
@@ -79,7 +82,6 @@ strong {
     border: 3px solid var(--c-accent);
     border-radius: 10em;
     font-weight: bold;
-    text-decoration: none;
     color: #fff;
     box-shadow: 3px 3px 3px var(--c-gray);
     background: var(--c-accent);
@@ -96,15 +98,18 @@ strong {
 
 /* 矢印リンク */
 
+.link_t,
+.link_b,
 .link_l,
-.link_r,
-.link_t {
+.link_r {
     margin: 0.5em;
     padding: 0.7em 1.3em;
     border-radius: 10em;
     border: 3px solid var(--c-main);
     background: #fff;
-    text-decoration: none;
+}
+.link_t {
+    margin-right: 1em;
 }
 .link_l {
     margin-left: 1em;
@@ -115,49 +120,56 @@ strong {
     align-items: center;
     justify-content: space-between;
 }
-.link_t {
-    margin-right: 1em;
-}
+.link_t:hover,
+.link_b:hover,
 .link_l:hover,
 .link_r:hover,
-.link_t:hover {
+.link_i:hover {
     color: var(--c-dark);
     border: 3px solid var(--c-lt-gray);
     background: var(--c-lt-gray);
 }
-.link_l:hover:before,
-.link_r:hover:after,
-.link_t:hover:before {
+.link_t:hover::before,
+.link_b:hover::before,
+.link_l:hover::before,
+.link_r:hover::after,
+.link_i:hover::after {
     position: relative;
     border-color: var(--c-accent);
 }
 
-.link_l:hover:before {
-    left: -1px;
-}
-.link_r:hover:after {
-    left: 0;
-}
-.link_t:hover:before {
+.link_t:hover::before {
     top: -1px;
 }
+.link_l:hover::before {
+    left: -1px;
+}
+.link_r:hover::after,
+.link_i:hover::after {
+    left: 0;
+}
 
+.link_t:active,
+.link_b:active,
 .link_l:active,
 .link_r:active,
-.link_t:active {
+.link_i:active {
     color: var(--c-dk-gray);
     border: 3px solid var(--c-gray);
     background: var(--c-base);
 }
-.link_l:active:before,
-.link_r:active:after,
-.link_t:active:before {
+.link_t:active::before,
+.link_b:active::before,
+.link_l:active::before,
+.link_r:active::after,
+.link_i:active::after {
     border-color: var(--c-gray);
 }
-.link_l:before,
-.link_r:after,
-.link_t:before,
-.link_i:after {
+.link_t::before,
+.link_b::before,
+.link_l::before,
+.link_r::after,
+.link_i::after {
     content: "";
     display: inline-block;
     width: 0.5em;
@@ -167,63 +179,88 @@ strong {
     border-left: 4px solid var(--c-main);
     border-radius: 3px;
 }
-.link_l:before {
+.link_t::before {
+    margin-right: 0.6em;
+    position: relative;
+    top: 2px;
+    transform: rotate(45deg);
+}
+.link_b::before,
+summary::before {
+    margin-right: 0.6em;
+    position: relative;
+    top: 2px;
+    transform: rotate(45deg);
+}
+.link_l::before {
     margin-right: 0.7em;
     transform: rotate(-45deg);
     position: relative;
     top: -1.5px;
     left: 2px;
 }
-.link_r:after,
-.link_i:after {
+.link_r::after,
+.link_i::after {
     margin-left: 0.8em;
     transform: rotate(135deg);
     position: relative;
     left: -3px;
 }
-.link_t:before {
-    margin-right: 0.6em;
-    position: relative;
-    top: 2px;
-    transform: rotate(45deg);
+
+summary {
+    margin-top: 0.8em;
+}
+.link_b::after,
+summary::before {
+    
 }
 
 .link_i {
-    display: flex;
+    text-align: left;
     margin-top: 0.5em;
-    padding-right: 1em;
+    padding-right: 1.2em;
     font-weight: bold;
-    text-decoration: none;
     border: 3px solid var(--c-main);
     border-radius: 50px;
-}
-.link_i:after {
-    border-color: var(--c-main);
-}
-.link_i:hover {
-    border-color: var(--c-accent);
-}
-.link_i:hover:after {
-    border-color: var(--c-accent);
-}
-.link_i:active {
-    border-color: var(--c-dk-gray);
-}
-.link_i:active:after {
-    border-color: var(--c-dk-gray);
-}
-.link_i div {
-    flex: 0 0 32px;
 }
 
 .icon {
     margin: 8px;
     width: 32px;
     height: 32px;
-    border: 2px solid var(--c-base);
+    border: 3px solid var(--c-base);
     border-radius: 50px;
+    box-shadow: 0 0 2px var(--c-dk-gray);
     background-size: 100%;
     background-repeat: no-repeat;
 }
 
+.scroll {
+    overflow-y: scroll;
+    height: 200px;
+    margin: 1.5em 0.5em;
+    padding: 0.3em 1.5em 2em;
+    border: solid 2px var(--c-border);
+    border-right: 0;
+    border-radius: 5px;
+}
+.scroll::-webkit-scrollbar,
+.scroll_x::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background: var(--c-lt-gray);
+}
+.scroll::-webkit-scrollbar-thumb,
+.scroll_x::-webkit-scrollbar-thumb  {
+    width: 6px;
+    height: 6px;
+    border-radius: 5px;
+    background: var(--c-main);
+}
+
+.scroll_x {
+    max-width: 100%;
+    overflow-x: scroll;
+    padding: 0.5em 1em 0.8em;
+}
 
