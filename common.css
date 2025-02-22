@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
     
@@ -20,41 +20,14 @@
     --c-back: #FDEFF2;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-}
-
-.bs {
-    box-sizing: border-box;
-}
-
-.dot {
-    image-rendering: pixelated;
-}
-
 body {
-    font-family: "Montserrat", sans-serif;
+    font-family: "Golos Text", sans-serif;
     font-weight: normal;
     font-style: normal;
     font-optical-sizing: auto;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.02em;
     color: var(--c-font);
     background: var(--c-base);
-}
-
-a, a:hover,
-a:hover::before,
-a:hover::after {
-    -webkit-transition: all 0.2s ease;
-    transition: all 0.2s ease;
-}
-a {
-    color: var(--c-font);
-}
-a:hover {
-    text-decoration: none;
-    color: var(--c-accent);
 }
 
 
