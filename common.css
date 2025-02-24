@@ -20,6 +20,11 @@
     --c-back: #FDEFF2;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: "Golos Text", sans-serif;
     font-weight: normal;
