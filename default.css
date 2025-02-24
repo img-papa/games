@@ -1,0 +1,28 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.dot {
+    image-rendering: pixelated;
+}
+
+.bs {
+    box-sizing: border-box;
+}
+
+a, a:hover,
+a:hover::before,
+a:hover::after {
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+a {
+    color: var(--c-font);
+}
+a:hover {
+    text-decoration: none;
+    color: var(--c-accent);
+}
+
