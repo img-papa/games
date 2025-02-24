@@ -35,9 +35,12 @@ body {
     background: var(--c-base);
 }
 
-
 /* テキスト装飾 */
 
+a {
+    color: var(--c-font);
+}
+a:hover,
 strong {
     color: var(--c-accent);
 }
