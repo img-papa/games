@@ -74,18 +74,6 @@
             color: var(--c-main);
         }
         
-        main a {
-            display: inline-block;
-            margin: 5em 1em;
-            padding: 0.2em 0.8em 0.4em;
-            line-height: 1;
-            letter-spacing: -3px;
-            text-decoration: none;
-            border-left: 5px double #000;
-            border-right: 5px double #000;
-            background: #900;
-        }
-        
         #wrap {
             padding: 1em;
             max-width: 700px;
@@ -174,8 +162,22 @@
             border-radius: 1000px;
         }
         
-        
         .link {
+            display: inline-block;
+            margin: 40vh 1em;
+            line-height: 1;
+            letter-spacing: -3px;
+            color: red;
+            text-decoration: none;
+            background-image: url('img/2025_icon.png');
+            background-repeat: no-repeat;
+            padding-top: 80px;
+            background-position: top center;
+        }
+        .link:hover {
+            color: #fff;
+        }
+        .linka {
             position: relative;
             margin: 20px auto;
             width: 300px;
@@ -235,9 +237,9 @@
 
             <h2>2025.4.<span class="mirror">1</span></h2>
 
-            <!--a href="">サイトトップへ戻る</a-->
+            <a class="link" href="">サイトトップ</a>
 
-            <a href="">
+            <!--a href="">
                 <div class="inner">
                     <p class="text">
                         <span style="transform: translate(76.4121px, -105.172px) rotate(36deg);">サ</span>
@@ -249,7 +251,7 @@
                         <span style="transform: translate(76.4121px, 105.172px) rotate(144deg);">へ</span>
                     </p>
                 </div>
-            </a>
+            </a-->
 
         </main>
         <footer>
