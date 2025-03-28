@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>２報 ティザーサイト</title>
+    <meta property="og:image" content="img/2025_icon.png" />
+    <link rel="icon" href="img/2025_icon.png" sizes="62x62" type="image/png" />
+    <link rel="apple-touch-icon-precomposed" href="img/2025_icon.png" />
+    <meta property="og:image" content="img/2025_card.png">
+    <meta property="og:locale" content="ja_JP">
+    <meta name="twitter:card" content="summary_large_image">
     <style>
         
         @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=New+Tegomin&family=Zen+Antique+Soft&display=swap');
@@ -33,13 +39,15 @@
             font-style: normal;
             background-image:
                 url(img/2025_door.png),
-                url(img/2025_wall.png);
-            background-attachment: fixed;
-            background-size: auto 100vh, auto 100vh;
-            background-repeat: no-repeat, no-repeat;
+                url(img/2025_wall.png),
+                url(img/2025_back.png);
+            background-attachment: fixed, fixed, scroll;
+            background-size: auto 102vh, auto 102vh, auto 25%;
+            background-repeat: no-repeat, no-repeat, no-repeat;
             background-position:
-                top right,
-                top left;
+                bottom right,
+                bottom left,
+                bottom left;
         }
         ::-webkit-scrollbar {
             width: 8px;
@@ -77,7 +85,7 @@
         #wrap {
             padding: 1em;
             max-width: 700px;
-            margin: auto;
+            margin: 0 auto 100vh;
             background: #0009;
         }
         
@@ -108,6 +116,7 @@
             100% { transform: skewX(0deg); }  
         }
         h1::first-letter,
+        .link:hover,
         .glitch {
             font-size: 1.2em;
             text-shadow: 0.05em 0 0 red, -0.05em 0.05em 0 #0f05, -0.05em 0 0 blue;
@@ -176,6 +185,7 @@
         }
         .link:hover {
             color: #fff;
+            font-size: 1em;
         }
         .linka {
             position: relative;
@@ -236,23 +246,9 @@
             <p class="border" style="font-size:1.5em;">─ 続<span class="glitch">報</span><small>を</small>待<small><span class="mirror">テ</span>｡</small></p>
 
             <h2>2025.4.<span class="mirror">1</span></h2>
-
-            <a class="link" href="">サイトトップ</a>
-
-            <!--a href="">
-                <div class="inner">
-                    <p class="text">
-                        <span style="transform: translate(76.4121px, -105.172px) rotate(36deg);">サ</span>
-                        <span style="transform: translate(105.172px, -76.4121px) rotate(54deg);">イ</span>
-                        <span style="transform: translate(123.637px, -40.1722px) rotate(72deg);">ト</span>
-                        <span style="transform: translate(130px, 0px) rotate(90deg);">ト</span>
-                        <span style="transform: translate(123.637px, 40.1722px) rotate(108deg);">ッ</span>
-                        <span style="transform: translate(105.172px, 76.4121px) rotate(126deg);">プ</span>
-                        <span style="transform: translate(76.4121px, 105.172px) rotate(144deg);">へ</span>
-                    </p>
-                </div>
-            </a-->
-
+            
+            <a class="link" href="https://img-papa.github.io/games/">サ<small>イト</small>ト<small>ッ</small>プ<small>を</small>覗<small>ク</small></a>
+            
         </main>
         <footer>
             © 2025 ImaginaryPapas
