@@ -23,6 +23,8 @@
 <link rel="stylesheet" href="default.css">
 <link rel="stylesheet" href="common.css">
 <style>
+
+    @import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@800&display=swap');
     
     body {
         line-height: 1.4em;
@@ -35,9 +37,13 @@
         background: var(--c-lt-gray);
     }
     header h1 {
-        transform: scale(0.9, 1);
+        font-family: "M PLUS 1p", sans-serif;
+        font-weight: 800;
+        font-style: normal;
+        transform: scale(0.85, 1);
         transform-origin: left center;
         line-height: 1.3em;
+        letter-spacing: -0.01em;
         font-size: 2.5em;
         font-weight: 700;
     }
@@ -118,6 +124,10 @@
     ul,ol {
         margin: 0.5em 0.8em 0.5em 1.5em;
     }
+    ul ul,
+    ol ol {
+        margin-right: 0;
+    }
     li {
         margin-bottom: 0.5em;
         padding-left: 0.5em;
@@ -155,44 +165,64 @@
         border-left: 5px solid var(--c-lt-gray);
         margin-right: 0;
     }
+    
     .toc li {
         position: relative;
-        left: -1.2em;
+        left: -8px;
         line-height: 1em;
-        margin: 0 0 1.5em;
+        margin: 0 1em 1em 0;
     }
     .toc a {
         display: flex;
         align-items: center;
+        text-decoration: none;
+        padding: 0 1.5em 0.7em;
+        border-bottom: 1px solid var(--c-gray);
     }
     .toc a::before,
     .toc a::after {
+        z-index: 2;
         display: inline-block;
         content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
     }
     .toc a::before {
-        width: 0.8em;
-        height: 0.8em;
+        left: -3px;
+        width: 12px;
+        height: 12px;
         border: 3px solid var(--c-base);
         box-shadow: 0 0 6px var(--c-base);
         margin-right: 0.8em;
         border-radius: 10em;
         background: var(--c-main);
     }
-    .toc a::after {
-        flex: 1;
-        height: 0.3em;
-        margin-left: 1em;
-        border-bottom: 1px dashed var(--c-dk-gray);
-    }
     .toc ul > ul a::before {
-        position: relative;
-        left: 0.15em;
-        width: 0.5em;
-        height: 0.5em;
+        left: -1px;
+        width: 9px;
+        height: 9px;
         margin-right: 1em;
         border-color: var(--c-main);
         background: var(--c-base);
+    }
+    .toc a::after {
+        display: block;
+        width: 8px;
+        height: 8px;
+        position: absolute;
+        right: 15px;
+        transform: rotate(45deg);
+        border-right: 2px solid var(--c-gray);
+        border-bottom: 2px solid var(--c-gray);
+/*      flex: 1;
+        height: 0.3em;
+        margin-left: 1em;
+        border-bottom: 1px dashed var(--c-dk-gray);*/
+    }
+    .toc a:hover::after {
+        top: 2px;
+        border-color: var(--c-accent);
     }
     
     .scroll h3 {
@@ -403,6 +433,10 @@
         <section id="news">
             <h2>更新履歴</h2>
             <article class="scroll">
+                <h3>2025.05.03</h3>
+                <ul>
+                    <li>一部デザインを変更</li>
+                </ul>
                 <h3>2025.02.22</h3>
                 <ul>
                     <li>項目の修正［禁止事項］＞［総合］＞ 1.各種SNSにて公開しているコンテンツを含める</li>
