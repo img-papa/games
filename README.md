@@ -12,3 +12,8 @@ https://img-papa.github.io/games/
 
 https://img-papa.github.io/games/guide.html
 (GitHub Pages)
+
+
+Copyright (c) 2025 ImaginaryPapas / Talpapapa
+
+All rights reserved. Unauthorized reproduction or distribution of this work is prohibited.
