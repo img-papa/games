@@ -2,13 +2,6 @@
 * {
     margin: 0;
     padding: 0;
-}
-
-.dot {
-    image-rendering: pixelated;
-}
-
-.bs {
     box-sizing: border-box;
 }
 
@@ -20,9 +13,85 @@ a:hover::after {
 }
 a {
     color: var(--c-font);
+    font-weight: 500;
 }
 a:hover {
     text-decoration: none;
     color: var(--c-accent);
 }
 
+ul, ol {
+    margin: 0.5em 0.8em 0.5em 1em;
+    padding-left: 1.5em;
+}
+ul ul, ul ol, 
+ol ol, ol ul {
+    margin: 0.2em 0 0.2em 0.5em;
+}
+li {
+    padding: 3px 0;
+    line-height: 1.7em;
+}
+
+
+/* 汎用クラス */
+
+.left {
+    text-align: left;
+}
+.center {
+    text-align: center;
+}
+.right {
+    text-align: right;
+}
+
+.flex,
+.flex_2,
+.flex_3,
+.flex_4 {
+    display: flex;
+    gap: 1em;
+}
+
+.flex_2 > * {
+    flex-basis: 50%;
+}
+
+.flex_3 > * {
+    flex-basis: 33%;
+}
+
+.flex_4 > * {
+    flex-basis: 20%;
+}
+
+.scroll {
+    overflow-y: scroll;
+    height: 5em;
+    padding-right: 5px;
+}
+
+@media (max-width: 500px) {
+
+    .flex_3,
+    .flex_4 {
+        flex-wrap: wrap;
+
+        * { flex: 100%; }
+
+    }
+
+}
+
+
+/* いる？ */
+
+.dot {
+    image-rendering: pixelated;
+}
+
+.bs {
+    box-sizing: border-box;
+    position: relative;
+}
