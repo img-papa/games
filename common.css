@@ -1,18 +1,35 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+/* フォント設定 */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    font-family: sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 0.95em;
+    letter-spacing: 0.03em;
+    color: var(--c-font);
+    background: var(--c-base);
+}
+
+h1, h2, #new dt {
+    font-family: "Roboto Condensed", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
 
 :root {
-    
     /* basic */
-    --c-font:    rgb(80,80,80);
-    --c-base:    rgb(253,253,253);
-    
-    --c-dark:    rgb(70,70,70);
+    --c-font: rgb(64,64,64);
+    --c-font-b: rgb(80,80,80);
+    --c-font-dk: rgb(250,250,250);
+    --c-font-dk-b: rgb(255,255,255);
+    --c-base: rgb(250,250,250);
+    --c-border: rgb(220,220,220);
+    --c-dark: rgb(70,70,70);
     --c-dk-gray: rgb(128,128,128);
-    --c-gray:    rgb(210,210,210);
+    --c-gray: rgb(210,210,210);
     --c-lt-gray: rgb(235,235,235);
-    --c-border:  rgb(220,220,220);
-    
     /* color */
     --c-main: #7DBB7C;
     --c-sub: #BA8B40;
@@ -20,22 +37,162 @@
     --c-back: #FDEFF2;
 }
 
-body {
-    font-family: "Golos Text", sans-serif;
-    font-weight: normal;
-    font-style: normal;
-    font-optical-sizing: auto;
-    letter-spacing: 0.02em;
-    color: var(--c-font);
-    background: var(--c-base);
+
+/* スクロールバー */
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--c-lt-gray);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background: var(--c-main);
 }
 
 
 /* テキスト装飾 */
 
+h1, h2, h3, h4, h5, b {
+    color: var(--c-font-b);
+}
+
+footer h2,
+footer h3,
+footer h4,
+footer h5,
+footer b {
+    color: var(--c-font-dk-b);
+}
+
+small {
+    color: var(--c-dk-gray);
+}
+
 strong {
     color: var(--c-accent);
 }
+
+header {
+    margin-bottom: 2em;
+}
+header h1 {
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+}
+header h1::before {
+    content: "";
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+    aspect-ratio: 1 / 1;
+    margin: 10px 20px 10px 10px;
+    border-radius: 8px;
+    background: url("img/img_icon.png");
+    background-size: 100%;
+}
+
+main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 1em 2em;
+}
+
+footer,
+footer a,
+footer a:hover {
+    color: var(--c-font-dk);
+}
+footer {
+    padding: 5px 20px 20px;
+    border-top: 3px solid #7779;
+    background: var(--c-dark);
+}
+footer > * {
+    max-width: 1200px;
+    margin: auto;
+}
+
+h2 {
+    margin: 5px 0 10px;
+    padding: 0 0.6em 0.5em;
+    font-weight: 500;
+    border-bottom: 2px solid var(--c-gray);
+}
+
+h3 {
+    margin: 20px 0 5px 10px;
+    padding: 0.3em 0.6em 0.4em;
+    font-size: 1.1em;
+    line-height: 1.3em;
+    border-left: 4px solid var(--c-main);
+}
+
+p {
+    margin: 0.8em 1em;
+}
+
+.flex_d {
+    margin: 5px;
+}
+.flex_d > * {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: flex-start;
+    margin-bottom: 5px;
+    padding: 10px;
+    box-shadow: 1px 1px 3px #0003;
+    background: #fff;
+}
+.flex_d dt {
+    flex-basis: 6em;
+    margin-right: 1em;
+    font-weight: 500;
+    line-height: 165%;
+    letter-spacing: 0.05em;
+    text-align: center;
+}
+#new .flex_d dd {
+    margin-bottom: 6px;
+}
+
+.new_bug,
+.new_ver,
+.new_site {
+    height: 1.3em;
+    laine-height: 1.3em;
+}
+.new_bug {
+    content: "バグ修正";
+}
+.new_ver {
+    content: "ver.更新";
+}
+.new_site {
+    content: "サイト更新";
+}
+
+/* PC / Pad */
+
+@media (min-width: 700px) {
+}
+
+
+/* スマートフォン */
+
+@media (max-width: 699px) {
+
+    body {
+        font-size: 0.95em;
+    }
+
+}
+
 
 .link_sp,
 .link_t,
@@ -47,10 +204,11 @@ strong {
     text-decoration: none;
 }
 
+
 /* 強調リンク */
     
 .link_sp {
-    margin: auto;
+    margin: 10px auto 20px;
     padding: 1em 2em;
     border: 3px solid var(--c-accent);
     border-radius: 10em;
@@ -69,16 +227,19 @@ strong {
     background: var(--c-base);
 }
 
+
 /* 矢印リンク */
 
 .link_t,
 .link_b,
 .link_l,
 .link_r {
-    margin: 0.5em;
-    padding: 0.7em 1.3em;
-    border-radius: 10em;
+    padding: 0.8em 1.3em;
+    font-weight: 500;
+    line-height: 1.5em;
+    color: var(--c-font-b);
     border: 3px solid var(--c-main);
+    border-radius: 10em;
     background: #fff;
 }
 .link_t {
@@ -148,9 +309,8 @@ strong {
     width: 0.5em;
     height: 0.5em;
     color: #999;
-    border-top: 4px solid var(--c-main);
-    border-left: 4px solid var(--c-main);
-    border-radius: 3px;
+    border-top: 3px solid var(--c-main);
+    border-left: 3px solid var(--c-main);
 }
 .link_t::before {
     margin-right: 0.6em;
@@ -169,7 +329,7 @@ summary::before {
     margin-right: 0.7em;
     transform: rotate(-45deg);
     position: relative;
-    top: -1.5px;
+    top: -0.5px;
     left: 2px;
 }
 .link_r::after,
@@ -206,29 +366,6 @@ summary::before {
     box-shadow: 0 0 2px var(--c-dk-gray);
     background-size: 100%;
     background-repeat: no-repeat;
-}
-
-.scroll {
-    overflow-y: scroll;
-    height: 200px;
-    margin: 1.5em 0.5em;
-    padding: 0.3em 1.5em 2em;
-    border: solid 2px var(--c-border);
-    border-right: 0;
-    border-radius: 5px;
-}
-.scroll::-webkit-scrollbar,
-.scroll_x::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-    background: var(--c-lt-gray);
-}
-.scroll::-webkit-scrollbar-thumb,
-.scroll_x::-webkit-scrollbar-thumb  {
-    width: 6px;
-    height: 6px;
-    border-radius: 5px;
-    background: var(--c-main);
 }
 
 .scroll_x {
