@@ -24,117 +24,45 @@
 <link rel="stylesheet" href="common.css">
 <style>
 
-    @import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@800&display=swap');
-    
     body {
         line-height: 1.4em;
     }
     
     header {
-        padding: 5em 4% 1.5em;
+        padding: 4em 4% 0.5em;
         font-weight: bold;
         color: var(--c-dk-gray);
         background: var(--c-lt-gray);
     }
     header h1 {
-        font-family: "M PLUS 1p", sans-serif;
-        font-weight: 800;
+        align-items: flex-start;
         font-style: normal;
-        transform: scale(0.85, 1);
-        transform-origin: left center;
-        line-height: 1.3em;
-        letter-spacing: -0.01em;
-        font-size: 2.5em;
+        font-size: 2em;
         font-weight: 700;
+        line-height: 1.5em;
+        letter-spacing: -0.01em;
+    }
+    header h1::before {
+        margin: 0 20px 0 0;
     }
     header h1::after {
-        margin: 30px 0;
-        width: 128px;
-        height: 6px;
-        background: var(--c-main);
+        content: "";
+        display: block;
     }
+
     header p {
-        display: inline-block;
-        position: relative;
-        bottom: 10px;
-        margin-right: 20px;
+        display: block;
         padding: 10px 15px;
         text-align: right;
     }
-    header article {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: flex-end;
-    }
-    header article,
-    footer article {
+    header > *,
+    footer > * {
         margin: auto;
         max-width: 780px;
     }
     main {
         margin: 20px auto 4em;
-        max-width: 700px;
-    }
-    
-    header h1::after,
-    main h2::after,
-    main h3::before {
-        content: "";
-        display: block;
-    }
-    
-    main h2,
-    main h3 {
-        display: flex;
-        align-items: center;
-        font-weight: 600;
-    }
-    
-    main h2 {
-        margin-top: 0.2em;
-        padding-top: 1em;
-        color: var(--dk-gray);
-    }
-    main h2::after {
-        flex: 1;
-        margin-left: 20px;
-        height: 3px;
-        border-radius: 0px;
-        background: var(--c-border);
-    }
-    
-    main h3 {
-        margin: 0.5em 0 1em;
-        padding-top: 1.5em;
-    }
-    main h3::before {
-        display: inline-block;
-        margin-right: 0.8em;
-        width: 24px;
-        height: 4px;
-        border-radius: 0px;
-        background: var(--c-main);
-    }
-    
-    section {
-        margin: 1.5em;
-    }
-    
-    ul,ol {
-        margin: 0.5em 0.8em 0.5em 1.5em;
-    }
-    ul ul,
-    ol ol {
-        margin-right: 0;
-    }
-    li {
-        margin-bottom: 0.5em;
-        padding-left: 0.5em;
-        line-height: 1.8em;
-    }
-    li p {
-        margin-top: 1em;
+        max-width: 750px;
     }
     
     footer {
@@ -143,23 +71,14 @@
         color: #eee;
         background: var(--c-dark);
     }
-    footer h2 {
-        display: flex;
-        align-items: center;
-        margin-bottom: 0.8em;
-    }
-    footer h2::before {
-        content: "";
-        display: inline-block;
-        height: 1.3em;
-        width: 4px;
-        margin-right: 0.5em;
-        background: var(--c-main);
-    }
     footer section > p {
         margin: 5px 20px;
     }
-    
+
+    h2 {
+        margin-top: 35px;
+    }
+
     .toc ul {
         list-style: none;
         border-left: 5px solid var(--c-lt-gray);
@@ -170,13 +89,14 @@
         position: relative;
         left: -8px;
         line-height: 1em;
-        margin: 0 1em 1em 0;
+        margin: 0;
+        margin-bottom: 1em;
     }
     .toc a {
         display: flex;
         align-items: center;
         text-decoration: none;
-        padding: 0 1.5em 0.7em;
+        padding: 0 1.4em 0.7em;
         border-bottom: 1px solid var(--c-gray);
     }
     .toc a::before,
@@ -215,22 +135,16 @@
         transform: rotate(45deg);
         border-right: 2px solid var(--c-gray);
         border-bottom: 2px solid var(--c-gray);
-/*      flex: 1;
-        height: 0.3em;
-        margin-left: 1em;
-        border-bottom: 1px dashed var(--c-dk-gray);*/
     }
     .toc a:hover::after {
         top: 2px;
         border-color: var(--c-accent);
     }
-    
-    .scroll h3 {
-        margin-top: 0;
-        padding-top: 1em;
+
+    .scroll {
     }
-    .scroll li {
-        margin: 0;
+    .scroll > *:first-child {
+        margin-top: 8px;
     }
     
     .link {
@@ -243,10 +157,10 @@
     
     /* pc */
     @media (min-width: 599px) {
-        
-        .scroll {
-            font-size: 0.95em;
+
+        header p {
         }
+
     }
     
     /* smp */
@@ -269,14 +183,14 @@
     
     
     <header>
-        <article>
+        <hgroup>
             <h1>イマジナリーパパス<br>総合ゲームガイドライン</h1>
-            <p>最終更新 2025年2月22日</p>
-        </article>
+            <p>最終更新 2026年1月2日</p>
+        </hgroup>
     </header>
     <main>
         
-        <section class="toc">
+        <section>
             <h2>目次</h2>
             <ul style="margin:1.8em 0 1.8em 2em;">
                 <li><a href="#note">前置き</a></li>
@@ -346,7 +260,7 @@
                 <li>二次利用が許可されていない特定のキャラクターまたは実在の人物の写真・映像を用いた関連作品を作成することを禁じます。</li>
                 <li>実在の人物または団体・人種・性別・宗教・政治思想へ対する、誹謗中傷・差別的表現・批判、または過剰な支援（宣伝・勧誘など）を含む関連作品を作成することを禁じます。</li>
                 <li>自他へ危害を加える行為（他者への暴力・殺人・自傷・自殺など）を煽動する目的の関連作品を作成することを禁じます。</li>
-                <li>生成AIを用いた非公式関連作品の作成、また本家コンテンツを生成AIのトレーニングに用いることを禁じます。</li>
+                <li>生成AIを用いた関連作品の作成、また本家コンテンツを生成AIのトレーニングに用いることを禁じます。</li>
                 <li>公式な関連作品であると誤認させるおそれのある内容で、非公式関連作品を発表・宣伝・公開・販売することを禁じます。</li>
                 <li>許諾なく専用サイト（本家コンテンツ専門のブログ・wikiなど）を設け、攻略情報を掲載することを禁じます。</li>
                 <ul>
@@ -406,8 +320,7 @@
             <h3>ご連絡</h3>
             <ul>
                 <li>
-                    各SNSのメッセージ、または以下のメールアドレスにご連絡ください。<br>
-                    <img src="img/img_address_b.png" style="margin-top:0.5em;width:180px;">
+                    各SNSのダイレクトメッセージ、またはこちらの<a href="https://docs.google.com/forms/d/e/1FAIpQLSdyKIPpo_jQnk5_Qb7rSG-eZxV2qOj1m-wHg5oEWlP97MnpLg/viewform?usp=dialog" target="_blank">Googleフォーム</a>からご連絡ください。
                 </li>
                 <li>
                     違反をしている方を見つけた場合、直接の指摘は控え、当方にご連絡ください。ただし、<strong>ご自身で制作した著作物を無断で利用されていた場合などは例外</strong>です。この場合、当方に協力できることがあればご連絡ください。
@@ -432,7 +345,12 @@
         
         <section id="news">
             <h2>更新履歴</h2>
-            <article class="scroll">
+            <article class="scroll" style="height:30vh;">
+                <h3>2026.01.02</h3>
+                <ul>
+                    <li>お問い合わせフォームへのリンクを追加</li>
+                    <li>トップデザイン変更に伴いデザインを調整</li>
+                </ul>
                 <h3>2025.05.03</h3>
                 <ul>
                     <li>一部デザインを変更</li>
