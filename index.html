@@ -1,457 +1,901 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<title>イマジナリーパパス - トップページ</title>
-<meta charset="utf-8">
 
-<meta name="description" content="ゲームを作っています。今のところフリーゲーム／ホラーのみ。" />
+    <title>イマジナリーパパス - トップページ</title>
+    <meta charset="utf-8">
 
-<meta property="og:title" content="イマジナリーパパス" />
-<meta property="og:site_name" content="イマジナリーパパス" />
-<meta property="og:url" content="https://img-papa.github.io/games/" />
-<link rel="canonical" href="https://img-papa.github.io/games/" />
-<meta name="twitter:site" content="@img_papa" />
+    <meta name="description" content="ゲームを作っています。現状フリーホラーゲームのみ。" />
 
-<meta property="og:image" content="img/myicon.png" />
-<link rel="icon" href="img/myicon.png" sizes="62x62" type="image/png" />
-<link rel="apple-touch-icon-precomposed" href="img/myicon.png" />
+    <meta property="og:title" content="イマジナリーパパス" />
+    <meta property="og:site_name" content="イマジナリーパパス" />
+    <meta property="og:url" content="https://img-papa.github.io/games/" />
+    <link rel="canonical" href="https://img-papa.github.io/games/" />
+    <meta name="twitter:site" content="@img_papa" />
 
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta property="og:image" content="img/myicon.png" />
+    <link rel="icon" href="img/myicon.png" sizes="62x62" type="image/png" />
+    <link rel="apple-touch-icon-precomposed" href="img/myicon.png" />
 
-<link rel="stylesheet" href="default.css">
-<link rel="stylesheet" href="common.css">
-<link rel="stylesheet" href="style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link rel="stylesheet" href="default.css">
+    <link rel="stylesheet" href="common.css">
+
+    <style>
+
+        h {
+            display: none;
+        }
+
+        /* header */
+
+        header {
+            margin-bottom: 1.2em;
+            padding: 2.5em 2em 2.5em 13em;
+            border-bottom: 5px solid var(--c-main);
+            background: url("img/header.png");
+            background-position: -10px 0;
+            background-size: auto 100%;
+            background-repeat: no-repeat;
+            background-color: rgb(50,50,50);
+        }
+        header h1 {
+            color: #fff;
+            text-shadow: 0 0 3px #000;
+        }
+        header h1::before {
+            margin-right: 0.8em;
+            outline: 3px solid #fff;
+            box-shadow: 0 0 3px #0005, 6px 6px 3px #0005;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1em;
+        }
+        
+
+        /* ゲーム一覧 */
+
+        #games > * {
+            margin: 10px;
+            margin-bottom: 20px;
+            box-shadow: 1px 1px 5px #0003;
+            background-color: #fff;
+        }
+        #games > * > section {
+            padding:  0 25px 25px;
+        }
+
+        #games h3 {
+            position: relative;
+            left: -5px;
+            margin-left: 0;
+            font-size: 1.3em;
+        }
+        #games ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #games .memo {
+            margin: 15px 0;
+            font-size: 0.9em;
+            height: 4em;
+        }
+        #games .center {
+            margin: 10px 0 0;
+        }
+
+
+        /* 検索フォーム */
+
+        .search {
+            max-width: 700px;
+            position: sticky;
+            top: 0.5em;
+            margin: 0 auto 0.5em;
+            z-index: 99;
+            display: flex;
+            align-items: center;
+            border-radius: 0 ;
+            box-shadow: 1px 1px 3px #0003;
+            background: #fff;
+        }
+        .search::before {
+            content: "";
+            display: block;
+            height: 3.1em;
+            aspect-ratio: 1 / 1;
+            background: var(--c-main);
+            background-image: url("img/icon/icon_search.png");
+            background-repeat: no-repeat;
+            background-size: 60%;
+            background-position: center;
+        }
+        .search input[type=text] {
+            width: 100%;
+            height: 3em;
+            margin: 0;
+            padding: 0 10px;
+            line-height: 2.5em;
+            font-size: 1.05em;
+            border: none;
+            outline: none;
+        }
+        .search button {
+            width: 3em;
+            min-height: 3em;
+            font-size: 1.2em;
+            border: none;
+            color: #fff;
+            background: var(--c-main);
+        }
+
+        .search_p {
+            max-width: 680px;
+            margin: 0 auto 2em;
+            padding: 0.1em 0.8em 0.2em;
+            position: relative;
+            right: 0;
+            text-align: right;
+            font-size: 0.85em;
+            color: #0009;
+        }
+
+        .highlight {
+            margin: 0 0.3em;
+            padding: 0.3em 0.6em;
+            border: 3px solid var(--c-accent);
+            outline: 3px solid #fff;
+            font-weight: bold;
+            color: var(--c-accent);
+            box-shadow: 2px 2px 3px #0009;
+            background: #fff;
+        }
+        .current {
+            padding-bottom: 0.4em;
+            font-size: 1.1em;
+            font-weight: 900;
+            color: #fff;
+            background: var(--c-accent);
+        }
+
+
+        /* ゲーム */
+
+        .ss {
+            aspect-ratio: 16 / 9;
+            border-bottom: 1px solid #0002;
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+
+
+        /* タグ */
+
+        .tag {
+            overflow-y: auto;
+            height: 5.2em;
+        }
+        .tag li {
+            display: inline;
+            font-size: 0.9em;
+            color: #0009;
+        }
+        .tag li:not(:last-child)::after {
+            display: inline-block;
+            content: "";
+            position: relative;
+            top: -1px;
+            left: 2px;
+            width: 1.5px;
+            height: 3.5em;
+            vertical-align: middle;
+            margin: 0 8px;
+            line-height: 0.5em;
+            font-size: 4px;
+            background: var(--c-gray);
+            transform: rotate(20deg);
+        }
+
+
+        /* 時間・分岐 */
+
+        .data {
+            display: flex;
+            align-items: center;
+            height: 2em;
+            color: var(--c-dk-gray);
+        }
+        .data p {
+            display: block;
+            flex: 1;
+            flex-basis: 33%;
+            margin: 0 0 0 10px;
+            padding: 0 0 0 20px;
+            font-size: 0.85em;
+        }
+        .data p:first-child {
+            margin-left: 5px;
+        }
+        .data b {
+            margin: 0 0.2em;
+            font-size: 1.2em;
+            color: var(--c-font-b);
+        }
+
+        .time,
+        .route,
+        .os {
+            display: block;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background-repeat: no-repeat;
+            background-size: 16px;
+            background-position: left 65%;
+            border-right: 2px solid var(--c-gray);
+        }
+        .time {
+            background-image: url(img/icon/icon_time.png);
+        }
+        .route {
+            background-image: url(img/icon/icon_route.png);
+        }
+        .os {
+            border: none;
+            background-image: url(img/icon/icon_os.png);
+        }
+        .time:hover::after,
+        .route:hover::after {
+            display: block;
+            position: absolute;
+            top: 2em;
+            left: 0;
+            margin: auto;
+            padding: 0.5em 1em;
+            color: var(--c-accent);
+            border-radius: 5px;
+            box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+            background: rgba(255,255,255,0.9);
+            -webkit-transition: all 0.2s ease;
+            transition: all 0.2s ease;
+            white-space: pre;
+            z-index: 1;
+        }
+        .route::before {
+            display: inline-block;
+            font-weight: normal;
+            content: "";
+            margin-right: 0.5em;
+            transform: scale(1,1);
+        }
+        .time:hover::after {
+            content: "クリア（分岐ありの場合、第１エンド到達）\Aまでの時間の目安です。";
+        }
+        .route:hover::after {
+            content: "ルートまたはエンディング分岐の数です。\A「なし」の場合は、１つのエンディングのみ。\Aゲームオーバーは含まれません。\Aまた、差分は含まれていません。";
+        }
+
+
+        /* 難易度・怖さパラ */
+
+        .level {
+        }
+        .level::after {
+            display: block;
+            content: "";
+            flex: 1;
+            position: relative;
+            top: -8px;
+            height: 5px;
+            margin: 0 20px;
+            background: #eee;
+        }
+        .level ul {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            text-align: center;
+        }
+        .level li {
+            font-size: 0.9em;
+            color: var(--c-dk-gray);
+        }
+        .level li:nth-child(2) {
+            font-size: 1em;
+            font-weight: 700;
+            color: var(--c-font-b);
+        }
+        .level_bar {
+            justify-content: space-around;
+            align-items: center;
+            margin: 0.5em 1em;
+        }
+        .level_bar li {
+            display: inline-block;
+            z-index: 10;
+            width: 12px;
+            height: 12px;
+            border: 3px solid #fff;
+            border-radius: 50px;
+            box-shadow: 0 0 2px var(--c-dk-gray), 1px 1px 3px var(--c-dk-gray);
+            background: var(--c-gray);
+        }
+        .level_bar .point {
+            width: 18px;
+            height: 18px;
+            border-width: 4px;
+            position: relative;
+            top: 4px;
+            background: var(--c-main);
+        }
+
+        .dl {
+            position: relative;
+        }
+        .dl::before {
+            content: "ダウンロードはこちらから";
+            display: block;
+            margin: 1.5em 2em 0.7em;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        .dl::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 4px;
+            left: 8px;
+            width: 0.45em;
+            height: 0.45em;
+            border-left: 3px solid var(--c-main);
+            border-bottom: 3px solid var(--c-main);
+            transform: rotate(-45deg);
+        }
+
+
+        /* PC / Pad */
+
+        @media (min-width: 700px) {
+
+            #games {
+                display: flex;
+            }
+            #games > * {
+                flex-basis: 33%;
+            }
+
+        }
+
+
+        /* スマートフォン */
+
+        @media (max-width: 699px) {
+
+            body {
+                font-size: 0.95em;
+            }
+
+            main > * {
+                flex: 100%;
+            }
+            main > *:first-child {
+                order: 3;
+            }
+        }
+
+    </style>
+
 </head>
 <body>
-        
+
+    <!--
+    やること
+    // アイコンもう少し太く・色薄く
+    // フォント変更
+        見出し　Jersey 10　BBH Bartle
+        RPG　Sekuya
+    -->
+
     <header>
-        <!-- background image -->
-        <nav>
-            <dl>
-                <dt>2025.02.09</dt>
-                <dd>『<a href="#new">指示待ちゲーム</a>』公開</dd>
-            </dl>
-        </nav>
+        <h1>Imaginary Papas Portal</h1>
     </header>
-
-    <aside>
-
-        <!--hgroup>
-            <h2>イマジナリーパパス</h2>
-            <h3>@img_papa</h3>
-            <p>ゲーム作ってるよ<br>今のところ全部ホラー</p>
-        </hgroup-->
-
-        <nav>
-
-            <a href="https://x.com/img_papa" target="_blank" class="link_i">
-                <div class="icon" style="background-image:url('img/logo-twitter_white.png')"></div>
-                <p>Twitter</p>
-            </a>
-
-            <a href="https://note.com/img_papa" target="_blank" class="link_i">
-                <div class="icon" style="background-image:url('img/links_icon_note.png')"></div>
-                <p>note</p>
-            </a>
-            
-            <a href="https://img-papa.booth.pm/" target="_blank" class="link_i">
-                <div class="icon" style="background-image:url('img/links_icon_booth.png')"></div>
-                <p>BOOTH</p>
-            </a>
-            
-            <a href="https://www.youtube.com/@img_papa" target="_blank" class="link_i">
-                <div class="icon" style="background-image:url('img/links_icon_youtube.png')"></div>
-                <p>YouTube</p>
-            </a>
-            
-            <a href="https://www.nicovideo.jp/user/138086854" target="_blank" class="link_i">
-                <div class="icon" style="background-image:url('img/links_icon_nico.png')"></div>
-                <article>
-                    <p>niconico</p>
-                </article>
-            </a>
-
-            <a href="https://xfolio.jp/portfolio/img_papa" target="_blank" class="link_i">
-                <div class="icon" style="background-image:url('img/links_icon_xfolio.png')"></div><p>Xfolio</p>
-            </a>
-        </nav>
-
-    </aside>
 
     <main>
 
-        <div id="top">
+        <section style="flex:1;">
 
-            <section class="search">
-                <h3>ゲーム検索</h3>
-                <p>
-                    ページ内検索ができます。Enterキーで次の項目<br>
-                    ※<a href="https://www.benricho.org/Tips/ctrl_F/highlight_inpage/" target="_blank">【みんなの知識 ちょっと便利帳】</a>様の<br>配布スクリプトを使用させていただいております。
-                </p>
-                <input type="text" id="searchTerm" placeholder="プレイしたいゲームのジャンルを入力してください。">
-                <button onclick="nextHighlight()">前へ</button>
-                <button onclick="previousHighlight()">次へ</button>
-                <button onclick="resetSearch()">リセット</button>
-            </section>
+            <h2>ABOUT</h2>
+            <p>ぼっちでフリーゲームを制作＆公開中。</p>
 
-            <section>
-                <a href="https://img-papa.github.io/games/guide.html" target="_blank" class="link_sp" style="margin:1em auto 2em;">実況の前にガイドラインをお読みください</a>
-            </section>
-
-        </div>
-
-        <div id="games">
-
-            <article id="new" style="background-image:url(img/games_rap.png);">
-                <section>
-
-                    <hgroup>
-                        <h3>指示待ちゲーム</h3>
-                        <p>絶対に指示を守ってください。</p>
-                    </hgroup>
-                    
-                    <div class="data">
-                        <p class="time"><b>1</b>～<b>2</b>分</p>
-                        <p class="route"><b>5</b>通り</p>
+            <article class="flex_d">
+                <dl>
+                    <dt>サークル名</dt>
+                    <div>
+                        <dd>イマジナリーパパス</dd>
+                        <dd><small>Imaginary Papas</small></dd>
                     </div>
-
-                    <ul class="tag">
-                        <li>Windows11</li><li>短編</li><li>キーボード操作</li><li>マウス操作</li><li>ミニゲーム</li><li>ホラー</li>
-                    </ul>
-
-                    <ul class="level">
-                        <ul>
-                            <li>じっとり</li>
-                            <li>怖さ</li>
-                            <li>びっくり</li>
-                        </ul>
-                        <ul class="level_bar">
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li class="point"></li>
-                        </ul>
-                    </ul>
-                    <ul class="dl">
-                        <li><a href="https://img-papa.booth.pm/items/6576498" target="_blank" class="link_r">BOOTH</a></li>
-                    </ul>
-
-                </section>
+                </dl>
+                <dl>
+                    <dt>作者</dt>
+                    <div>
+                        <dd>タルパパパ</dd>
+                        <dd><small>Tulpapapa</small></dd>
+                    </div>
+                </dl>
+                <dl>
+                    <dt>活動開始日</dt>
+                    <dd>2024年 11月 9日</dd>
+                </dl>
             </article>
 
-            <article style="background-image:url(img/games_fofw.png);">
-                <section>
-                    <hgroup>
-                        <h3>Focus on Fox's windows</h3>
-                        <p>“狐の窓”で怪異を探そう！</p>
-                    </hgroup>
+            <p><a class="link_r" href="https://docs.google.com/forms/d/e/1FAIpQLSdyKIPpo_jQnk5_Qb7rSG-eZxV2qOj1m-wHg5oEWlP97MnpLg/viewform?usp=dialog" target="_blank">お問い合わせ先（Googleフォーム）</a></p>
 
-                    <div class="data">
-                        <p class="time"><b>2</b>～<b>3</b>分</p>
-                        <p class="route">なし</p>
+        </section>
+
+        <section id="new" style="flex:2;">
+            <h2>NEW</h2>
+            <article class="scroll" style="height:17.5em;">
+                <dl class="flex_d">
+                    <div>
+                        <dt>2026.01.15</dt>
+                        <div>
+                            <dd class="new_site">サイトデザイン変更</dd>
+                            <!--dd class="new_site">お問い合わせフォーム追加</dd-->
+                        </div>
                     </div>
 
-                    <ul class="tag">
-                        <li>Windows11</li><li>短編</li><li>マウス操作</li><li>ホラー</li>
-                    </ul>
-
-                    <ul class="level">
-                        <ul>
-                            <li>じっとり</li>
-                            <li>怖さ</li>
-                            <li>びっくり</li>
-                        </ul>
-                        <ul class="level_bar">
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li class="point"></li>
-                            <li></li>
-                        </ul>
-                    </ul>
-                    <ul class="dl">
-                        <li><a href="https://freegame-mugen.jp/adventure/game_13163.html" target="_blank" class="link_r">フリーゲーム夢現</a></li>
-                        <li><a href="https://img-papa.booth.pm/items/6409614" target="_blank" class="link_r">BOOTH</a></li>
-                    </ul>
-                </section>
-            </article>
-
-            <article style="background-image:url(img/games_k-alert.png);">
-                <section>
-
-                    <hgroup>
-                        <h3>K報</h3>
-                        <p>外から断続的な機械音がする。どうやら、マンションの警報機が壊れてしまったらしい。</p>
-                    </hgroup>
-
-                    <div class="data">
-                        <p class="time"><b>7</b>～<b>10</b>分</p>
-                        <p class="route">なし</p>
+                    <div>
+                        <dt>2025.02.09</dt>
+                        <dd class="new_game">『<a href="#game003">指示待ちゲーム</a>』公開</dd>
                     </div>
 
-                    <ul class="tag">
-                        <li>Windows11</li><li>短編</li><li>マウス操作</li><li>一人称視点</li><li>ストーリー</li><li>ホラー</li>
-                    </ul>
+                    <div>
+                        <dt>2024.12.21</dt>
+                        <dd class="new_game">『<a href="#game002">Focus on Fox's windows</a>』公開</dd>
+                    </div>
 
-                    <ul class="level">
-                        <ul>
-                            <li>じっとり</li>
-                            <li>怖さ</li>
-                            <li>びっくり</li>
-                        </ul>
-                        <ul class="level_bar">
-                            <li></li>
-                            <li class="point"></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
-                    </ul>
+                    <div>
+                        <dt>2024.11.27</dt>
+                        <dd class="new_site">実況ガイドライン作成</dd>
+                    </div>
 
-                    <ul class="dl">
-                        <li><a href="https://freegame-mugen.jp/adventure/game_13045.html" target="_blank" class="link_r">フリーゲーム夢現</a></li>
-                        <li><a href="https://img-papa.booth.pm/items/6272406" target="_blank" class="link_r">BOOTH</a></li>
-                    </ul>
+                    <div>
+                        <dt>2024.11.09</dt>
+                        <dd class="new_game">『<a href="#game001">K報</a>』公開
+                        </dd>
+                    </div>
 
-                    <p class="center">
-                        <a href="https://img-papa.github.io/games/alert/" target="_blank" class="link_sp">おまけページはこちら</a>
-                    </p>
-
-                </section>
+                </dl>
             </article>
-        </div>
+        </section>
 
-        <a href="#" class="link_t" style="margin:3em auto 5em;">ページトップへ戻る</a>
-    
-        <!--article>
-            <hgroup>
-                <h3>Information</h3>
-                <p>このサイトについて</p>
-            </hgroup>
-            <p>ゲーム作ってるよ 今のところ全部ホラー</p>
-        </article-->
+        <section>
+            <h2>GAMES</h2>
+
+            <p class="center"><a href="https://img-papa.github.io/games/guide.html" target="_blank" class="link_sp">実況の前にガイドラインをご確認ください</a></p>
+
+            <article>
+
+                <article class="search">
+                    <input type="text" id="searchTerm" placeholder="プレイしたいゲームのジャンル・長さなどを入力してください。">
+                    <!--button onclick="previousHighlight()">&lt;</!--button>
+                    <button onclick="nextHighlight()">&gt;</button>
+                    <button onclick="resetSearch()">×</button-->
+                </article>
+                <div class="search_p">Script by <a href="https://www.benricho.org/Tips/ctrl_F/highlight_inpage/" target="_blank">みんなの知識 ちょっと便利帳</a> 様</div>
+
+                <article id="games">
+
+                    <article id="game003">
+
+                        <div class="ss" style="background-image:url(img/tmb/games_rap.png);"></div>
+                        <section>
+
+                            <hgroup>
+                                <h3>指示待ちゲーム</h3>
+                            </hgroup>
+
+                            <div class="data">
+                                <p class="time"><b>1</b><h>分</h>～<b>2</b>分</p>
+                                <p class="route"><b>5</b>通り</p>
+                                <p class="os">Windows11</p>
+                            </div>
+
+                            <p class="memo">絶対に指示を守ってください。</p>
+
+                            <ul class="tag">
+                                <li>Windows11</li>
+                                <li>短編</li>
+                                <li>キーボード操作</li>
+                                <li>マウス操作</li>
+                                <li>ミニゲーム</li>
+                                <li>ホラー</li>
+                            </ul>
+
+                            <ul class="level">
+                                <ul>
+                                    <li>じっとり</li>
+                                    <li>怖さ</li>
+                                    <li>びっくり</li>
+                                </ul>
+                                <ul class="level_bar">
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li class="point"></li>
+                                </ul>
+                            </ul>
+                            <ul class="dl">
+                                <li><a href="https://img-papa.booth.pm/items/6576498" target="_blank" class="link_r">BOOTH</a></li>
+                            </ul>
+
+                        </section>
+                    </article>
+
+                    <article id="game002">
+
+                        <div class="ss" style="background-image:url(img/tmb/games_fofw.png);"></div>
+                        <section>
+                            <hgroup>
+                                <h3>Focus on Fox's windows</h3>
+                            </hgroup>
+
+                            <div class="data">
+                                <p class="time"><b>2</b><h>分</h>～<b>3</b>分</p>
+                                <p class="route">分岐なし</p>
+                                <p class="os">Windows11</p>
+                            </div>
+
+                            <p class="memo">“狐の窓”で怪異を探そう！</p>
+
+                            <ul class="tag">
+                                <li>Windows11</li>
+                                <li>短編</li>
+                                <li>マウス操作</li>
+                                <li>ホラー</li>
+                            </ul>
+
+                            <ul class="level">
+                                <ul>
+                                    <li>じっとり</li>
+                                    <li>怖さ</li>
+                                    <li>びっくり</li>
+                                </ul>
+                                <ul class="level_bar">
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li class="point"></li>
+                                    <li></li>
+                                </ul>
+                            </ul>
+                            <ul class="dl">
+                                <li><a href="https://freegame-mugen.jp/adventure/game_13163.html" target="_blank" class="link_r">フリーゲーム夢現</a></li>
+                                <li><a href="https://img-papa.booth.pm/items/6409614" target="_blank" class="link_r">BOOTH</a></li>
+                            </ul>
+                        </section>
+                    </article>
+
+                    <article id="game001">
+
+                        <div class="ss" style="background-image:url(img/tmb/games_k-alert.png);"></div>
+
+                        <section>
+
+                            <hgroup>
+                                <h3>K報</h3>
+                            </hgroup>
+
+                            <div class="data">
+                                <p class="time"><b>7</b><h>分</h>～<b>10</b>分</p>
+                                <p class="route">分岐なし</p>
+                                <p class="os">Windows11</p>
+                            </div>
+
+                            <p class="memo">外から断続的な機械音がする。どうやら、マンションの警報機が壊れてしまったらしい。</p>
+
+                            <ul class="tag">
+                                <li>Windows11</li>
+                                <li>短編</li>
+                                <li>マウス操作</li>
+                                <li>一人称視点</li>
+                                <li>ストーリー</li>
+                                <li>ホラー</li>
+                            </ul>
+
+                            <ul class="level">
+                                <ul>
+                                    <li>じっとり</li>
+                                    <li>怖さ</li>
+                                    <li>びっくり</li>
+                                </ul>
+                                <ul class="level_bar">
+                                    <li></li>
+                                    <li class="point"></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                            </ul>
+
+                            <ul class="dl">
+                                <li><a href="https://freegame-mugen.jp/adventure/game_13045.html" target="_blank" class="link_r">フリーゲーム夢現</a></li>
+                                <li><a href="https://img-papa.booth.pm/items/6272406" target="_blank" class="link_r">BOOTH</a></li>
+                            </ul>
+
+                            <p class="center">
+                                <a href="https://img-papa.github.io/games/alert/" target="_blank" class="link_sp" style="margin-bottom:0;">おまけページ（作中登場ブログ風）</a>
+                                <a href="https://img-papa.github.io/games/apr/2025.html" target="_blank" class="link_sp">2025年エイプリルフールページ</a>
+                            </p>
+
+                        </section>
+                    </article>
+
+                </article>
+            </article>
+        </section>
 
     </main>
 
     <footer>
+        <article class="flex_3">
+            
+            <!--article>
+                <a class="twitter-timeline" href="https://twitter.com/img_papa?ref_src=twsrc%5Etfw">Tweets by img_papa</a>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </article-->
+
+            <section>
+                <h3>サイトマップ</h3>
+                <ul>
+                    <li>トップページ
+                        <ul>
+                            <li><a href="https://img-papa.github.io/games/guide.html">総合ガイドライン</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        特設ページ
+                        <ul>
+                            <li><a href="https://img-papa.github.io/games/apr/2025.html">K報 2025年エイプリルフール</a></li>
+                            <li><a href="https://img-papa.github.io/games/alert/">K報 おまけページ</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>外部サイト</h3>
+                <ul>
+                    <li><a href="https://img-papa.booth.pm/" target="_blank">BOOTH</a></li>
+                    <li><a href="https://freegame-mugen.jp/cms/mt-cp.cgi?__mode=view&blog_id=1&id=10333" target="_blank">フリーゲーム夢現</a></li>
+                    <li><a href="https://x.com/img_papa" target="_blank">Twitter(X)</a></li>
+                    <li><a href="https://note.com/img_papa" target="_blank">note</a></li>
+                    <li><a href="https://www.youtube.com/@img_papa" target="_blank">YouTube</a></li>
+                    <li><a href="https://www.nicovideo.jp/user/138086854" target="_blank">ニコニコ動画</a></li>
+                    <li><a href="https://xfolio.jp/portfolio/img_papa" target="_blank">Xfolio</a></li>
+                </ul>
+            </section>
+
+        </article>
     </footer>
 
+    <!--
+
+        ここから下は以下のサイト様で配布されているスクリプトを利用させていただいております。
+
+        【みんなの知識 ちょっと便利帳】
+        ページ内検索を自サイトに設置する方法 - How to Implement In-Page Search on Your Web Page. ヒットしたテキストをハイライト表示・対象の文字へスクロール
+        https://www.benricho.org/Tips/ctrl_F/highlight_inpage/
 
 
+    -->
 
+    <script>
+        let highlights = [];            // ハイライトされた要素を格納する配列
+        let currentIndex = -1;          // 現在のハイライト位置を示すインデックス
+        let lastSearchTerm = '';        // 最後に検索された語句を保持する変数
+        let searchTimer = null;         // 入力変更後に検索を遅延させるためのタイマー
+        let isComposing = false;        // 入力中の状態を保持
+        let caseSensitive = false;      // 大文字小文字の区別フラグ（デフォルトは区別しない）
 
-<!--
-
-ここから下は以下のサイト様で配布されているスクリプトを利用させていただいております。
-
-【みんなの知識 ちょっと便利帳】
-https://www.benricho.org/Tips/ctrl_F/highlight_inpage/
-
-ページ内検索を自サイトに設置する方法 - How to Implement In-Page Search on Your Web Page. ヒットしたテキストをハイライト表示・対象の文字へスクロール
-
--->
-
-<script>
-    let highlights = [];            // ハイライトされた要素を格納する配列
-    let currentIndex = -1;          // 現在のハイライト位置を示すインデックス
-    let lastSearchTerm = '';        // 最後に検索された語句を保持する変数
-    let searchTimer = null;         // 入力変更後に検索を遅延させるためのタイマー
-    let isComposing = false;        // 入力中の状態を保持
-    let caseSensitive = false;      // 大文字小文字の区別フラグ（デフォルトは区別しない）
-
-    /**
-     * 特殊文字をエスケープする関数
-     * @param {string} string - エスケープする文字列
-     * @returns {string} - エスケープされた文字列
-     */
-    function escapeRegExp(string) {
-        return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    }
-
-    /**
-     * 検索を実行し、マッチしたテキストをハイライトする関数
-     * @param {string} searchTerm - 検索語
-     */
-    function search(searchTerm) {
-        if (!searchTerm || searchTerm === lastSearchTerm) return;
-
-        lastSearchTerm = searchTerm;
-        resetHighlights();
-
-        searchTerm = escapeRegExp(searchTerm);
-
-        const content = document.getElementById('games');
-        searchAndHighlight(content, searchTerm);
-
-        if (highlights.length > 0) {
-            currentIndex = 0;
-            scrollToHighlight(currentIndex);
+        /**
+         * 特殊文字をエスケープする関数
+         * @param {string} string - エスケープする文字列
+         * @returns {string} - エスケープされた文字列
+         */
+        function escapeRegExp(string) {
+            return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
         }
 
-        document.getElementById('searchTerm').focus();
-    }
+        /**
+         * 検索を実行し、マッチしたテキストをハイライトする関数
+         * @param {string} searchTerm - 検索語
+         */
+        function search(searchTerm) {
+            if (!searchTerm || searchTerm === lastSearchTerm) return;
 
-    /**
-     * テキストノード内で検索語を見つけてハイライトする関数
-     * @param {Node} element - 検索対象のノード
-     * @param {string} searchTerm - 検索語
-     */
-    function searchAndHighlight(element, searchTerm) {
-        if (element.nodeType === 3) { // テキストノード
-            const regex = new RegExp(searchTerm, caseSensitive ? 'g' : 'gi');
-            const matches = element.textContent.match(regex);
-            if (matches) {
-                const parent = element.parentNode;
-                const fragment = document.createDocumentFragment();
-                let lastIndex = 0;
-                matches.forEach(match => {
-                    const matchStart = element.textContent.indexOf(match, lastIndex);
-                    const matchEnd = matchStart + match.length;
+            lastSearchTerm = searchTerm;
+            resetHighlights();
 
-                    fragment.appendChild(document.createTextNode(element.textContent.slice(lastIndex, matchStart)));
+            searchTerm = escapeRegExp(searchTerm);
 
-                    const span = document.createElement('span');
-                    span.className = 'highlight';
-                    span.textContent = match;
-                    fragment.appendChild(span);
+            const content = document.getElementById('games');
+            searchAndHighlight(content, searchTerm);
 
-                    lastIndex = matchEnd;
-                    highlights.push(span);
-                });
-
-                fragment.appendChild(document.createTextNode(element.textContent.slice(lastIndex)));
-                parent.replaceChild(fragment, element);
+            if (highlights.length > 0) {
+                currentIndex = 0;
+                scrollToHighlight(currentIndex);
             }
-        } else {
-            Array.from(element.childNodes).forEach(child => searchAndHighlight(child, searchTerm));
-        }
-    }
 
-    /**
-     * 現在のハイライト要素にスクロールする関数
-     * @param {number} index - ハイライト要素のインデックス
-     */
-    function scrollToHighlight(index) {
-        if (highlights.length > 0) {
-            highlights.forEach(el => el.classList.remove('current'));
-            highlights[index].classList.add('current');
-            highlights[index].scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
-    }
-
-    /**
-     * 次のハイライトに移動する関数
-     */
-    function nextHighlight() {
-        if (highlights.length > 0) {
-            currentIndex = (currentIndex + 1) % highlights.length;
-            scrollToHighlight(currentIndex);
-        }
-    }
-
-    /**
-     * 前のハイライトに移動する関数
-     */
-    function previousHighlight() {
-        if (highlights.length > 0) {
-            currentIndex = (currentIndex - 1 + highlights.length) % highlights.length;
-            scrollToHighlight(currentIndex);
-        }
-    }
-
-    /**
-     * ハイライトをリセットする関数
-     */
-    function resetHighlights() {
-        highlights.forEach(el => {
-            el.outerHTML = el.innerHTML;
-        });
-        highlights = [];
-        currentIndex = -1;
-        lastSearchTerm = '';
-    }
-
-    /**
-     * 検索をリセットし、入力枠にスクロールする関数
-     */
-    function resetSearch() {
-        resetHighlights();
-        document.getElementById('searchTerm').value = '';
-        scrollToSearchInput();
-    }
-
-    /**
-     * 入力枠にスクロールする関数
-     */
-    function scrollToSearchInput() {
-        const searchInput = document.getElementById('searchTerm');
-        searchInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        searchInput.focus(); // 入力枠にフォーカスも合わせる
-    }
-
-    /**
-     * 検索の処理を実行する関数
-     */
-    function handleSearch() {
-        const searchTerm = document.getElementById('searchTerm').value;
-
-        // 検索語句が空の場合にリセットし、入力枠にスクロールする
-        if (searchTerm === '') {
-            resetSearch();
-            return;
+            document.getElementById('searchTerm').focus();
         }
 
-        if (searchTerm && searchTerm !== lastSearchTerm) {
-            search(searchTerm);
+        /**
+         * テキストノード内で検索語を見つけてハイライトする関数
+         * @param {Node} element - 検索対象のノード
+         * @param {string} searchTerm - 検索語
+         */
+        function searchAndHighlight(element, searchTerm) {
+            if (element.nodeType === 3) { // テキストノード
+                const regex = new RegExp(searchTerm, caseSensitive ? 'g' : 'gi');
+                const matches = element.textContent.match(regex);
+                if (matches) {
+                    const parent = element.parentNode;
+                    const fragment = document.createDocumentFragment();
+                    let lastIndex = 0;
+                    matches.forEach(match => {
+                        const matchStart = element.textContent.indexOf(match, lastIndex);
+                        const matchEnd = matchStart + match.length;
 
-            if (highlights.length === 0) {
-                scrollToSearchInput();
+                        fragment.appendChild(document.createTextNode(element.textContent.slice(lastIndex, matchStart)));
+
+                        const span = document.createElement('span');
+                        span.className = 'highlight';
+                        span.textContent = match;
+                        fragment.appendChild(span);
+
+                        lastIndex = matchEnd;
+                        highlights.push(span);
+                    });
+
+                    fragment.appendChild(document.createTextNode(element.textContent.slice(lastIndex)));
+                    parent.replaceChild(fragment, element);
+                }
+            } else {
+                Array.from(element.childNodes).forEach(child => searchAndHighlight(child, searchTerm));
             }
         }
-    }
 
-    document.getElementById('searchTerm').addEventListener('keydown', function(e) {
-        if (e.key === 'Enter') {
-            e.preventDefault();
-            const searchTerm = this.value;
-            if (searchTerm) {
-                if (currentIndex === -1) {
-                    handleSearch();
-                } else {
-                    nextHighlight();
+        /**
+         * 現在のハイライト要素にスクロールする関数
+         * @param {number} index - ハイライト要素のインデックス
+         */
+        function scrollToHighlight(index) {
+            if (highlights.length > 0) {
+                highlights.forEach(el => el.classList.remove('current'));
+                highlights[index].classList.add('current');
+                highlights[index].scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+
+        /**
+         * 次のハイライトに移動する関数
+         */
+        function nextHighlight() {
+            if (highlights.length > 0) {
+                currentIndex = (currentIndex + 1) % highlights.length;
+                scrollToHighlight(currentIndex);
+            }
+        }
+
+        /**
+         * 前のハイライトに移動する関数
+         */
+        function previousHighlight() {
+            if (highlights.length > 0) {
+                currentIndex = (currentIndex - 1 + highlights.length) % highlights.length;
+                scrollToHighlight(currentIndex);
+            }
+        }
+
+        /**
+         * ハイライトをリセットする関数
+         */
+        function resetHighlights() {
+            highlights.forEach(el => {
+                el.outerHTML = el.innerHTML;
+            });
+            highlights = [];
+            currentIndex = -1;
+            lastSearchTerm = '';
+        }
+
+        /**
+         * 検索をリセットし、入力枠にスクロールする関数
+         */
+        function resetSearch() {
+            resetHighlights();
+            document.getElementById('searchTerm').value = '';
+            scrollToSearchInput();
+        }
+
+        /**
+         * 入力枠にスクロールする関数
+         */
+        function scrollToSearchInput() {
+            const searchInput = document.getElementById('searchTerm');
+            searchInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            searchInput.focus(); // 入力枠にフォーカスも合わせる
+        }
+
+        /**
+         * 検索の処理を実行する関数
+         */
+        function handleSearch() {
+            const searchTerm = document.getElementById('searchTerm').value;
+
+            // 検索語句が空の場合にリセットし、入力枠にスクロールする
+            if (searchTerm === '') {
+                resetSearch();
+                return;
+            }
+
+            if (searchTerm && searchTerm !== lastSearchTerm) {
+                search(searchTerm);
+
+                if (highlights.length === 0) {
+                    scrollToSearchInput();
                 }
             }
         }
-    });
 
-    document.getElementById('searchTerm').addEventListener('input', function() {
-        if (searchTimer) clearTimeout(searchTimer);
-        if (!isComposing) {
-            searchTimer = setTimeout(handleSearch, 500);
+        document.getElementById('searchTerm').addEventListener('keydown', function (e) {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                const searchTerm = this.value;
+                if (searchTerm) {
+                    if (currentIndex === -1) {
+                        handleSearch();
+                    } else {
+                        nextHighlight();
+                    }
+                }
+            }
+        });
+
+        document.getElementById('searchTerm').addEventListener('input', function () {
+            if (searchTimer) clearTimeout(searchTimer);
+            if (!isComposing) {
+                searchTimer = setTimeout(handleSearch, 500);
+            }
+        });
+
+        document.getElementById('searchTerm').addEventListener('compositionstart', function () {
+            isComposing = true;
+        });
+
+        document.getElementById('searchTerm').addEventListener('compositionend', function () {
+            isComposing = false;
+            handleSearch();
+        });
+
+        document.querySelectorAll('input[name="caseOption"]').forEach(radio => {
+            radio.addEventListener('change', handleCaseOptionChange);
+        });
+
+        /**
+         * 大文字小文字の区別設定を変更する関数
+         */
+        function handleCaseOptionChange() {
+            caseSensitive = document.querySelector('input[name="caseOption"]:checked').value === 'sensitive';
+            search(document.getElementById('searchTerm').value);
         }
-    });
-
-    document.getElementById('searchTerm').addEventListener('compositionstart', function() {
-        isComposing = true;
-    });
-
-    document.getElementById('searchTerm').addEventListener('compositionend', function() {
-        isComposing = false;
-        handleSearch();
-    });
-
-    document.querySelectorAll('input[name="caseOption"]').forEach(radio => {
-        radio.addEventListener('change', handleCaseOptionChange);
-    });
-
-    /**
-     * 大文字小文字の区別設定を変更する関数
-     */
-    function handleCaseOptionChange() {
-        caseSensitive = document.querySelector('input[name="caseOption"]:checked').value === 'sensitive';
-        search(document.getElementById('searchTerm').value);
-    }
-</script>
+    </script>
 </body>
