@@ -83,8 +83,7 @@
         }
         #games .memo {
             margin: 15px 0;
-            font-size: 0.9em;
-            height: 4em;
+            font-size: 0.95em;
         }
         #games .center {
             margin: 10px 0 0;
@@ -155,6 +154,7 @@
             color: var(--c-accent);
             box-shadow: 2px 2px 3px #0009;
             background: #fff;
+            z-index: 5;
         }
         .current {
             padding-bottom: 0.4em;
@@ -162,6 +162,7 @@
             font-weight: 900;
             color: #fff;
             background: var(--c-accent);
+            z-index: 5;
         }
 
 
@@ -177,10 +178,6 @@
 
         /* タグ */
 
-        .tag {
-            overflow-y: auto;
-            height: 5.2em;
-        }
         .tag li {
             display: inline;
             font-size: 0.9em;
@@ -225,6 +222,7 @@
         .data b {
             margin: 0 0.2em;
             font-size: 1.2em;
+            letter-spacing: -0.05em;
             color: var(--c-font-b);
         }
 
@@ -255,7 +253,7 @@
             display: block;
             position: absolute;
             top: 2em;
-            left: 0;
+            left: -1.5em;
             margin: auto;
             padding: 0.5em 1em;
             color: var(--c-accent);
@@ -275,16 +273,19 @@
             transform: scale(1,1);
         }
         .time:hover::after {
-            content: "クリア（分岐ありの場合、第１エンド到達）\Aまでの時間の目安です。";
+            content: "クリア（分岐ありの場合、ノーマルエンド到達）\Aまでの時間の目安です。";
         }
         .route:hover::after {
-            content: "ルートまたはエンディング分岐の数です。\A「なし」の場合は、１つのエンディングのみ。\Aゲームオーバーは含まれません。\Aまた、差分は含まれていません。";
+            content: "ルート・エンディング分岐の数です。\A「なし」の場合は、１つのみ。\Aゲームオーバー・差分は含まれません。";
         }
 
 
         /* 難易度・怖さパラ */
 
         .level {
+            border: 15px solid #fff;
+            border-top-width: 13px;
+            border-bottom-width: 5px;
         }
         .level::after {
             display: block;
@@ -294,7 +295,9 @@
             top: -8px;
             height: 5px;
             margin: 0 20px;
+            border-radius: 5px;
             background: #eee;
+            /*border-bottom: 3px dashed #eee;*/
         }
         .level ul {
             display: flex;
@@ -303,7 +306,7 @@
             text-align: center;
         }
         .level li {
-            font-size: 0.9em;
+            font-size: 0.85em;
             color: var(--c-dk-gray);
         }
         .level li:nth-child(2) {
@@ -327,8 +330,8 @@
             background: var(--c-gray);
         }
         .level_bar .point {
-            width: 18px;
-            height: 18px;
+            width: 20px;
+            height: 20px;
             border-width: 4px;
             position: relative;
             top: 4px;
@@ -369,6 +372,18 @@
             #games > * {
                 flex-basis: 33%;
             }
+            #games .memo {
+                overflow-y: auto;
+                height: 4em;
+            }
+
+            .scroll {
+                height: 17.5em;
+            }
+            .tag {
+                overflow-y: auto;
+                height: 5.2em;
+            }
 
         }
 
@@ -381,12 +396,23 @@
                 font-size: 0.95em;
             }
 
+            header {
+                padding-left: 10em;
+                font-size: 0.95em;
+                background-position: -40px 0;
+            }
+
             main > * {
                 flex: 100%;
             }
             main > *:first-child {
                 order: 3;
             }
+
+            .scroll {
+                height: 10.6em;
+            }
+
         }
 
     </style>
@@ -440,7 +466,7 @@
 
         <section id="new" style="flex:2;">
             <h2>NEW</h2>
-            <article class="scroll" style="height:17.5em;">
+            <article class="scroll">
                 <dl class="flex_d">
                     <div>
                         <dt>2026.01.02</dt>
