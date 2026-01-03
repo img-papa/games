@@ -141,7 +141,6 @@ p {
 }
 .flex_d > * {
     display: flex;
-    flex-wrap: wrap;
     align-items: flex-start;
     align-content: flex-start;
     margin-bottom: 5px;
@@ -374,3 +373,13 @@ summary::before {
     padding: 0.5em 1em 0.8em;
 }
 
+
+/* スマートフォン */
+
+@media (max-width: 699px) {
+
+    ::-webkit-scrollbar {
+        width: 4px;
+    }
+
+}
