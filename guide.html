@@ -2,354 +2,454 @@
 <html lang="ja">
 <head>
 
-<title>イマジナリーパパス - 総合ガイドライン</title>
-<meta charset="utf-8">
+    <title>イマジナリーパパス - 総合ガイドライン</title>
+    <meta charset="utf-8">
 
-<meta name="description" content="『イマジナリーパパス』ゲームなど他諸々のガイドラインです。みてね" />
+    <meta name="description" content="『イマジナリーパパス』制作ゲームなど他諸々のガイドラインです。みてね" />
 
-<meta property="og:title" content="イマジナリーパパス" />
-<meta property="og:site_name" content="イマジナリーパパス" />
-<meta property="og:url" content="https://img-papa.github.io/games/guide.html" />
-<link rel="canonical" href="https://img-papa.github.io/games/guide.html" />
-<meta name="twitter:site" content="@img_papa" />
+    <meta property="og:title" content="イマジナリーパパス" />
+    <meta property="og:site_name" content="イマジナリーパパス" />
+    <meta property="og:url" content="https://img-papa.github.io/games/guide.html" />
+    <link rel="canonical" href="https://img-papa.github.io/games/guide.html" />
+    <meta name="twitter:site" content="@img_papa" />
 
-<meta property="og:image" content="img/myicon.png" />
-<link rel="icon" href="img/myicon.png" sizes="62x62" type="image/png" />
-<link rel="apple-touch-icon-precomposed" href="img/myicon.png" />
+    <meta property="og:image" content="img/myicon.png" />
+    <link rel="icon" href="img/myicon.png" sizes="62x62" type="image/png" />
+    <link rel="apple-touch-icon-precomposed" href="img/myicon.png" />
 
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<link rel="stylesheet" href="default.css">
-<link rel="stylesheet" href="common.css">
-<style>
+    <link rel="stylesheet" href="default.css">
+    <link rel="stylesheet" href="common.css">
+    <style>
 
-    body {
-        line-height: 1.4em;
-    }
-    
-    header {
-        padding: 4em 4% 0.5em;
-        font-weight: bold;
-        color: var(--c-dk-gray);
-        background: var(--c-lt-gray);
-    }
-    header h1 {
-        align-items: flex-start;
-        font-style: normal;
-        font-size: 2em;
-        font-weight: 700;
-        line-height: 1.5em;
-        letter-spacing: -0.01em;
-    }
-    header h1::before {
-        margin: 0 20px 0 0;
-    }
-    header h1::after {
-        content: "";
-        display: block;
-    }
-
-    header p {
-        display: block;
-        padding: 10px 15px;
-        text-align: right;
-    }
-    header > *,
-    footer > * {
-        margin: auto;
-        max-width: 780px;
-    }
-    main {
-        margin: 20px auto 4em;
-        max-width: 750px;
-    }
-    
-    footer {
-        margin-top: 1em;
-        padding: 2em 2em 5em;
-        color: #eee;
-        background: var(--c-dark);
-    }
-    footer section > p {
-        margin: 5px 20px;
-    }
-
-    h2 {
-        margin-top: 35px;
-    }
-
-    .toc ul {
-        list-style: none;
-        border-left: 5px solid var(--c-lt-gray);
-        margin-right: 0;
-    }
-    
-    .toc li {
-        position: relative;
-        left: -8px;
-        line-height: 1em;
-        margin: 0;
-        margin-bottom: 1em;
-    }
-    .toc a {
-        display: flex;
-        align-items: center;
-        text-decoration: none;
-        padding: 0 1.4em 0.7em;
-        border-bottom: 1px solid var(--c-gray);
-    }
-    .toc a::before,
-    .toc a::after {
-        z-index: 2;
-        display: inline-block;
-        content: "";
-        position: absolute;
-        top: 0;
-        bottom: 0;
-    }
-    .toc a::before {
-        left: -3px;
-        width: 12px;
-        height: 12px;
-        border: 3px solid var(--c-base);
-        box-shadow: 0 0 6px var(--c-base);
-        margin-right: 0.8em;
-        border-radius: 10em;
-        background: var(--c-main);
-    }
-    .toc ul > ul a::before {
-        left: -1px;
-        width: 9px;
-        height: 9px;
-        margin-right: 1em;
-        border-color: var(--c-main);
-        background: var(--c-base);
-    }
-    .toc a::after {
-        display: block;
-        width: 8px;
-        height: 8px;
-        position: absolute;
-        right: 15px;
-        transform: rotate(45deg);
-        border-right: 2px solid var(--c-gray);
-        border-bottom: 2px solid var(--c-gray);
-    }
-    .toc a:hover::after {
-        top: 2px;
-        border-color: var(--c-accent);
-    }
-
-    .scroll {
-    }
-    .scroll > *:first-child {
-        margin-top: 8px;
-    }
-    
-    .link {
-        display: flex;
-        justify-content: space-around;
-        border-top: 4px solid var(--c-lt-gray);
-        margin-top: 3em;
-        padding-top: 2em;
-    }
-    
-    /* pc */
-    @media (min-width: 599px) {
-
-        header p {
-        }
-
-    }
-    
-    /* smp */
-    @media (max-width: 600px) {
-        
         body {
-            font-size: 0.93em;
+            letter-spacing: 0.03em;
         }
-        header h1 {
-            font-size: 2em;
+
+        header {
+            padding: 4em 4% 0.5em;
+            font-weight: bold;
+            color: var(--c-dk-gray);
+            background: var(--c-lt-gray);
         }
-        
-        .toc ul > ul li::before {
-            left: 0.13em;
+
+            header h1 {
+                align-items: flex-start;
+                font-style: normal;
+                font-size: 2em;
+                font-weight: 700;
+                line-height: 1.4em;
+                letter-spacing: 0;
+                padding-left: 0.6em;
+                border-left: 8px solid var(--c-main);
+            }
+
+                header h1::before {
+                    display: none;
+                }
+
+                header h1::after {
+                    content: "";
+                    display: block;
+                }
+
+            header p {
+                display: block;
+                padding: 10px 15px;
+                text-align: right;
+            }
+
+            header > *,
+            footer > * {
+                margin: auto;
+                max-width: 780px;
+            }
+
+        main {
+            margin: 20px auto 4em;
+            max-width: 700px;
         }
-    
-</style>
+
+            main p {
+                line-height: 1.7em;
+            }
+
+        footer {
+            margin-top: 1em;
+            padding: 2em 2em 5em;
+            color: #eee;
+            background: var(--c-dark);
+        }
+
+            footer section > p {
+                margin: 0.5em 1em 0;
+            }
+
+        h2 {
+            margin-top: 35px;
+        }
+
+        h3 {
+            margin-top: 1.5em;
+            padding: 0.2em 0.8em 0.4em;
+        }
+
+        ul > li {
+            padding-left: 0.2em;
+        }
+
+        ol > li {
+            padding-left: 0.4em;
+        }
+
+        .toc ul {
+            list-style: none;
+            border-left: 5px solid var(--c-lt-gray);
+            margin-right: 0;
+        }
+
+        .toc li {
+            position: relative;
+            left: -8px;
+            line-height: 1em;
+            margin: 0;
+            margin-bottom: 1em;
+        }
+
+        .toc a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            padding: 0 1.4em 0.7em;
+            border-bottom: 1px solid var(--c-gray);
+        }
+
+            .toc a::before,
+            .toc a::after {
+                z-index: 2;
+                display: inline-block;
+                content: "";
+                position: absolute;
+                top: 0;
+                bottom: 0;
+            }
+
+            .toc a::before {
+                left: -3px;
+                width: 12px;
+                height: 12px;
+                border: 3px solid var(--c-base);
+                box-shadow: 0 0 6px var(--c-base);
+                margin-right: 0.8em;
+                border-radius: 10em;
+                background: var(--c-main);
+            }
+
+        .toc ul > ul a::before {
+            left: -1px;
+            width: 9px;
+            height: 9px;
+            margin-right: 1em;
+            border-color: var(--c-main);
+            background: var(--c-base);
+        }
+
+        .toc a::after {
+            display: block;
+            width: 8px;
+            height: 8px;
+            position: absolute;
+            right: 15px;
+            transform: rotate(45deg);
+            border-right: 2px solid var(--c-gray);
+            border-bottom: 2px solid var(--c-gray);
+        }
+
+        .toc a:hover::after {
+            top: 2px;
+            border-color: var(--c-accent);
+        }
+
+        .scroll h3 {
+            padding: 0 0.3em;
+            border: none;
+        }
+
+            .scroll > *:first-child {
+                margin-top: 8px;
+            }
+
+        .link {
+            display: flex;
+            justify-content: space-around;
+            border-top: 4px solid var(--c-lt-gray);
+            margin-top: 3em;
+            padding-top: 2em;
+        }
+
+        .hr_top {
+            margin-top: 1.3em;
+            padding: 0.7em;
+            border-top: 2px solid var(--c-border);
+        }
+
+        /* pc */
+        @media (min-width: 599px) {
+
+            header p {
+            }
+        }
+
+        /* smp */
+        @media (max-width: 600px) {
+
+            body {
+                font-size: 0.93em;
+            }
+
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            .toc ul > ul li::before {
+                left: 0.13em;
+            }
+    </style>
 </head>
 <body>
-    
-    
+
+
     <header>
         <hgroup>
             <h1>イマジナリーパパス<br>総合ゲームガイドライン</h1>
-            <p>最終更新 2026年1月2日</p>
+            <p>最終更新日 2026年3月26日</p>
         </hgroup>
     </header>
     <main>
-        
+
         <section>
             <h2>目次</h2>
-            <ul style="margin:1.8em 0 1.8em 2em;">
-                <li><a href="#note">前置き</a></li>
+
                 <ul>
-                    <li><a href="#note">複数のガイドラインがある場合</a></li>
-                    <li><a href="#note_name">ガイドライン内の記述について</a></li>
+
+                    <li>目次</li>
+                    <li><a href="#note">このページについて</a></li>
+                    <ul>
+                        <li><a href="#note_other">複数のガイドラインがある場合</a></li>
+                        <li><a href="#note_name">ガイドライン内の表記について</a></li>
+                    </ul>
+
+                    <li><a href="#common">共通事項</a></li>
+                    <ul>
+                        <li><a href="#ok_common">許可事項</a></li>
+                        <li><a href="#ng_common">禁止事項</a></li>
+                    </ul>
+
+                    <li><a href="#movie">配信・実況動画について</a></li>
+                    <ul>
+                        <li><a href="#ok_movie">許可事項</a></li>
+                        <li><a href="#ng_movie">禁止事項</a></li>
+                    </ul>
+
+                    <li><a href="#other">その他</a></li>
+                    <ul>
+                        <li><a href="#breach">違反時の対応について</a></li>
+                        <li><a href="#contact">連絡先</a></li>
+                    </ul>
+
+                    <li><a href="#right">コンテンツの権利について</a></li>
+                    <li><a href="#disclaimer">免責事項</a></li>
+
                 </ul>
-                <li><a href="#ng">禁止事項</a></li>
+
                 <ul>
-                    <li><a href="#ng">総合</a></li>
-                    <li><a href="#ng_movie">配信・実況動画</a></li>
-                    <!--li><a href="#ng_fanart">二次創作における禁止行為</a></li-->
+                    <li><a href="#news">更新履歴</a></li>
                 </ul>
-                <li><a href="#ok">可能なもの</a></li>
-                <ul>
-                    <li><a href="#ok_movie">配信・実況動画</a></li>
-                    <!--li><a href="#ok_fanart">二次創作活動</a></li-->
-                    <li><a href="#ok_other">その他</a></li>
-                </ul>
-                <li><a href="#other">その他</a></li>
-                <li><a href="#disclaimer">免責事項</a></li>
-                <ul>
-                    <li><a href="#d_contents">コンテンツについて</a></li>
-                    <li><a href="#d_guide">ガイドラインについて</a></li>
-                </ul>
-                
-                <li><a href="#news">更新履歴</a></li>
-            </ul>
+
         </section>
-        
+
         <section id="note">
-            <h2>前置き</h2>
-            <h3>複数のガイドラインがある場合</h3>
+
+            <h2>このページについて</h2>
+
+            <p>当ページは、タルパパパが管理するサークル「イマジナリーパパス」（旧名義「イマジナリーパパ」）制作の各コンテンツ（主にはゲーム）のガイドラインを掲載しています。</p>
+
+            <h3 id="note_other">複数のガイドラインがある場合</h3>
             <ul>
                 <li>
-                    ゲームの形態によっては、個別にガイドラインを設けているものがあります。実況などの際は必ず<strong>ゲームの紹介ページに掲載されているガイドラインを優先</strong>してください。
+                    作品によっては、個別にガイドラインを設けているものがあります。必ず<strong>作品の公開ページに掲載されているガイドラインを優先</strong>してください。
                 </li>
             </ul>
+
             <h3 id="note_name">ガイドライン内の表記について</h3>
             <ul>
                 <li>
-                    本ガイドラインでは、当方の著作物（ゲーム・動画・イラスト・音声・文章・Webページなど）を『<strong>本家コンテンツ</strong>』と総称します。
+                    本ガイドラインでは、当方の著作物全般（ゲーム・動画・画像・音声・文章・Webページ・プログラムまたはゲームファイルそのものなど）を『<strong>本家コンテンツ</strong>』と総称します。
                 </li>
                 <li>
-                    また、上記の本家コンテンツを題材とした、以下のような第三者の著作物を『<strong>非公式コンテンツ</strong>』と総称します。
+                    また、上記の本家コンテンツを題材とした、以下のような第三者の著作物を『<strong>二次コンテンツ</strong>』と総称します。
                     <ul>
-                        <li>本家コンテンツの実況・配信動画</li>
+                        <li>本家コンテンツの実況・配信・レビュー動画</li>
                         <li>ゲーム・動画・イラスト・音声・文章など、形態を問わない二次創作</li>
-                        <li>ブログ・wikiなどの感想または攻略記事</li>
+                        <li>ブログ・SNS等での感想・レビュー・攻略記事</li>
                     </ul>
                 </li>
                 <li class="note">
                     翻訳ミスやクローラーによる情報収集時のミスを防ぐため、禁止事項の項目のみ都度「～を禁じます」と冗長な記述をしています。読み辛い箇所があるかと思われますが、何卒ご容赦ください。
                 </li>
             </ul>
+
         </section>
-        
-        <section id="ng">
-            <h2>禁止事項</h2>
-            <h3>総合</h3>
+
+        <section id="common">
+
+            <h2>共通事項</h2>
+
+            <h3 id="ok_common">許可事項</h3>
             <ol>
-                <li>当サイト（https://img-papa.github.io/）内および本家コンテンツ内または公式SNSにて使用された画像・音源・文章・コードなど、またはゲームファイルそのものの再利用・配布等を行うことを禁じます。</li>
+                <li>
+                    ゲームのスクリーンショットの使用・加工（実況動画のサムネイルまたは紹介・レビュー・プレイ記録を目的としたブログ・SNSの記事内において、引用の範囲内で利用する場合に限る）
                     <ul>
-                        <li>例外として、実況動画内または実況動画用のサムネイル、レビュー記事等の引用等に限り、スクリーンショットの使用・加工が可能です。加工はモザイク処理を除き、元画像の原型を留めるようにしてください。</li>
+                        <li>加工はモザイク処理を除き、元画像の原型を留めるようにしてください。</li>
                     </ul>
-                <li>二次利用が許可されていない特定のキャラクターまたは実在の人物の写真・映像を用いた非公式コンテンツを作成することを禁じます。</li>
-                <li>実在の人物または団体・人種・性別・宗教・政治思想へ対する、誹謗中傷・差別的表現・批判、または過剰な支援（宣伝・勧誘など）を含む非公式コンテンツを作成することを禁じます。</li>
-                <li>自他へ危害を加える行為（他者への暴力・殺人・自傷・自殺など）を煽動する目的の非公式コンテンツを作成することを禁じます。</li>
-                <li>生成AIを用いた非公式コンテンツの作成、また本家コンテンツを生成AIのトレーニングに用いることを禁じます。</li>
-                <li>公式コンテンツであると誤認させるおそれのある内容で、非公式コンテンツを発表・宣伝・公開・販売することを禁じます。</li>
-                <li>許諾なく専用サイト（本家コンテンツ専門のブログ・wikiなど）を設け、攻略情報を掲載することを禁じます。</li>
+                </li>
+            </ol>
+
+            <h3 id="ng_common">禁止事項</h3>
+            <ol>
+                <li>各許可事項の範囲外で本家コンテンツの利用・配布等を行うことを禁じます。</li>
+                <li>
+                    他者の権利を侵害する形で二次コンテンツを作成することを禁じます。
+                    <ul>
+                        <li>許可を得ずに実在の人物の写真・映像・音声を利用した作品、二次利用が許可されていない非実在のキャラクターを用いている作品なども該当します。</li>
+                    </ul>
+                </li>
+                <li>実在の人物または団体・人種・性別・宗教・政治思想へ対する、誹謗中傷・差別的表現・批判、または宣伝・勧誘などの支援を含む二次コンテンツを作成することを禁じます。</li>
+                <li>自他に危害を加える行為（他者への暴力・殺人・自傷・自殺など）を促す目的の二次コンテンツを作成することを禁じます。</li>
+                <li>生成AIを用いた二次コンテンツの作成を禁じます。</li>
+                <li>本家コンテンツを生成AIのトレーニングに用いることを禁じます。</li>
+                <li>本家コンテンツであると誤認させるおそれのある内容で、二次コンテンツを発表・宣伝・公開・販売することを禁じます。</li>
+                <li>許諾なく専用サイト（本家コンテンツのみを取り扱ったブログ・wikiなど）を設け、攻略情報を掲載することを禁じます。</li>
                 <ul>
-                    <li>必ず事前にご連絡ください。また、個人の範囲内（個人ブログ・SNS内での言及）であれば問題ありません。</li>
+                    <li>必ず事前にご連絡ください。内容によっては許可できない場合がございます。</li>
+                    <li>個人の範囲内（個人ブログの一部・SNS上での言及）であれば問題ありません。</li>
                 </ul>
             </ol>
-            <h3 id="ng_movie">配信・実況動画</h3>
-            <ol>
-                <li>実況形式の音声または字幕を<strong>含まない</strong>、一部またはゲーム全編に渡る本家コンテンツ（イベント・スチル・BGMなど種類を問わず）の視聴のみを目的とした動画（閲覧用にストーリー箇所を繋げたものや、いわゆる「<a href="https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A1%E3%82%B9%E3%83%88%E6%98%A0%E7%94%BB" target="_blank">ファスト映画</a>」的な動画）の作成および投稿を禁じます。</li>
-                <li>本家コンテンツの一部または全体のストーリーを解説するのみの動画を作成および投稿することを禁じます。</li>
-            </ol>
-            <!--h3 id="ng_fanart">二次創作活動</h3>
-            <ol>
-                <li>本家コンテンツまたは他者が作成した著作物を許可なく利用した、非公式コンテンツの販売を禁じます。トレス作品・画像加工・生成AI等も不可です。</li>
-            </ol-->
-            
+
         </section>
-        <section id="ok">
-            
-            <h2>可能なもの</h2>
-            <h3 id="ok_movie">配信・実況動画</h3>
+
+        <section id="movie">
+            <h2>配信・実況動画について</h2>
+            <h3 id="ok_movie">許可事項</h3>
             <ol>
-                <li>音声または字幕などによる実況形式のプレイ動画・配信・記事
+                <li>
+                    音声または字幕などによる実況形式のプレイ動画・配信・記事
                     <ul>
-                        <li>視聴者側が任意で非表示にできる字幕（YouTube上の字幕など）のみの実況はお控えください。
+                        <li>
+                            視聴者側が任意で非表示にできる字幕（YouTube上の字幕など）のみの実況は不可とします。
+                        </li>
+                        <li>
+                            実況要素を含めた場合に限り、<strong>ゲーム全編に渡る動画化が可能</strong>です。
                         </li>
                     </ul>
                 </li>
-                <li>配信時のスーパーチャットによる収益化</li>
-                <li>同一の動画または配信内で他作者様の作品のゲームをプレイすること
+                <li>
+                    同一の動画または配信内で他サークル様・作者様の作品のゲームをプレイすること
                     <ul>
-                        <li>当方と先方の実況ガイドラインに相違がある場合は、先方のガイドラインを優先してください。
+                        <li>
+                            当方と先方の実況ガイドラインに相違がある場合は、先方のガイドラインを優先してください。
                         </li>
                     </ul>
                 </li>
-                <li>ゲーム全編に渡る動画化（実況を含めた場合に限る）
-                </li>
+                <li>プラットフォーム上での広告・配信時の投げ銭機能などによる収益化</li>
             </ol>
-            <!--h3 id="ok_fanart">二次創作活動</h3>
+
+            <h3 id="ng_movie">禁止事項</h3>
             <ol>
-                <li>生成AIを<strong>除く</strong>、ご自身で制作された二次創作・同人作品およびグッズの公開・販売</li>
-                <li>本編のネタバレを含む作品の公開・販売</li>
-                <li>性的またはグロテスクな要素を含む作品（<strong>必ず内容に即した注意喚起を行ってください</strong>）</li>
-                <li>イベント会場など、許可された特定の敷地内でのコスプレおよび撮影</li>
-            </ol-->
-            <h3 id="ok_other">その他</h3>
-            <ol>
-                <li>レビュー動画・記事（もちろん批判的なレビューであっても可能です）</li>
-                <li>上記活動に伴うスクリーンショットの掲載</li>
+                <li>実況形式の音声または字幕を<strong>含まない</strong>、一部または全編に渡る本家コンテンツ（イベント・スチル・BGMなど種類を問わず）の視聴のみを目的とした動画（閲覧用にストーリー箇所を繋げた、いわゆる「<a href="https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A1%E3%82%B9%E3%83%88%E6%98%A0%E7%94%BB" target="_blank">ファスト映画</a>」のようなものも含む）の投稿を禁じます。</li>
+                <li>本家コンテンツの一部または全体のストーリーを解説するのみの動画の投稿することを禁じます。</li>
             </ol>
-            
+            <!--<p><a href="https://www.youtube.com/@img_papa">こちらのYouTubeアカウント</a>は公式チャンネルです。</p>-->
+
         </section>
-            
-        <section>
-            
-            <h2 id="other">その他</h2>
-            <h3>ご連絡</h3>
+
+
+        <section id="other">
+
+            <h2>その他</h2>
+
+            <h3 id="breach">違反時の対応について</h3>
+            <ol>
+                <li>上記のガイドライン違反が確認された場合、投稿内容の訂正や削除を勧告することがあります。</li>
+                <li>勧告後の改善が見られない場合、また勧告の有無にかかわらず違反内容が悪質な場合は、掲載サイト内での通報、または法的措置を行う場合があります。</li>
+            </ol>
+
+            <h3 id="contact">連絡先</h3>
             <ul>
                 <li>
                     各SNSのダイレクトメッセージ、またはこちらの<a href="https://docs.google.com/forms/d/e/1FAIpQLSdyKIPpo_jQnk5_Qb7rSG-eZxV2qOj1m-wHg5oEWlP97MnpLg/viewform?usp=dialog" target="_blank">Googleフォーム</a>からご連絡ください。
                 </li>
                 <li>
-                    違反をしている方を見つけた場合、直接の指摘は控え、当方にご連絡ください。ただし、<strong>ご自身で制作した著作物を無断で利用されていた場合などは例外</strong>です。この場合、当方に協力できることがあればご連絡ください。
+                    トラブルを避けるため、ガイドライン違反をしている方を見つけた場合は直接の指摘は控え、当方にご連絡ください。ただし、<strong>ご自身で制作した著作物を無断で利用されていた場合などは例外</strong>です。この場合、当方に協力できることがあればご連絡ください。
                 </li>
             </ul>
-            
+
         </section>
+
+        <section id="right">
+
+            <h2>コンテンツの権利について</h2>
+            <ul>
+                <li>本家コンテンツに関する一切の権利は、当方に帰属します。</li>
+                <li>本家コンテンツは本ガイドラインに基づき許可された範囲でのみ、取り扱いが可能です。ただし各種許可事項はこれらの権利を放棄・譲渡するものではないことをご留意ください。</li>
+            </ul>
+
+        </section>
+
         <section id="disclaimer">
-            
+
             <h2>免責事項</h2>
-            <h3 id="d_contents">コンテンツについて</h3>
-            <ol>
-                <li>本家コンテンツおよび非公式コンテンツを閲覧・プレイした際に生じたあらゆる損害に関し、当方は一切の責任を負いません。特にゲームの場合、対応OS以外でプレイした場合、何らかの不具合が生じる可能性が高いです。必ず指定のOSでプレイしてください。</li>
-            </ol>
-            <h3 id="d_guide">ガイドラインについて</h3>
-            <ol>
-                <li>本ガイドラインは予告なく加筆・修正・変更を行う場合がございます。</li>
-                <li>本ガイドラインに記述がない場合も、当方が問題のある行為であると判断した場合、個別にご連絡させていただく場合がございます。</li>
-            </ol>
-            
+
+            <ul>
+                <li>
+                    本家コンテンツおよび二次コンテンツを閲覧・プレイした際に生じたあらゆる損害に関し、当方は一切の責任を負いません。
+                    <ul>
+                        <li>特にゲームを対応OS以外でプレイした場合、何らかの不具合が生じる可能性が高いです。必ず指定されたOSでプレイしてください。</li>
+                    </ul>
+                </li>
+                <li>本ガイドラインは予告なく改正を行う場合がございます。</li>
+                <li>当方が問題のある行為であると判断した場合、本ガイドラインに違反との記載がない場合であっても、上記の違反時の対応を行う可能性がございます。</li>
+            </ul>
+
         </section>
-        
+
         <section id="news">
             <h2>更新履歴</h2>
-            <article class="scroll" style="height:30vh;">
+            <article class="scroll" style="height:50vh;">
+                <!--
+            項目［注意事項］＞［ホラー作品のサムネイルについて］を新設（ゲーム個別ページに記載していたものです）
+            -->
+
+                <h3>2026.03.26</h3>
+                <ul>
+                    <li>全体的な項目の順序を整理</li>
+                    <li>名称を変更［前置き］→［このページについて］、［可能なこと］→［許可事項］</li>
+                    <li>再度名称を調整『非公式コンテンツ』→『二次コンテンツ』</li>
+                    <li>［ガイドライン内の表記について］＞『二次コンテンツ』解説からwikiの記述を削除</li>
+                    <li>項目［共通事項］、［違反時の対応］を新設</li>
+                    <li>項目［禁止事項］＞「スクリーンショットの利用・加工」の項目を新設の［共通事項］＞［許可事項］に移動</li>
+                    <li>項目［このページについて］＞［コンテンツの権利について］の項目を独立</li>
+                    <li>項目［その他］＞レビュー動画・記事に関する項目を別項目に統合</li>
+                    <li>一部テキストの修正（<strong>※1</strong>）</li>
+                    <li>デザインの調整</li>
+                </ul>
+
                 <h3>2026.03.22</h3>
                 <ul>
-                    <li>項目の加筆［禁止事項］＞［
-総合］＞1.「加工はモザイク処理を除き、元画像の原型を留めるようにしてください。」</li>
-                    <li>ガイドライン全体の表記を統一（『非公式関連作品』『関連作品』→『非公式コンテンツ』）</li>
+                    <li>項目の加筆［禁止事項］＞［総合］＞1. 加工はモザイク処理を除き、元画像の原型を留めるようにしてください。</li>
+                    <li>ガイドライン全体の表記を統一『非公式関連作品』、『関連作品』→『非公式コンテンツ』</li>
                 </ul>
                 <h3>2026.01.02</h3>
                 <ul>
@@ -358,25 +458,25 @@
                 </ul>
                 <h3>2025.05.03</h3>
                 <ul>
-                    <li>一部デザインを変更</li>
+                    <li>デザインの調整</li>
                 </ul>
                 <h3>2025.02.22</h3>
                 <ul>
-                    <li>項目の修正［禁止事項］＞［総合］＞ 1.各種SNSにて公開しているコンテンツを含める</li>
+                    <li>項目の修正［禁止事項］＞［総合］＞ 1. 各種SNSにて公開しているコンテンツを含める</li>
                 </ul>
                 <h3>2025.02.07</h3>
                 <ul>
                     <li>項目の修正［禁止事項］＞［配信・実況動画］＞ 2.「実況形式の音声または字幕を含まない」の記述を撤廃</li>
-                    <li>テキストを一部修正（内容の変更はありません）</li>
+                    <li>一部テキストの修正（<strong>※1</strong>）</li>
                 </ul>
                 <h3>2025.02.06</h3>
                 <ul>
                     <li>項目の追記［前置き］＞［複数のガイドラインがある場合］</li>
-                    <li>テキストを一部修正（内容の変更はありません）</li>
+                    <li>一部テキストの修正（<strong>※1</strong>）</li>
                 </ul>
                 <h3>2025.01.31</h3>
                 <ul>
-                    <li>テキストを一部修正（内容の変更はありません）</li>
+                    <li>一部テキストの修正（<strong>※1</strong>）</li>
                     <li>デザインを一部変更</li>
                 </ul>
                 <h3>2025.01.24</h3>
@@ -391,7 +491,7 @@
                     <li>項目の追記［禁止事項］＞［総合］＞ 1. レビュー記事内での画像使用の許可</li>
                     <li>項目の追記［禁止事項］＞［総合］＞ 7. 専用サイトを設けての攻略情報の掲載を禁止</li>
                     <li>項目の追記［可能なもの］＞［配信・実況動画］＞     1. 字幕についての詳細、4. ゲーム全編の動画化</li>
-                    <li>読みやすいように一部文章を編集（内容の変更はありません）</li>
+                    <li>一部テキストの修正（<strong>※1</strong>）</li>
                     <li>デザインを一部変更</li>
                 </ul>
                 <h3>2024.12.22</h3>
@@ -416,29 +516,38 @@
                     <li>ガイドライン作成</li>
                 </ul>
             </article>
+            <p class="hr_top">
+                <strong>※1</strong>「一部テキストの修正」はニュアンスや可読性の改善のみに留めたものです。規約内容そのものの変更は行っておりません。
+            </p>
+
         </section>
-        
+
         <section class="link">
             <a href="https://img-papa.github.io/games/" class="link_l">サイトトップ</a>
             <a href="#" class="link_t">ページトップ</a>
         </section>
-        
+
     </main>
     <footer>
         <article>
-            
+
             <section>
                 <h2>ページ情報</h2>
                 <p>イマジナリーパパス - フリーゲーム総合ガイドライン</p>
-                <p>https://img-papa.github.io/games/guide.html</p>
+                <p>ＵＲＬ　https://img-papa.github.io/games/guide.html</p>
                 <p>作成日　2024年11月27日</p>
+                <p>連絡先　イマジナリーパパス 各SNS / <a href="https://docs.google.com/forms/d/e/1FAIpQLSdyKIPpo_jQnk5_Qb7rSG-eZxV2qOj1m-wHg5oEWlP97MnpLg/viewform?usp=dialog" target="_blank">Googleフォーム</a></p>
             </section>
-            
+
+            <p>© 2024 Imaginary Papas / Tulpapapa</p>
+
         </article>
     </footer>
-    
-    
+
+
 </body>
 </html>
 
-​
+
+
+
