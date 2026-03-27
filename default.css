@@ -29,13 +29,16 @@ ul ul, ul ol,
 ol ol, ol ul {
     margin: 0.2em 0 0.2em 0.5em;
 }
+ul ul, ul ol {
+    margin-left: 0.3em;
+}
 
 li {
     padding: 3px 0;
     line-height: 1.8em;
 }
 ul > li {
-    padding-left: 0;
+    padding-left: 0.2em;
 }
 ol > li {
     padding-left: 0.4em;
