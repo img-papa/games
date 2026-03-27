@@ -29,7 +29,8 @@
         }
 
         header {
-            padding: 4em 4% 0.5em;
+            margin-bottom: 0.5em;
+            padding: 4em 0.2em 0.5em 5%;
             font-weight: bold;
             color: var(--c-dk-gray);
             background: var(--c-lt-gray);
@@ -40,21 +41,20 @@
                 font-style: normal;
                 font-size: 2em;
                 font-weight: 700;
-                line-height: 1.4em;
-                letter-spacing: 0;
-                padding-left: 0.6em;
-                border-left: 8px solid var(--c-main);
+                line-height: 1.5em;
+                letter-spacing: -0.01em;
             }
 
                 header h1::before {
-                    display: none;
+                    margin: 0 0.7em 0 0.3em;
+                    width: 3em;
+                    height: 3em;
                 }
 
                 header h1::after {
                     content: "";
                     display: block;
                 }
-
             header p {
                 display: block;
                 padding: 10px 15px;
@@ -68,11 +68,17 @@
             }
 
         main {
-            margin: 20px auto 4em;
-            max-width: 700px;
+            margin: 0 auto 4em;
         }
 
+            main section,
+            .toc {
+                max-width: 700px;
+                margin: auto;
+            }
+
             main p {
+                margin: 1em;
                 line-height: 1.7em;
             }
 
@@ -88,7 +94,8 @@
             }
 
         h2 {
-            margin-top: 35px;
+            margin-top: 0;
+            padding-top: 1em;
         }
 
         h3 {
@@ -96,97 +103,97 @@
             padding: 0.2em 0.8em 0.4em;
         }
 
-        ul > li {
-            padding-left: 0.2em;
-        }
-
-        ol > li {
-            padding-left: 0.4em;
-        }
-
-        .toc ul {
-            list-style: none;
-            border-left: 5px solid var(--c-lt-gray);
-            margin-right: 0;
-        }
-
-        .toc li {
+        .toc {
+            margin: 0 0 1em;
             position: relative;
-            left: -8px;
-            line-height: 1em;
-            margin: 0;
-            margin-bottom: 1em;
+            left: -10px;
         }
+            .toc li {
+                list-style: none;
+                position: relative;
+                margin: 0;
+                line-height: 1.3em;
+            }
 
-        .toc a {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            padding: 0 1.4em 0.7em;
-            border-bottom: 1px solid var(--c-gray);
-        }
+            .toc a {
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                padding: 0.8em 2em 0.8em 1.5em;
+                border-bottom: 2px solid var(--c-border);
+            }
 
             .toc a::before,
-            .toc a::after {
+            .toc a::after,
+            .toc ul li a::before {
                 z-index: 2;
                 display: inline-block;
                 content: "";
-                position: absolute;
+                position: relative;
                 top: 0;
                 bottom: 0;
+                margin: auto 0;
             }
 
-            .toc a::before {
-                left: -3px;
-                width: 12px;
-                height: 12px;
-                border: 3px solid var(--c-base);
-                box-shadow: 0 0 6px var(--c-base);
-                margin-right: 0.8em;
-                border-radius: 10em;
-                background: var(--c-main);
+            .toc a::after {
+                display: block;
+                width: 8px;
+                height: 8px;
+                position: absolute;
+                top: -10px;
+                right: 15px;
+                transform: rotate(45deg);
+                border-right: 2px solid var(--c-gray);
+                border-bottom: 2px solid var(--c-gray);
             }
 
-        .toc ul > ul a::before {
-            left: -1px;
-            width: 9px;
-            height: 9px;
-            margin-right: 1em;
-            border-color: var(--c-main);
-            background: var(--c-base);
-        }
+            .toc a:hover {
+                border-color: var(--c-accent);
+            }
 
-        .toc a::after {
-            display: block;
-            width: 8px;
-            height: 8px;
-            position: absolute;
-            right: 15px;
-            transform: rotate(45deg);
-            border-right: 2px solid var(--c-gray);
-            border-bottom: 2px solid var(--c-gray);
-        }
+            .toc a:hover::after {
+                top: -5px;
+                border-color: var(--c-accent);
+            }
 
-        .toc a:hover::after {
-            top: 2px;
-            border-color: var(--c-accent);
+
+            .toc ul li a::before,
+            .toc > li a::before {
+                left: -0.7em;
+                color: var(--c-main);
+                font-weight: 900;
+            }
+
+            .toc > li a::before {
+                content: "＋";
+            }
+
+        .toc ul {
+            margin: 0;
+            padding: 0;
         }
+        .toc ul li a {
+            padding-left: 3.2em;
+        }
+            .toc ul li a::before {
+                content: "－";
+            }
 
         .scroll h3 {
             padding: 0 0.3em;
             border: none;
         }
-
-            .scroll > *:first-child {
-                margin-top: 8px;
-            }
+        .scroll > *:first-child {
+            margin-top: 8px;
+        }
+        .scroll li {
+        }
 
         .link {
             display: flex;
             justify-content: space-around;
-            border-top: 4px solid var(--c-lt-gray);
-            margin-top: 3em;
-            padding-top: 2em;
+            border-top: 4px solid var(--c-lt-gra);
+            margin: 3em 1em;
         }
 
         .hr_top {
@@ -196,26 +203,70 @@
         }
 
         /* pc */
-        @media (min-width: 599px) {
+        @media (min-width: 849px) {
 
-            header p {
+            header,
+            footer {
+                padding-left: 25%;
             }
+            hgroup {
+                max-width: 100%;
+            }
+
+            main {
+                margin: auto;
+            }
+            
+            main > section {
+                max-width: 75%;
+                margin: auto auto auto 25%;
+            }
+
+            .toc {
+                padding: 0;
+                left: 0;
+                font-size: 0.9em;
+            }
+
+                .toc ul li a {
+                    padding-left: 12%;
+                }
+
+            .fix {
+                display: block;
+                width: 21%;
+                height: 100vh;
+                position: fixed;
+                top: 0;
+                left: 0;
+                margin: 0 0 0 auto;
+                overflow-y: scroll;
+                background: var(--c-base);
+            }
+
+            .smp {
+                display: none;
+            }
+
         }
 
         /* smp */
-        @media (max-width: 600px) {
+        @media (max-width: 850px) {
 
             body {
-                font-size: 0.93em;
+                font-size: 0.92em;
             }
 
             header h1 {
                 font-size: 1.8em;
             }
 
-            .toc ul > ul li::before {
-                left: 0.13em;
+            .toc {
+                font-size: 1.1em;
             }
+
+        }
+
     </style>
 </head>
 <body>
@@ -228,53 +279,48 @@
         </hgroup>
     </header>
     <main>
+            
+        <section class="fix">
 
-        <section>
-            <h2>目次</h2>
+            <h2 class="smp">目次</h2>
+            <ul class="toc">
 
+                <li><a href="#note">このページについて</a></li>
                 <ul>
-
-                    <li>目次</li>
-                    <li><a href="#note">このページについて</a></li>
-                    <ul>
-                        <li><a href="#note_other">複数のガイドラインがある場合</a></li>
-                        <li><a href="#note_name">ガイドライン内の表記について</a></li>
-                    </ul>
-
-                    <li><a href="#common">共通事項</a></li>
-                    <ul>
-                        <li><a href="#ok_common">許可事項</a></li>
-                        <li><a href="#ng_common">禁止事項</a></li>
-                    </ul>
-
-                    <li><a href="#movie">配信・実況動画について</a></li>
-                    <ul>
-                        <li><a href="#ok_movie">許可事項</a></li>
-                        <li><a href="#ng_movie">禁止事項</a></li>
-                    </ul>
-
-                    <li><a href="#other">その他</a></li>
-                    <ul>
-                        <li><a href="#breach">違反時の対応について</a></li>
-                        <li><a href="#contact">連絡先</a></li>
-                    </ul>
-
-                    <li><a href="#right">コンテンツの権利について</a></li>
-                    <li><a href="#disclaimer">免責事項</a></li>
-
+                    <li><a href="#note_other">複数のガイドラインがある場合</a></li>
+                    <li><a href="#note_name">ガイドライン内の記述について</a></li>
                 </ul>
 
+                <li><a href="#common">共通事項</a></li>
                 <ul>
-                    <li><a href="#news">更新履歴</a></li>
+                    <li><a href="#ok_common">許可事項</a></li>
+                    <li><a href="#ng_common">禁止事項</a></li>
                 </ul>
 
+                <li><a href="#movie">配信・実況動画について</a></li>
+                <ul>
+                    <li><a href="#ok_movie">許可事項</a></li>
+                    <li><a href="#ng_movie">禁止事項</a></li>
+                </ul>
+
+                <li><a href="#other">その他</a></li>
+                <ul>
+                    <li><a href="#breach">違反時の対応について</a></li>
+                    <li><a href="#contact">連絡先</a></li>
+                </ul>
+
+                <li><a href="#right">コンテンツの権利について</a></li>
+                <li><a href="#disclaimer">免責事項</a></li>
+
+                <li><a href="#news">更新履歴</a></li>
+            </ul>
         </section>
 
         <section id="note">
 
             <h2>このページについて</h2>
 
-            <p>当ページは、タルパパパが管理するサークル「イマジナリーパパス」（旧名義「イマジナリーパパ」）制作の各コンテンツ（主にはゲーム）のガイドラインを掲載しています。</p>
+            <p>当ページでは、タルパパパが管理する個人サークル「イマジナリーパパス」（旧名義「イマジナリーパパ」）制作の各コンテンツのガイドラインを公開しています。</p>
 
             <h3 id="note_other">複数のガイドラインがある場合</h3>
             <ul>
@@ -283,7 +329,7 @@
                 </li>
             </ul>
 
-            <h3 id="note_name">ガイドライン内の表記について</h3>
+            <h3 id="note_name">ガイドライン内の記述について</h3>
             <ul>
                 <li>
                     本ガイドラインでは、当方の著作物全般（ゲーム・動画・画像・音声・文章・Webページ・プログラムまたはゲームファイルそのものなど）を『<strong>本家コンテンツ</strong>』と総称します。
@@ -310,9 +356,10 @@
             <h3 id="ok_common">許可事項</h3>
             <ol>
                 <li>
-                    ゲームのスクリーンショットの使用・加工（実況動画のサムネイルまたは紹介・レビュー・プレイ記録を目的としたブログ・SNSの記事内において、引用の範囲内で利用する場合に限る）
+                    ゲームのスクリーンショットの使用・軽微な加工
                     <ul>
-                        <li>加工はモザイク処理を除き、元画像の原型を留めるようにしてください。</li>
+                        <li>実況動画のサムネイル、または紹介・レビュー・プレイ記録を目的としたブログ・SNSの記事内において、引用の範囲内で利用する場合に限ります。</li>
+                        <li>加工はモザイク・ぼかしなどの隠蔽処理を除き、元画像の原型を留めるようにしてください。</li>
                     </ul>
                 </li>
             </ol>
@@ -323,7 +370,8 @@
                 <li>
                     他者の権利を侵害する形で二次コンテンツを作成することを禁じます。
                     <ul>
-                        <li>許可を得ずに実在の人物の写真・映像・音声を利用した作品、二次利用が許可されていない非実在のキャラクターを用いている作品なども該当します。</li>
+                        <li>該当する例として、許可を得ていない実在の人物の写真・映像・音声を利用した作品、二次利用が許可されていない非実在のキャラクターを用いた作品などがあります。</li>
+                        <li>ただし上記のケースは一例であり、違反はこれらに限りません。</li>
                     </ul>
                 </li>
                 <li>実在の人物または団体・人種・性別・宗教・政治思想へ対する、誹謗中傷・差別的表現・批判、または宣伝・勧誘などの支援を含む二次コンテンツを作成することを禁じます。</li>
@@ -348,7 +396,7 @@
                     音声または字幕などによる実況形式のプレイ動画・配信・記事
                     <ul>
                         <li>
-                            視聴者側が任意で非表示にできる字幕（YouTube上の字幕など）のみの実況は不可とします。
+                            YouTube上の字幕など、視聴者側が任意で非表示にできる字幕のみの実況は不可とします。
                         </li>
                         <li>
                             実況要素を含めた場合に限り、<strong>ゲーム全編に渡る動画化が可能</strong>です。
@@ -368,7 +416,7 @@
 
             <h3 id="ng_movie">禁止事項</h3>
             <ol>
-                <li>実況形式の音声または字幕を<strong>含まない</strong>、一部または全編に渡る本家コンテンツ（イベント・スチル・BGMなど種類を問わず）の視聴のみを目的とした動画（閲覧用にストーリー箇所を繋げた、いわゆる「<a href="https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A1%E3%82%B9%E3%83%88%E6%98%A0%E7%94%BB" target="_blank">ファスト映画</a>」のようなものも含む）の投稿を禁じます。</li>
+                <li>実況形式の音声または字幕を<strong>含まない</strong>、一部または全編に渡る本家コンテンツの視聴のみを目的とした動画（閲覧用にストーリー箇所を繋げた、いわゆる「<a href="https://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A1%E3%82%B9%E3%83%88%E6%98%A0%E7%94%BB" target="_blank">ファスト映画</a>」のようなものも含む）の投稿を禁じます。</li>
                 <li>本家コンテンツの一部または全体のストーリーを解説するのみの動画の投稿することを禁じます。</li>
             </ol>
             <!--<p><a href="https://www.youtube.com/@img_papa">こちらのYouTubeアカウント</a>は公式チャンネルです。</p>-->
@@ -384,15 +432,15 @@
             <ol>
                 <li>上記のガイドライン違反が確認された場合、投稿内容の訂正や削除を勧告することがあります。</li>
                 <li>勧告後の改善が見られない場合、また勧告の有無にかかわらず違反内容が悪質な場合は、掲載サイト内での通報、または法的措置を行う場合があります。</li>
+                <li>
+                    トラブルを避けるため、ガイドライン違反をしている方を見つけた場合は直接の指摘は控え、当方にご連絡ください。ただし、<strong>ご自身で制作した著作物を無断で利用されていた場合などは例外</strong>です。この場合、当方に協力できることがあればご連絡ください。
+                </li>
             </ol>
 
             <h3 id="contact">連絡先</h3>
             <ul>
                 <li>
                     各SNSのダイレクトメッセージ、またはこちらの<a href="https://docs.google.com/forms/d/e/1FAIpQLSdyKIPpo_jQnk5_Qb7rSG-eZxV2qOj1m-wHg5oEWlP97MnpLg/viewform?usp=dialog" target="_blank">Googleフォーム</a>からご連絡ください。
-                </li>
-                <li>
-                    トラブルを避けるため、ガイドライン違反をしている方を見つけた場合は直接の指摘は控え、当方にご連絡ください。ただし、<strong>ご自身で制作した著作物を無断で利用されていた場合などは例外</strong>です。この場合、当方に協力できることがあればご連絡ください。
                 </li>
             </ul>
 
@@ -428,16 +476,19 @@
         <section id="news">
             <h2>更新履歴</h2>
             <article class="scroll" style="height:50vh;">
-                <!--
-            項目［注意事項］＞［ホラー作品のサムネイルについて］を新設（ゲーム個別ページに記載していたものです）
-            -->
+
+                <h3>2026.03.27</h3>
+                <ul>
+                    <li>一部テキストの修正（<strong>※1</strong>）</li>
+                    <li>デザインの調整</li>
+                </ul>
 
                 <h3>2026.03.26</h3>
                 <ul>
                     <li>全体的な項目の順序を整理</li>
                     <li>名称を変更［前置き］→［このページについて］、［可能なこと］→［許可事項］</li>
                     <li>再度名称を調整『非公式コンテンツ』→『二次コンテンツ』</li>
-                    <li>［ガイドライン内の表記について］＞『二次コンテンツ』解説からwikiの記述を削除</li>
+                    <li>［ガイドライン内の記述について］＞『二次コンテンツ』解説からwikiの記述を削除</li>
                     <li>項目［共通事項］、［違反時の対応］を新設</li>
                     <li>項目［禁止事項］＞「スクリーンショットの利用・加工」の項目を新設の［共通事項］＞［許可事項］に移動</li>
                     <li>項目［このページについて］＞［コンテンツの権利について］の項目を独立</li>
@@ -516,15 +567,18 @@
                     <li>ガイドライン作成</li>
                 </ul>
             </article>
+
             <p class="hr_top">
                 <strong>※1</strong>「一部テキストの修正」はニュアンスや可読性の改善のみに留めたものです。規約内容そのものの変更は行っておりません。
             </p>
 
         </section>
 
-        <section class="link">
-            <a href="https://img-papa.github.io/games/" class="link_l">サイトトップ</a>
-            <a href="#" class="link_t">ページトップ</a>
+        <section>
+            <article class="link">
+                <a href="https://img-papa.github.io/games/" class="link_l">サイトトップ</a>
+                <a href="#" class="link_t">ページトップ</a>
+            </article>
         </section>
 
     </main>
@@ -547,6 +601,8 @@
 
 </body>
 </html>
+
+
 
 
 
