@@ -1,4 +1,3 @@
-
 /* フォント設定 */
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 
@@ -272,10 +271,13 @@ p {
 }
 
 .link_t:hover::before {
+    top: -0.5px;
+}
+.link_b:hover::before {
     top: -1px;
 }
 .link_l:hover::before {
-    left: -1px;
+    left: 0;
 }
 .link_r:hover::after,
 .link_i:hover::after {
@@ -311,21 +313,27 @@ p {
     border-top: 3px solid var(--c-main);
     border-left: 3px solid var(--c-main);
 }
-.link_t::before {
-    margin-right: 0.6em;
+
+.link_t::before,
+.link_b::before,
+summary::before {
     position: relative;
-    top: 2px;
+    margin-left: 0.2em;
+    margin-right: 0.8em;
+}
+
+.link_t::before {
+    top: 1.5px;
     transform: rotate(45deg);
 }
 .link_b::before,
 summary::before {
-    margin-right: 0.6em;
-    position: relative;
-    top: 2px;
-    transform: rotate(45deg);
+    top: -3px;
+    transform: rotate(-135deg);
 }
 .link_l::before {
-    margin-right: 0.7em;
+    margin-left: 0.15em;
+    margin-right: 0.85em;
     transform: rotate(-45deg);
     position: relative;
     top: -0.5px;
