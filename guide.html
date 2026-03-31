@@ -55,6 +55,7 @@
                     content: "";
                     display: block;
                 }
+
             header p {
                 display: block;
                 padding: 10px 15px;
@@ -108,6 +109,7 @@
             position: relative;
             left: -10px;
         }
+
             .toc li {
                 list-style: none;
                 position: relative;
@@ -123,38 +125,38 @@
                 border-bottom: 2px solid var(--c-border);
             }
 
-            .toc a::before,
-            .toc a::after,
-            .toc ul li a::before {
-                z-index: 2;
-                display: inline-block;
-                content: "";
-                position: relative;
-                top: 0;
-                bottom: 0;
-                margin: auto 0;
-            }
+                .toc a:hover {
+                    border-color: var(--c-accent);
+                }
 
-            .toc a::after {
-                display: block;
-                width: 8px;
-                height: 8px;
-                position: absolute;
-                top: -10px;
-                right: 15px;
-                transform: rotate(45deg);
-                border-right: 2px solid var(--c-gray);
-                border-bottom: 2px solid var(--c-gray);
-            }
+                .toc a::before,
+                .toc a::after,
+                .toc ul li a::before {
+                    z-index: 2;
+                    display: inline-block;
+                    content: "";
+                    position: relative;
+                    top: 0;
+                    bottom: 0;
+                    margin: auto 0;
+                }
 
-            .toc a:hover {
-                border-color: var(--c-accent);
-            }
+                .toc a::after {
+                    display: block;
+                    width: 8px;
+                    height: 8px;
+                    position: absolute;
+                    top: -10px;
+                    right: 15px;
+                    transform: rotate(45deg);
+                    border-right: 2px solid var(--c-gray);
+                    border-bottom: 2px solid var(--c-gray);
+                }
 
-            .toc a:hover::after {
-                top: -5px;
-                border-color: var(--c-accent);
-            }
+                .toc a:hover::after {
+                    top: -5px;
+                    border-color: var(--c-accent);
+                }
 
 
             .toc ul li a::before,
@@ -168,30 +170,39 @@
                 content: "＋";
             }
 
-        .toc ul {
-            margin: 0;
-            padding: 0;
-        }
-        .toc ul li a {
-            padding-left: 3.2em;
-        }
-            .toc ul li a::before {
-                content: "－";
+            .toc ul {
+                margin: 0;
+                padding: 0;
             }
+
+                .toc ul li a {
+                    padding-left: 3.2em;
+                }
+
+                    .toc ul li a::before {
+                        content: "－";
+                    }
+
+                    .toc > li a:hover::before,
+                    .toc ul li a:hover::before {
+                        color: var(--c-gray);
+                    }
 
         .scroll h3 {
             padding: 0 0.3em;
             border: none;
         }
+
         .scroll > *:first-child {
-            margin-top: 8px;
+            margin-top: 10px;
         }
+
         .scroll li {
         }
 
         .link {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             border-top: 4px solid var(--c-lt-gra);
             margin: 3em 1em;
         }
@@ -202,6 +213,23 @@
             border-top: 2px solid var(--c-border);
         }
 
+        .o {
+            display: inline-block;
+            width: 1.5em;
+            height: 1.5em;
+            margin: 0 0.2em;
+            font-size: 0.98em;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 1.5em;
+            color: #fff;
+            background-color: var(--c-main);
+        }
+        .o:hover {
+            color: var(--c-accent);
+            background-color: var(--c-border);
+        }
+
         /* pc */
         @media (min-width: 849px) {
 
@@ -209,6 +237,7 @@
             footer {
                 padding-left: 25%;
             }
+
             hgroup {
                 max-width: 100%;
             }
@@ -216,11 +245,11 @@
             main {
                 margin: auto;
             }
-            
-            main > section {
-                max-width: 75%;
-                margin: auto auto auto 25%;
-            }
+
+                main > section {
+                    max-width: 75%;
+                    margin: auto auto auto 25%;
+                }
 
             .toc {
                 padding: 0;
@@ -241,13 +270,13 @@
                 left: 0;
                 margin: 0 0 0 auto;
                 overflow-y: scroll;
+                border-right: 1px solid var(--c-border);
                 background: var(--c-base);
             }
 
             .smp {
                 display: none;
             }
-
         }
 
         /* smp */
@@ -258,13 +287,17 @@
             }
 
             header h1 {
-                font-size: 1.8em;
+                font-size: 1.7em;
+                ◆小さく
             }
 
             .toc {
-                font-size: 1.1em;
+                font-size: 1em;
             }
 
+                .toc a:hover {
+                    border-width: 1px;
+                }
         }
 
     </style>
@@ -275,11 +308,11 @@
     <header>
         <hgroup>
             <h1>イマジナリーパパス<br>総合ゲームガイドライン</h1>
-            <p>最終更新日 2026年3月26日</p>
+            <p>最終更新日 2026年3月31日<a href="#news" class="o">？</a></p>
         </hgroup>
     </header>
     <main>
-            
+
         <section class="fix">
 
             <h2 class="smp">目次</h2>
@@ -399,7 +432,7 @@
                             YouTube上の字幕など、視聴者側が任意で非表示にできる字幕のみの実況は不可とします。
                         </li>
                         <li>
-                            実況要素を含めた場合に限り、<strong>ゲーム全編に渡る動画化が可能</strong>です。
+                            これらの実況要素を含めた場合に限り、<strong>ゲーム全編に渡る動画化が可能</strong>です。
                         </li>
                     </ul>
                 </li>
@@ -476,6 +509,11 @@
         <section id="news">
             <h2>更新履歴</h2>
             <article class="scroll" style="height:50vh;">
+
+                <h3>2026.03.31</h3>
+                <ul>
+                    <li>デザインの調整</li>
+                </ul>
 
                 <h3>2026.03.27</h3>
                 <ul>
@@ -601,9 +639,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
