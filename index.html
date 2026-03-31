@@ -61,7 +61,6 @@
         /* ゲーム一覧 */
 
         #games > * {
-            margin: 10px;
             margin-bottom: 20px;
             box-shadow: 1px 1px 5px #0003;
             background-color: #fff;
@@ -70,10 +69,15 @@
             padding:  0 25px 25px;
         }
 
+        #games hgroup {
+            height: 4em;
+        }
+
         #games h3 {
             position: relative;
             left: -5px;
             margin-left: 0;
+            line-height: 1.3em;
             font-size: 1.3em;
         }
         #games ul {
@@ -119,19 +123,26 @@
             width: 100%;
             height: 3em;
             margin: 0;
-            padding: 0 10px;
+            padding: 0 13px;
             line-height: 2.5em;
             font-size: 1.05em;
+            color: rgba(0,0,0,0.8);
             border: none;
             outline: none;
         }
         .search button {
-            width: 3em;
-            min-height: 3em;
-            font-size: 1.2em;
+            width: 2em;
+            font-size: 1.4em;
+            font-weight: 500;
             border: none;
-            color: #fff;
-            background: var(--c-main);
+            color: rgba(0,0,0,0.5);
+            background: #fff;
+            transform: scaleX(0.8);
+        }
+        .search button:last-child {
+            font-size: 1.8em;
+            font-weight: 300;
+            transform: scaleX(1);
         }
 
         .search_p {
@@ -181,7 +192,11 @@
         .tag li {
             display: inline;
             font-size: 0.9em;
-            color: #0009;
+            color: rgba(0,0,0,0.65);/*
+            padding: 2px 8px 4px;
+            border-radius: 5px;
+            color: rgba(0,0,0,0.6);
+            background: rgba(0,0,0,0.055);*/
         }
         .tag li:not(:last-child)::after {
             display: inline-block;
@@ -361,6 +376,14 @@
             transform: rotate(-45deg);
         }
 
+        .scroll div div {
+            display: grid;
+            row-gap: 0.3em;
+        }
+        .scroll dt {
+            margin-right: 0.5em;
+        }
+
 
         /* PC / Pad */
 
@@ -368,9 +391,11 @@
 
             #games {
                 display: flex;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
             }
             #games > * {
-                flex-basis: 33%;
+                flex-basis: 44%;
             }
             #games .memo {
                 overflow-y: auto;
@@ -383,6 +408,50 @@
             .tag {
                 overflow-y: auto;
                 height: 5.2em;
+            }
+
+
+            .new_site:before,
+            .new_game:before {
+                display: inline-block;
+                width: 7em;
+                height: 1.8em;
+                margin-right: 0.5em;
+                line-height: 1.6em;
+                font-size: 0.95em;
+                font-weight: 600;
+                text-align: center;
+                color: #fff;
+                border-radius: 0.4em;
+            }
+
+            .new_site:before {
+                content: 'サイト更新';
+                background: #bbb;
+            }
+
+            .new_game:before {
+                content: 'ゲーム更新';
+                background: var(--c-main);
+            }
+
+            .new_note:before {
+                content: '重要';
+                background: var(--c-accent);
+            }
+
+        }
+
+
+        /* full */
+
+        @media (min-width: 1100px) {
+
+            #games {
+                justify-content: space-between;
+            }
+            #games > * {
+                flex-basis: 32.5%;
             }
 
         }
@@ -407,6 +476,10 @@
             }
             main > *:first-child {
                 order: 3;
+            }
+
+            #games > * {
+                margin: 10px 3% 20px;
             }
 
             .scroll {
@@ -436,8 +509,8 @@
 
         <section style="flex:1;">
 
-            <h2>ABOUT</h2>
-            <p>ぼっちでフリーゲームを制作＆公開中。</p>
+            <h2 id="about">ABOUT</h2>
+            <!--p>サークル名は父かつ複数形ですが、実際は女がぼっちで管理しています。</p-->
 
             <article class="flex_d">
                 <dl>
@@ -460,7 +533,7 @@
                 </dl>
             </article>
 
-            <p><a class="link_r" href="https://docs.google.com/forms/d/e/1FAIpQLSdyKIPpo_jQnk5_Qb7rSG-eZxV2qOj1m-wHg5oEWlP97MnpLg/viewform?usp=dialog" target="_blank">お問い合わせ先（Googleフォーム）</a></p>
+            <p><a class="link_r" href="https://docs.google.com/forms/d/e/1FAIpQLSdyKIPpo_jQnk5_Qb7rSG-eZxV2qOj1m-wHg5oEWlP97MnpLg/viewform?usp=dialog" target="_blank">お問い合わせ（Googleフォーム）</a></p>
 
         </section>
 
@@ -468,11 +541,19 @@
             <h2>NEW</h2>
             <article class="scroll">
                 <dl class="flex_d">
+
+                    <!--div>
+                        <dt>2026.04.01</dt>
+                        <div>
+                            <dd class="new_site">『<a href="https://img-papa.github.io/games/8sec/index.html">境界警備員</a>』特設ページ公開</dd>
+                        </div>
+                    </div-->
+
                     <div>
                         <dt>2026.01.02</dt>
                         <div>
-                            <dd class="new_site">サイトデザイン変更</dd>
-                            <!--dd class="new_site">お問い合わせフォーム追加</dd-->
+                            <dd class="new_site"> サイトデザイン変更</dd>
+                            <dd class="new_site"> お問い合わせフォーム追加</dd>
                         </div>
                     </div>
 
@@ -488,12 +569,13 @@
 
                     <div>
                         <dt>2024.11.27</dt>
-                        <dd class="new_site">実況ガイドライン作成</dd>
+                        <dd class="new_site"> 実況ガイドライン作成</dd>
                     </div>
 
                     <div>
                         <dt>2024.11.09</dt>
-                        <dd class="new_game">『<a href="#game001">K報</a>』公開
+                        <dd class="new_game">
+                            『<a href="#game001">K報</a>』公開
                         </dd>
                     </div>
 
@@ -501,8 +583,14 @@
             </article>
         </section>
 
-        <section>
+        <section id="game">
             <h2>GAMES</h2>
+
+            <!--span class="circle">？</span>独自のタグについて
+            <dl>
+            <dt>ストーリー</dt>
+            <dd>ゲーム全編に渡って続く本筋のストーリーがある作品にのみ付けています。それ以外の作品にも個別のストーリーが存在します。</dd>
+            </dl-->
 
             <p class="center"><a href="https://img-papa.github.io/games/guide.html" target="_blank" class="link_sp">実況の前にガイドラインをご確認ください</a></p>
 
@@ -510,9 +598,9 @@
 
                 <article class="search">
                     <input type="text" id="searchTerm" placeholder="プレイしたいゲームのジャンル・長さなどを入力してください。">
-                    <!--button onclick="previousHighlight()">&lt;</!--button>
+                    <button onclick="previousHighlight()">&lt;</button>
                     <button onclick="nextHighlight()">&gt;</button>
-                    <button onclick="resetSearch()">×</button-->
+                    <button onclick="resetSearch()">×</button>
                 </article>
                 <div class="search_p">Script by <a href="https://www.benricho.org/Tips/ctrl_F/highlight_inpage/" target="_blank">みんなの知識 ちょっと便利帳</a> 様</div>
 
@@ -520,7 +608,7 @@
 
                     <article id="game003">
 
-                        <div class="ss" style="background-image:url(img/tmb/games_rap.png);"></div>
+                        <div class="ss" style="background-image:url(img/tmb/games_003.png);"></div>
                         <section>
 
                             <hgroup>
@@ -530,7 +618,7 @@
                             <div class="data">
                                 <p class="time"><b>1</b><h>分</h>～<b>2</b>分</p>
                                 <p class="route"><b>5</b>通り</p>
-                                <p class="os">Windows11</p>
+                                <p class="os">Win11</p>
                             </div>
 
                             <p class="memo">絶対に指示を守ってください。</p>
@@ -567,7 +655,7 @@
 
                     <article id="game002">
 
-                        <div class="ss" style="background-image:url(img/tmb/games_fofw.png);"></div>
+                        <div class="ss" style="background-image:url(img/tmb/games_002.png);"></div>
                         <section>
                             <hgroup>
                                 <h3>Focus on Fox's windows</h3>
@@ -576,7 +664,7 @@
                             <div class="data">
                                 <p class="time"><b>2</b><h>分</h>～<b>3</b>分</p>
                                 <p class="route">分岐なし</p>
-                                <p class="os">Windows11</p>
+                                <p class="os">Win11</p>
                             </div>
 
                             <p class="memo">“狐の窓”で怪異を探そう！</p>
@@ -611,7 +699,7 @@
 
                     <article id="game001">
 
-                        <div class="ss" style="background-image:url(img/tmb/games_k-alert.png);"></div>
+                        <div class="ss" style="background-image:url(img/tmb/games_001.png);"></div>
 
                         <section>
 
@@ -622,7 +710,7 @@
                             <div class="data">
                                 <p class="time"><b>7</b><h>分</h>～<b>10</b>分</p>
                                 <p class="route">分岐なし</p>
-                                <p class="os">Windows11</p>
+                                <p class="os">Win11</p>
                             </div>
 
                             <p class="memo">外から断続的な機械音がする。どうやら、マンションの警報機が壊れてしまったらしい。</p>
@@ -658,7 +746,7 @@
 
                             <p class="center">
                                 <a href="https://img-papa.github.io/games/alert/" target="_blank" class="link_sp" style="margin-bottom:0;">おまけページ（作中登場ブログ風）</a>
-                                <a href="https://img-papa.github.io/games/apr/2025.html" target="_blank" class="link_sp">2025年エイプリルフールページ</a>
+                                <a href="https://img-papa.github.io/games/alert/af2025.html" target="_blank" class="link_sp">2025年エイプリルフールページ</a>
                             </p>
 
                         </section>
@@ -672,27 +760,35 @@
 
     <footer>
         <article class="flex_3">
-            
+
             <!--article>
-                <a class="twitter-timeline" href="https://twitter.com/img_papa?ref_src=twsrc%5Etfw">Tweets by img_papa</a>
-                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-            </article-->
+        <a class="twitter-timeline" href="https://twitter.com/img_papa?ref_src=twsrc%5Etfw">Tweets by img_papa</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </article-->
 
             <section>
                 <h3>サイトマップ</h3>
                 <ul>
-                    <li>トップページ
+                    <li>
+                        トップページ
                         <ul>
                             <li><a href="https://img-papa.github.io/games/guide.html">総合ガイドライン</a></li>
                         </ul>
                     </li>
                     <li>
-                        特設ページ
+                        おまけページ
                         <ul>
-                            <li><a href="https://img-papa.github.io/games/apr/2025.html">K報 2025年エイプリルフール</a></li>
-                            <li><a href="https://img-papa.github.io/games/alert/">K報 おまけページ</a></li>
+                            <li><a href="https://img-papa.github.io/games/alert/af2025.html">2報 ティザーサイト（2025年エイプリルフール）</a></li>
+                            <li><a href="https://img-papa.github.io/games/alert/">K報 パパのホラー＆ゲームブログ</a></li>
                         </ul>
                     </li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>特設ページ</h3>
+                <ul>
+                    <li><a href="https://img-papa.github.io/games/8sec/">境界警備員（八衢警備保障 ホームページ）</a></li>
                 </ul>
             </section>
 
@@ -701,15 +797,18 @@
                 <ul>
                     <li><a href="https://img-papa.booth.pm/" target="_blank">BOOTH</a></li>
                     <li><a href="https://freegame-mugen.jp/cms/mt-cp.cgi?__mode=view&blog_id=1&id=10333" target="_blank">フリーゲーム夢現</a></li>
-                    <li><a href="https://x.com/img_papa" target="_blank">Twitter(X)</a></li>
+                    <li><a href="https://x.com/img_papa" target="_blank">Twitter（X）</a></li>
                     <li><a href="https://note.com/img_papa" target="_blank">note</a></li>
                     <li><a href="https://www.youtube.com/@img_papa" target="_blank">YouTube</a></li>
                     <li><a href="https://www.nicovideo.jp/user/138086854" target="_blank">ニコニコ動画</a></li>
-                    <li><a href="https://xfolio.jp/portfolio/img_papa" target="_blank">Xfolio</a></li>
+                    <li><a href="https://xfolio.jp/portfolio/img_papa" target="_blank">クロスフォリオ</a></li>
                 </ul>
             </section>
 
         </article>
+
+        <p class="right" style="margin:1em auto;">© 2024 Imaginary Papas / Tulpapapa</p>
+
     </footer>
 
     <!--
@@ -925,3 +1024,5 @@
         }
     </script>
 </body>
+
+
