@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+    <title>八千俣警備保障 - トップページ</title>
+    <meta charset="utf-8">
+
+    <meta name="description" content="ゲームを作っています。今のところフリーゲーム／ホラーのみ。" />
+
+    <meta property="og:title" content="イマジナリーパパス" />
+    <meta property="og:site_name" content="イマジナリーパパス" />
+    <meta property="og:url" content="https://img-papa.github.io/games/" />
+    <link rel="canonical" href="https://img-papa.github.io/games/" />
+    <meta name="twitter:site" content="@img_papa" />
+
+    <meta property="og:image" content="img/myicon.png" />
+    <link rel="icon" href="img/myicon.png" sizes="62x62" type="image/png" />
+    <link rel="apple-touch-icon-precomposed" href="img/myicon.png" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link rel="stylesheet" href="../default.css">
+
+    <style>
+
+        :root {
+            --c-font: rgb(50,50,50);
+            --c-font-b: rgb(32,32,32);
+            --c-main: rgb(0,80,200);
+            --c-dark: rgb(50,50,50);
+            --c-link: rgb(80,180,255);
+            --c-border: #aaa;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0003;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            border: 1px solid #fff;
+            background: var(--c-main);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            color: var(--c-font);
+        }
+
+        header {
+            background: #fff;
+            z-index: 10;
+        }
+
+        header h1, img {
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -moz-user-select: none;
+            -khtml-user-select: none;
+            -webkit-user-drag: none;
+            -khtml-user-drag: none;
+        }
+
+        header h1 {
+            margin: 15px auto;
+            color: #0000;
+            background-image: url("img/8sec_logo_long.jpg");
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+
+        header nav {
+            flex: 1;
+            text-align: center;
+        }
+
+            header nav ul {
+                display: flex;
+                flex-wrap: wrap;
+                list-style: none;
+                max-width: 60em;
+                border-right: 1px solid var(--c-border);
+            }
+
+                header nav ul li {
+                    flex-grow: 1;
+                    padding: 0;
+                }
+
+                    header nav ul li a {
+                        display: block;
+                        padding: 15px 0 16px;
+                        font-weight: 600;
+                        text-decoration: none;
+                        border-left: 1px solid var(--c-border);
+                    }
+
+                        header nav ul li a:hover {
+                            color: #fff;
+                            background: var(--c-main);
+                        }
+
+                        header nav ul li a:active {
+                            background: var(--c-border);
+                        }
+
+        main {
+            margin: 10px auto;
+        }
+
+            main p {
+                padding: 0.2em 0.8em;
+                line-height: 1.8em;
+            }
+
+            main > * {
+                padding: 0 15px 4em;
+            }
+
+                main > *:nth-child(even) {
+                    color: #fff;
+                    background: var(--c-main);
+                }
+
+                    main > *:nth-child(even) table th {
+                        color: var(--c-main);
+                        background: #fffc;
+                    }
+
+                    main > *:nth-child(even)::selection {
+                        background-color: #fff;
+                        color: var(--c-main);
+                    }
+
+                main > *:nth-child(odd) h2 {
+                    color: var(--c-main);
+                }
+
+                main > *:nth-child(odd) b {
+                    color: var(--c-main);
+                }
+
+                main > *:first-child {
+                    height: 80vh;
+                    background-image: url('img/8sec_header.jpg');
+                    background-size: 120% auto;
+                    background-position: center 30%;
+                }
+
+                main > * > * {
+                    max-width: 1000px;
+                    margin: 10px auto;
+                    padding: 20px 10px;
+                }
+
+                main > *:first-child h2 {
+                    max-width: 1300px;
+                    font-size: 3em;
+                    color: #fff;
+                    text-shadow: 4px 4px 8px var(--c-main);
+                }
+
+                main > *:nth-child(2) {
+                    box-shadow: 0 -40px 80px #fff8;
+                }
+
+            main ul,
+            main ol {
+                margin-top: 0;
+                padding-top: 0;
+                padding-left: 4em;
+            }
+
+        section {
+            padding-left: 1em;
+        }
+
+        footer {
+            margin-top: 1em;
+            padding: 0 1em 4em;
+            color: #fff;
+            background: var(--c-dark);
+        }
+
+            footer a {
+                padding: 0 2px;
+                font-weight: 400;
+                text-decoration: underline;
+                text-decoration-thickness: 1px;
+                color: #fff;
+            }
+
+                footer a:hover {
+                    border-color: var(--c-dark);
+                }
+
+            footer h3 {
+                margin-top: 1em;
+                padding-bottom: 0.3em;
+                border-bottom: 1px solid var(--c-border);
+            }
+
+            footer dl {
+                display: flex;
+                margin-top: 0.8em;
+                justify-content: flex-start;
+                max-width: 21em;
+            }
+            footer dt {
+                flex-basis: 5.5em;
+                padding-right: 1em;
+                text-align: right;
+            }
+
+            footer ul {
+                margin-left: 2em;
+            }
+
+        h2 {
+            margin: 0 auto;
+            padding-top: 1.2em;
+            padding-bottom: 0;
+            font-size: 2.5em;
+            line-height: 1.3em;
+        }
+
+        h3 {
+            margin-bottom: 0.4em;
+            padding-bottom: 0;
+            font-size: 1.4em;
+        }
+
+        main > *:nth-child(odd) h3 {
+            margin: 1.4em auto 0.4em;
+            padding: 0.5em 0.7em;
+            border-left: 4px solid var(--c-main);
+        }
+
+        h4 {
+            margin-top: 1em;
+            margin-bottom: 0.5em;
+            padding-bottom: 0.1em;
+            font-size: 1.2em;
+        }
+
+        ul, ol {
+            padding-left: 1em;
+        }
+
+        hr {
+            border: 0;
+            margin: 4em auto 0;
+            padding: 0;
+            height: 8px;
+            background: var(--c-main);
+        }
+
+        table {
+            margin: 1em auto;
+            font-size: 1.1em;
+        }
+
+        td {
+            padding: 0.8em 1.6em;
+        }
+
+        th {
+            padding: 0.8em 2em;
+            background: var(--c-main);
+        }
+
+        dt {
+            font-weight: 600;
+        }
+
+        .top_img {
+            display: block;
+            width: 50%;
+            height: auto;
+            aspect-ratio: 16 / 9;
+            margin: 4em auto 5em;
+            box-shadow: 0 0 8px var(--c-border), 8px 8px 8px var(--c-border);
+            border: 8px solid #fff;
+            background-image: url('img/8sec_top.jpg');
+            background-size: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .logo {
+            display: block;
+            width: 30%;
+            height: auto;
+            aspect-ratio: 1 / 1;
+            margin-right: 1.8em;
+            box-shadow: 8px 8px 8px #0008;
+            background-color: #fff;
+            background-image: url('img/8sec_logo.png');
+            background-size: 95%;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .record div {
+            display: flex;
+            margin-bottom: 0.4em;
+            padding: 0.8em 16px;
+            color: var(--c-font);
+            background: #fff;
+            box-shadow: 4px 4px 4px #0004;
+        }
+
+        .record dt {
+            width: 7em;
+        }
+
+        .sv {
+            max-width: 320px;
+            margin: 0 auto;
+        }
+
+            .sv > * {
+                margin: 10px;
+            }
+
+            .sv h4 {
+                margin-top: 1.3em;
+                font-size: 1.5em;
+                text-align: center;
+                color: var(--c-main);
+            }
+
+        .bgi {
+            height: 180px;
+            border: 3px solid #fff;
+            background-size: 100%;
+            box-shadow: 7px 7px 3px #0003;
+        }
+
+        .flex_2 {
+            position: relative;
+            padding-top: 0;
+        }
+
+        .msg {
+            display: inline-block;
+            position: relative;
+            margin: 5px auto 0 0;
+            padding: 0.7em 1.2em;
+            text-align: left;
+            line-height: 1.5em;
+            border-radius: 1.3em;
+            color: #fff;
+            background: var(--c-main);
+        }
+
+            .msg::before {
+                content: '';
+                position: absolute;
+                right: calc( -100px + -1.5em );
+                bottom: 0;
+                width: 100px;
+                height: 100px;
+                margin-left: 1em;
+                border-radius: 1em;
+                background-image: url('img/8sec_icon.png');
+                background-position: bottom center;
+                background-repeat: no-repeat;
+                background-size: 88%;
+                background-color: rgb(80,180,255);
+                box-shadow: 8px 8px 8px #0005;
+            }
+
+            .msg::after {
+                content: "";
+                display: block;
+                width: 1.5em;
+                height: 1em;
+                position: absolute;
+                right: -0.8em;
+                bottom: 0.8em;
+                border-bottom: 8px solid var(--c-main);
+                border-radius: 100%;
+                transform: rotate(10deg);
+            }
+
+        .btn {
+            display: inline-block;
+            color: #fff;
+            margin: 0.8em auto;
+            padding: 0.8em 1.4em;
+            text-decoration: none;
+            font-weight: 800;
+            border: 3px solid var(--c-main);
+            border-radius: 8em;
+            background: var(--c-main);
+        }
+
+            .btn:hover {
+                background: #fff;
+            }
+
+        .btn_at {
+            display: inline-block;
+            padding: 0.8em 2em;
+            border: 4px solid red;
+            border-radius: 1em;
+            color: #fff;
+            font-size: 1.2em;
+            font-weight: 800;
+            text-decoration: none;
+            background: red;
+        }
+
+            .btn_at:hover {
+                font-weight: 700;
+                color: var(--c-font-b);
+                background: #fff;
+            }
+
+            .btn_at::after {
+                content: '';
+                display: block;
+                position: relative;
+                top: -1px;
+                width: 0.8em;
+                height: 0.8em;
+                margin: 0.5em auto;
+                box-shadow: 3px 3px 0 #fff;
+                transform: rotate(45deg);
+            }
+
+            .btn_at:hover::after {
+                top: 2px;
+                box-shadow: 3px 3px 0 var(--c-font);
+            }
+
+        .note {
+            padding: 0;
+            margin-top: 50vw;
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: 500;
+        }
+
+            .note ul {
+                padding: 0 4em 4em;
+            }
+
+            .note::before,
+            .note::after {
+                content: "";
+                display: block;
+                height: 2em;
+                background-image: repeating-linear-gradient(-45deg, #000, #000 10px, #fc0 10px, #fc0 20px);
+            }
+
+            .note > * {
+                font-weight: 700;
+            }
+
+            .note > ul li {
+                text-align: left;
+                padding: 10px;
+            }
+
+            .note a {
+                color: #fff;
+            }
+
+        .i {
+            display: block;
+            width: 1.5em;
+            height: 1.5em;
+            margin: 10px auto 20px;
+            padding: 0;
+            text-align: center;
+            line-height: 1.4em;
+            color: #c03;
+            background: #fff;
+            border-radius: 100%;
+        }
+
+            .i strong {
+                color: yellow;
+                text-decoration: underline;
+            }
+
+        .h_o {
+            display: inline-block;
+            width: 1.8em;
+            line-height: 1.8em;
+            margin-right: 0.5em;
+            text-align: center;
+            color: #fff;
+            background: var(--c-main);
+            border-radius: 8em;
+        }
+
+        .a_hide {
+            display: block;
+            margin-left: 18%;
+            width: 20%;
+            height: 18%;
+        }
+        .a_hide_txt a {
+            color: var(--c-main);
+            text-decoration: none;
+        }
+
+        .tag:before {
+            display: inline-block;
+            content: 'サイト更新';
+            width: 6.5em;
+            height: 2em;
+            margin-right: 0.8em;
+            line-height: 1.9em;
+            font-size: 0.95em;
+            font-weight: 600;
+            text-align: center;
+            color: #fff;
+            border-radius: 0.4em;
+            background: var(--c-main);
+            transform: scaleX(0.95);
+        }
+
+
+        /* PC / Pad */
+
+        @media (min-width: 900px) {
+
+            header {
+                display: flex;
+                align-items: center;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                box-shadow: 0 0 8px #0008;
+            }
+
+                header h1 {
+                    width: 200px;
+                    height: 70px;
+                    margin-left: 20px;
+                    margin-bottom: 10px;
+                }
+
+                header nav ul {
+                    display: flex;
+                }
+
+            main > *:first-child {
+                padding-top: 4.8em;
+            }
+
+            .clm2 {
+                display: flex;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 899px) {
+
+            header h1 {
+                width: 60%;
+                height: auto;
+                aspect-ratio: 3 / 1;
+                margin-top: 0.6em;
+            }
+        }
+
+        /* スマートフォン */
+
+        @media (max-width: 699px) {
+
+            header {
+                box-shadow: 0 8px 8px #0008;
+            }
+
+            header nav ul {
+                max-width: auto;
+                margin: 0;
+                padding: 0;
+            }
+
+                header nav ul li {
+                    border-top: 1px solid var(--c-border);
+                    flex: 1;
+                    flex-basis: 33%;
+                    padding: 0;
+                }
+
+            main {
+                margin: 0;
+            }
+
+            main > *:first-child {
+                font-size: 0.8em;
+                height: 40vh;
+                z-index: -1;
+            }
+
+            .top_img {
+                width: 88%;
+            }
+
+            .logo {
+                width: 44%;
+                margin: 2em auto;
+            }
+
+            .tag::before {
+                display: none;
+            }
+
+            .flex_2,
+            .flex_3 {
+                display: block;
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+    <!--
+
+
+    /!\ 警告
+    ￣￣
+    当ページは2026年エイプリルフールに作成された
+    架空の会社のホームページ および
+    その会社が登場するゲームの仮設紹介ページです。
+
+    【八千俣警備保障】という会社は実在しません。
+
+    -->
+
+    <header>
+        <h1>八千俣警備保障</h1>
+        <nav>
+            <ul>
+                <li><a href="#news">新着情報</a></li>
+                <li><a href="#service">業務内容</a></li>
+                <li><a href="#company">企業情報</a></li>
+                <li><a href="#recruit">採用情報</a></li>
+                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdyKIPpo_jQnk5_Qb7rSG-eZxV2qOj1m-wHg5oEWlP97MnpLg/viewform?usp=dialog">お問い合わせ</a></li>
+                <li><a href="#attention">注意事項</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section>
+            <h2>日本の日々の暮らしを陰から守る。支える。</h2>
+        </section>
+
+        <section id="news">
+            <h2>新着情報</h2>
+            <dl class="record">
+                <!--div>
+                    <dt>2028.8.8</dt>
+                    <dd>採用ページ 新規公開</dd>
+                </div-->
+                <div>
+                    <dt>2026.04.01</dt>
+                    <dd class="tag">サイトリニューアル</dd>
+                </div>
+                <div>
+                    <dt>2024.12.31</dt>
+                    <dd class="tag">ホームページ設立のお知らせ</dd>
+                </div>
+            </dl>
+        </section>
+
+        <section id="service">
+
+            <p class="center" style="margin-top:2em;">
+                <a class="btn_at" href="#attention">ご連絡の前に<br>注意事項をよくお読みください</a>
+            </p>
+
+            <hr>
+
+            <h2 style="margin-bottom:0.8em;">業務内容</h2>
+            <p><ruby>八千俣<rt>やちまた</rt></ruby>警備保障は『<strong>境界警備員</strong>』の会社です。<br>「完璧」「完全」「安全」をモットーに、日本全国からご依頼を承っております。</p>
+
+            <div class="top_img"></div>
+
+            <h3>“境界警備員”とは？</h3>
+            <p>表立って活躍する職種ではないため、聞き馴染みのない方も多いかもしれません。<br>『<b>境界警備員</b>』とは、読んで字の如し、私たちの暮らす現世と、異界や神域のような禁足地を隔てる“境界”を警備する仕事です。</p>
+            <p>名前から想像できる通り、主には<b>境界近隣区域の監視</b>を行いますが、境界の<b>敷設</b>や、管理者が不明な境界の<b>調査・移譲・点検</b>など、業務内容は多岐にわたります。</p>
+
+            <h3>主な業務</h3>
+            <article class="flex_3" style="padding:0;">
+
+                <section class="sv">
+                    <h4>◇　敷設　◇</h4>
+                    <div class="bgi" style="background-image:url('img/8sec_service_001.jpg');"></div>
+                    <p>新たに境界の敷設を行います。</p>
+                </section>
+
+                <section class="sv">
+                    <h4>◇　監視　◇</h4>
+                    <div class="bgi" style="background-image:url('img/8sec_service_002.jpg');"></div>
+                    <p>敷設された境界内外の監視を行います。</p>
+                </section>
+
+                <section class="sv">
+                    <h4 class="a_hide_txt"><a href="omake.html">◇</a>　点検　◇</h4>
+                    <div class="bgi" style="background-image:url('img/8sec_service_003.jpg');"><a class="a_hide" href="omake.html"></a></div>
+                    <p>境界に不備がないか定期点検を行います。</p>
+                </section>
+
+            </article>
+
+            <p>その他、“境界”に関わる仕事を全般的に承っております。</p>
+            
+        </section>
+
+        <section id="company">
+            <h2>企業情報</h2>
+
+            <section>
+
+                <h3>会社概要</h3>
+                <table>
+                    <tr>
+                        <th>名称</th>
+                        <td>八千俣警備保障（やちまたけいびほしょう）</td>
+                    </tr>
+                    <tr>
+                        <th>設立</th>
+                        <td>昭和48年4月8日</td>
+                    </tr>
+                    <tr>
+                        <th>営業エリア</th>
+                        <td>日本全国</td>
+                    </tr>
+                    <tr>
+                        <th>従業員数</th>
+                        <td>警備員88名、そのほか社員8名</td>
+                    </tr>
+                    <tr>
+                        <th>各種資格者数</th>
+                        <td style="line-height:2em;">
+                            施設警備2級資格：5名<br>
+                            貴重品運搬警備1級資格：2名<br>
+                            貴重品運搬警備2級資格：7名<br>
+                            交通誘導警備2級資格：2名<br>
+                            防災管理者：3名<br>
+                            防犯設備士：2名<br>
+                            階位（正階）：1名<br>
+                            階位（権正階）：1名<br>
+                            階位（直階）：2名<br>
+                            結界技士特級資格：3名<br>
+                            結界技士一級資格：5名<br>
+                            結界技士二級資格：13名<br>
+                            結界取扱技能講習終了：23名<br>
+                            特定神域作業責任者：10名
+                        </td>
+                    </tr>
+                </table>
+
+            </section>
+
+            <article class="flex_2">
+
+                <section style="margin-bottom:2em;">
+                    <h3 id="">会社理念</h3>
+                    <p>
+                        当社は、境界領域の管理を通じ、治安維持に貢献する。<br>
+                        常に迅速・最善の判断を下し、顧客および近隣住民の安心・安全を第一に、いかなる状況下においても業務を完遂する。
+                    </p>
+                </section>
+
+                <section>
+                    <h3>社是・社訓</h3>
+                    <p>
+                        <b>社是</b>　お客様の安心・安全第一<br>
+                        <b>社訓</b>　「完璧」「完全」「安全」
+                    </p>
+                </section>
+
+            </article>
+
+            <!--<h3 id="">八千俣警備保障の歴史</h3>-->
+            <section class="clm2">
+
+                <article class="logo"></article>
+
+                <article>
+                    <h3 id="mon" style="margin-top:0.8em;">当社のロゴマークについて</h3>
+                    <p>当社では、組み合い角に八文字の紋を会社ロゴに起用しています。</p>
+                    <p>境界が安定する四角形を二重にして堅牢に、更に双子の道祖神である八千俣ノ彦・八千俣ノ姫から八の字をいただき、安全な境界警備保障を表しています。</p>
+                </article>
+
+            </section>
+
+        </section>
+
+        <section id="recruit">
+            <h2>採用情報</h2>
+
+            <h3>境界警備員の魅力！</h3>
+
+            <article style="margin:auto;padding-left:1.5em;">
+
+                <h4><span class="h_o">1</span>業界トップの高収入！</h4>
+                <p>
+                    境界警備員は案件の内容に応じて給与が変動します。<br>
+                    更に八千俣警備保障の給与は<b>業界水準以上</b>。業務内容と努力に見合った報酬制度で働けます。
+                </p>
+
+                <h4><span class="h_o">2</span>理想のライフワークバランス</h4>
+                <p>
+                    勤務時間や勤務地が幅広いため、<b>柔軟な働き方が可能</b>。<br>
+                    朝が弱い人は夜間警備を選んだり、自宅から近い場所の案件を選ぶこともできます。
+                </p>
+
+                <h4><span class="h_o">3</span>様々な経験が積める</h4>
+                <p>
+                    我が社では境界に関わる技術研鑽のため、<b>定期的な研修</b>を実施しています。<br>
+                    そして現場では境界に関する専門スキルだけでなく、判断力と適応力を培うことができます。
+                </p>
+
+                <h4><span class="h_o">4</span>チームで乗り越える達成感</h4>
+                <p>
+                    境界敷設は安全性の観点から最低3名で行うため、強固なチームワークが必須となります。<br>
+                    <b>アットホーム</b>なチームで一丸となり、優しい先輩たちと業務を遂行しましょう。
+                </p>
+
+                <h4><span class="h_o">5</span>全国の秘境へ行ける!?</h4>
+                <p>
+                    我が社の勤務地は全国。会社負担で日本各地に行けちゃいます。<br>
+                    案件によっては、普段は関係者でも立ち入れない<b>秘境</b>に入れることも！
+                </p>
+
+            </article>
+
+                <h3>先輩社員の声</h3>
+
+                <article class="flex_2" style="align-items:center;">
+
+                    <section>
+                        <h4>Yさん（40代・中途入社）</h4>
+                        <p class="msg">
+                            やりがいにあふれた職場です！<br>
+                            めげずに頑張れば必ず報われます！<br>
+                            とにかく実務！<br>
+                            経験してナンボの職業です！<br>
+                            まずは応募してみてください。<br>
+                            実際に見学にいらしてください。<br>
+                            では、現場でお会いしましょう！
+                        </p>
+                    </section>
+
+                    <section style="margin-top:3em;">
+                        <h4>Gさん（60代・中途入社）</h4>
+                        <p class="msg">
+                            まあ何事も経験ですね。<br>
+                            応募をお待ちしております。
+                        </p>
+                    </section>
+
+                </article>
+
+                <h3>採用情報</h3>
+                <div class="flex_2">
+
+                    <article>
+                        <h4>募集要項</h4>
+                        <ul>
+                            <li>性別不問</li>
+                            <li>年齢不問</li>
+                            <li>学歴不問</li>
+                            <li>経験不問（※実務経験者歓迎）</li>
+                            <li>
+                                資格不問（※資格保持者優遇）
+                                <ul>
+                                    <li>普通免許</li>
+                                    <li>階位（浄階～直階）</li>
+                                    <li>結界技士（特級～二級）</li>
+                                    <li>結界取扱技能講習終了</li>
+                                    <li>特定神域作業責任者 ほか</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </article>
+
+                    <article>
+
+                        <h4>給与・報酬</h4>
+                        <ul><li>固定給＋歩合制</li></ul>
+                        <p>
+                            成果および業務内容の危険度に応じて変動。<br>
+                            一部業務に特殊勤務手当あり。
+                        </p>
+
+                        <h4>労働時間・休日・就業場所</h4>
+                        <p>案件ごとに異なります。お気軽にご相談ください。</p>
+
+                        <p>※詳細条件は公開していません。</p>
+
+                        <p class="center">
+                            <a href="" class="btn" style="margin:3em auto 1em;"><s>採用ページ（外部サイト）へ移動する</s></a>
+                            <br>
+                            <strong style="font-size:1.2em;">現在、採用ページは閉鎖中です。</strong>
+                        </p>
+
+
+                    </article>
+
+                </div>
+
+        </section>
+
+        <article id="attention" class="note" style="background:#c03;">
+
+            <article>
+                <h2 class="i">！</h2>
+                <p>
+                    当サイトは2026年度<strong>エイプリルフール</strong>を兼ねた<br>
+                    <strong>開発中ゲーム『境界警備員』特設サイト</strong>です。
+                </p><p>
+                    『八千俣警備保障』という組織 および<br>
+                    『境界警備員』という職種は<strong>実在せず</strong>、<br>
+                    <strong>実在の団体・人物とは一切の関係はありません</strong>。
+                </p>
+            </article>
+
+            <article style="font-size:0.9em;">
+                <p>以下のフリー素材をお借りしました。</p>
+                <ul style="text-align:left;">
+                    <li><a href="https://www.photo-ac.com/main/detail/22613534&title=%E5%B9%8C%E8%A6%8B%E5%B3%A0%E3%81%8B%E3%82%89%E6%9C%AD%E5%B9%8C%E5%B8%82%E5%8C%97%E5%8C%BA%E3%82%92%E6%9C%9B%E3%82%80%EF%BC%88%E9%BA%BB%E7%94%9F%E3%83%BB%E5%A4%AA%E5%B9%B3%E3%83%BB%E7%AF%A0%E8%B7%AF%E5%91%A8%E8%BE%BA%EF%BC%89" target="_blank">幌見峠から札幌市北区を望む（麻生・太平・篠路周辺） - No: 22613534｜写真素材なら「写真AC」無料（フリー）ダウンロードOK</a></li>
+                    <li><a href="https://www.photo-ac.com/main/detail/420909&title=%E3%83%93%E3%82%B8%E3%83%8D%E3%82%B9%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF%E6%97%A5%E6%9C%AC" target="_blank">ビジネスネットワーク日本 - No: 420909｜写真素材なら「写真AC」無料（フリー）ダウンロードOK</a></li>
+                    <li><a href="https://www.photo-ac.com/main/detail/22872342/?title=%E7%9B%A3%E8%A6%96%E3%82%AB%E3%83%A1%E3%83%A9%E3%81%AE%E3%83%A2%E3%83%8B%E3%82%BF%E3%83%BC%E3%82%92%E7%A2%BA%E8%AA%8D%E3%81%99%E3%82%8B%E4%BB%8B%E8%AD%B7%E5%A3%AB" target="_blank">監視カメラのモニターを確認する介護士 - No: 22872342｜写真素材なら「写真AC」無料（フリー）ダウンロードOK</a></li>
+                    <li><a href="https://www.photo-ac.com/main/detail/3960497?title=%E5%B7%A5%E4%BA%8B%E7%8F%BE%E5%A0%B4%E3%81%AE%E3%83%95%E3%82%A7%E3%83%B3%E3%82%B9" target="_blank">工事現場のフェンス - No: 3960497｜写真素材なら「写真AC」無料（フリー）ダウンロードOK</a></li>
+                    <li><a href="https://www.photo-ac.com/main/detail/32227792&title=%E7%82%B9%E6%A4%9C%E3%82%92%E3%81%99%E3%82%8B%E7%94%B7%E5%A5%B3" target="_blank">点検をする男女 - No: 32227792｜写真素材なら「写真AC」無料（フリー）ダウンロードOK</a></li>
+                </ul>
+            </article>
+
+        </article>
+
+    </main>
+
+    <footer>
+        <section style="margin:auto;max-width:1200px;">
+            <h2>Information</h2>
+            <article class="flex_3">
+
+                <section>
+                    <h3>ゲーム情報</h3>
+                    <article>
+                        <dl><dt>タイトル</dt><dd>境界警備員</dd></dl>
+                        <dl><dt>ジャンル</dt><dd>見下ろし型2Dホラー</dd></dl>
+                        <dl><dt>公開日</dt><dd>未定</dd></dl>
+                        <dl><dt>制作</dt><dd>イマジナリーパパス / タルパパパ</dd></dl>
+                    </article>
+                </section>
+
+                <section>
+                    <h3>ページ内リンク</h3>
+                    <article style="display:flex;">
+                        <ul>
+                            <li><a href="#news">新着情報</a></li>
+                            <li><a href="#service">業務内容</a></li>
+                            <li><a href="#company">企業情報</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#recruit">採用情報</a></li>
+                            <li><a href="#contact">お問い合わせ</a></li>
+                            <li><a href="#attention">注意事項</a></li>
+                        </ul>
+                    </article>
+                </section>
+
+                <section>
+                    <h3>サイト内リンク</h3>
+                    <ul>
+                        <li>
+                            <a href="https://img-papa.github.io/games/">トップページ</a>
+                            <ul>
+                                <li><a href="https://img-papa.github.io/games/#about">サイト情報</a></li>
+                                <li><a href="https://img-papa.github.io/games/#new">更新履歴</a></li>
+                                <li><a href="https://img-papa.github.io/games/#game">ゲームいちらん</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="https://img-papa.github.io/games/guide.html">総合ガイドライン</a></li>
+                    </ul>
+                </section>
+
+            </article>
+        </section>
+    </footer>
+
+
+</body>
+
+
